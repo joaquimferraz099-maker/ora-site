@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ORA · Café especial da Fazenda Santa Cruz</title>
+<meta name="description" content="Café especial da Fazenda Santa Cruz, no Sul de Minas. Natural e Cereja Descascado, 500 g, e kits para presentear.">
+<meta name="theme-color" content="#4A3025">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=5">
+<style>
+/* abertura */
+.hero{position:relative;height:100svh;min-height:640px;color:var(--butter);overflow:hidden;background:var(--roast)}
+.hero .bg{position:absolute;inset:-8% 0;}
+.hero video{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.45) 0%,rgba(33,29,26,0) 28%,rgba(33,29,26,.05) 50%,rgba(33,29,26,.72) 100%)}
+.hero .in{position:absolute;z-index:2;inset:auto var(--gut) clamp(34px,5vw,64px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero .eyebrow{margin-bottom:clamp(20px,2.4vw,34px)}
+.hero .side{max-width:330px;padding-bottom:8px}
+.hero .side p{margin:0 0 26px;font-size:16px;line-height:1.65;opacity:.9}
+.cue{position:absolute;z-index:2;left:50%;bottom:24px;width:1px;height:46px;background:rgba(241,225,179,.25);overflow:hidden}
+.cue::after{content:"";position:absolute;inset:0;background:var(--butter);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
+
+/* credenciais */
+.creds{display:grid;grid-template-columns:repeat(4,1fr);padding:clamp(34px,4vw,56px) var(--gut)}
+.creds div{display:flex;align-items:center;gap:20px;padding:0 clamp(14px,2vw,34px)}
+.creds div + div{border-left:1px solid var(--line)}
+.creds div:first-child{padding-left:0}
+.creds b{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.2vw,52px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.creds span{font-size:13px;line-height:1.45;opacity:.75}
+
+/* cabeçalho dos cafés */
+.chd{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;padding-top:clamp(90px,11vw,170px);padding-bottom:clamp(50px,6vw,90px)}
+.chd > p{margin:0;max-width:24em;font-size:17px;opacity:.78}
+
+/* manifesto curto */
+
+/* os dois cafés */
+.cafe{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));min-height:min(100svh,940px)}
+.cafe .pk{grid-column:1/8;position:relative;overflow:hidden}
+.cafe .pk .pack{position:absolute;inset:0}
+.cafe .pk .pack img{width:33%}
+.cafe .pk .ix{position:absolute;left:clamp(20px,2.6vw,40px);top:clamp(20px,2.6vw,40px);color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.8;z-index:2}
+.cafe .pk .scr{position:absolute;right:clamp(20px,2.6vw,40px);bottom:clamp(20px,2.6vw,40px);z-index:2;color:var(--butter)}
+.cafe .tx{grid-column:8/13;padding:clamp(40px,5vw,90px) var(--gut) clamp(40px,5vw,90px) clamp(30px,4vw,70px);display:flex;flex-direction:column;justify-content:center}
+.cafe.rev .pk{grid-column:6/13;order:2}
+.cafe.rev .tx{grid-column:1/6;order:1;padding:clamp(40px,5vw,90px) clamp(30px,4vw,70px) clamp(40px,5vw,90px) var(--gut)}
+.cafe h2{margin:20px 0 10px}
+.cafe .sub{font-family:var(--serif);font-style:italic;font-size:22px;opacity:.7}
+.cafe .lede{margin:30px 0 26px;max-width:16em}
+.cafe dl{display:grid;grid-template-columns:auto 1fr;gap:10px 26px;margin:32px 0 0;padding:22px 0 0;border-top:1px solid var(--line);font-size:15px}
+.cafe dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55;padding-top:3px}
+.cafe dd{margin:0;font-family:var(--serif);font-size:19px}
+.cafe .buy{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:36px}
+.cafe .buy .num{font-size:30px;margin-right:6px}
+
+/* história */
+.hist{position:relative;height:min(115svh,1100px);min-height:640px;color:var(--butter);overflow:hidden}
+.hist .media{position:absolute;inset:0}
+.hist .media video{position:absolute;inset:-10% 0;height:120%}
+.hist::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.15),rgba(33,29,26,.7));pointer-events:none}
+.hist .in{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(44px,6vw,90px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.hist h2{grid-column:1/9}
+.hist .r{grid-column:9/13}
+.hist .r p{margin:0 0 26px;opacity:.88}
+
+/* preparo */
+.prep{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center}
+.prep .pv{grid-column:1/6;aspect-ratio:4/5}
+.prep .pt{grid-column:7/13}
+.prep .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
+.prep .top p{margin:0;opacity:.75;max-width:24em}
+.prep .n3{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
+.prep .n3 div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line)}
+.prep .n3 b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(54px,5.6vw,96px);line-height:.9;letter-spacing:-.03em}
+.prep .n3 span{display:block;font-size:16px;opacity:.8;max-width:18em}
+
+/* presentes */
+.gift{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(14px,1.8vw,30px);align-items:center}
+.gift .ph{grid-column:1/7;aspect-ratio:4/5}
+.gift .tx{grid-column:8/12}
+.gift .tx h2{margin:22px 0 26px}
+.gift .tx .body{opacity:.82}
+.gift .from{display:flex;align-items:baseline;gap:12px;margin:34px 0;padding-top:22px;border-top:1px solid var(--line)}
+.gift .from b{font-family:var(--serif);font-weight:400;font-size:34px}
+.gift .from span{font-size:13px;opacity:.6;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+
+@media (max-width:960px){
+  .hero .in{grid-template-columns:1fr}
+  .cafe,.cafe.rev{grid-template-columns:1fr;min-height:0}
+  .cafe .pk,.cafe.rev .pk{grid-column:1/-1;order:0;aspect-ratio:1/1}
+  .cafe .tx,.cafe.rev .tx{grid-column:1/-1;order:1;padding:44px var(--gut) 70px}
+  .cafe .pk .pack img{width:32%}
+  .hist .in{grid-template-columns:1fr}
+  .hist h2,.hist .r{grid-column:1/-1}
+  .gift .ph,.gift .tx{grid-column:1/-1}
+  .gift .tx{margin-top:30px}
+  .prep .pv,.prep .pt{grid-column:1/-1}
+  .prep .pt{margin-top:40px}
+  .prep .pv{aspect-ratio:4/3}
+  .creds{grid-template-columns:1fr 1fr;row-gap:30px}
+  .creds div:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:600px){
+  .prep .n3 div{grid-template-columns:1fr;gap:10px}
+  .creds{grid-template-columns:1fr 1fr;row-gap:28px}
+  .creds div{padding:0}
+  .creds div + div{border-left:0}
+  .creds div{flex-direction:column;align-items:flex-start;gap:8px}
+  .cafe .pk .pack img{width:36%}
+  .cafe .pk .scr{top:clamp(20px,2.6vw,40px);bottom:auto}
+}
+</style>
+</head>
+<body data-page="home">
+
+<section class="hero">
+  <div class="bg" data-par=".6"><video src="assets/video/vapor.mp4" poster="assets/video/vapor.jpg" autoplay muted loop playsinline></video></div>
+  <div class="in">
+    <div>
+      <p class="eyebrow ln-l" data-fade>Café especial · Sul de Minas</p>
+      <h1 class="display xxl" data-lines><span class="ln"><span>Todo momento</span></span><span class="ln"><span>tem sua <em class="it">ORA.</em></span></span></h1>
+    </div>
+    <div class="side" data-fade data-delay="2">
+      <p>Dois cafés de uma mesma fazenda no Sul de Minas, colhidos maduros e torrados em pequenos lotes.</p>
+      <a class="btn light" href="#cafes">Conhecer os cafés <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+    </div>
+  </div>
+  <span class="cue" aria-hidden="true"></span>
+</section>
+
+<section class="creds t-roast" aria-label="Sobre os cafés">
+  <div data-fade><b class="num">1</b><span>Origem única<br>Fazenda Santa Cruz</span></div>
+  <div data-fade data-delay="1"><b class="num">84</b><span>Pontos SCA<br>no lote mais bem avaliado</span></div>
+  <div data-fade data-delay="2"><b class="num">2</b><span>Processos<br>Natural e Cereja Descascado</span></div>
+  <div data-fade data-delay="3"><b class="num">500 g</b><span>Moído para coado<br>Torra em pequenos lotes</span></div>
+</section>
+
+<div class="chd wrap t-butter" id="cafes">
+  <div><p class="eyebrow ln-l" data-fade>Safra 2026/27</p><h2 class="display xl" data-lines style="margin-top:22px"><span class="ln"><span>Os cafés</span></span></h2></div>
+  <p data-fade>Mesma fazenda, mesma colheita. O processo depois do pé é o que separa um do outro.</p>
+</div>
+<div>
+  <article class="cafe t-butter">
+    <div class="pk"><div class="pack" data-par=".35"><img src="assets/img/pacote-natural.webp" alt="Pacote do Café Natural, 500 g"></div><span class="ix">01</span><span class="score scr">SCA <b>84</b></span></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Processo natural</p>
+      <h2 class="display xl" data-lines><span class="ln"><span>Natural</span></span></h2>
+      <span class="sub" data-fade>Variedade Bourbon</span>
+      <p class="lede" data-fade>Doce e redondo, com acidez equilibrada e um final que fica.</p>
+      <div class="chips" data-fade><span>chocolate</span><span>caramelo</span><span>doce</span></div>
+      <dl data-fade><dt>Corpo</dt><dd>Aveludado</dd><dt>Acidez</dt><dd>Equilibrada</dd><dt>Formato</dt><dd>Moído · 500 g</dd></dl>
+      <div class="buy" data-fade><span class="num">R$ 74,90</span><button class="btn solid" data-quick="cafe-natural">Adicionar</button><a class="link" href="produto.html?p=cafe-natural">Detalhes</a></div>
+    </div>
+  </article>
+  <article class="cafe rev t-butter">
+    <div class="pk"><div class="pack mocha" data-par=".35"><img src="assets/img/pacote-cereja.webp" alt="Pacote do Café Cereja Descascado, 500 g"></div><span class="ix">02</span><span class="score scr">SCA <b>83,5</b></span></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Cereja descascado</p>
+      <h2 class="display xl" data-lines><span class="ln"><span>Cereja</span></span><span class="ln"><span class="it">Descascado</span></span></h2>
+      <span class="sub" data-fade>Catucaí, Mundo Novo e Catuaí</span>
+      <p class="lede" data-fade>Limpo e vivo, com uma acidez cítrica delicada e final longo.</p>
+      <div class="chips" data-fade><span>chocolate</span><span>caramelo</span><span>cítrico</span></div>
+      <dl data-fade><dt>Corpo</dt><dd>Aveludado</dd><dt>Acidez</dt><dd>Cítrica delicada</dd><dt>Formato</dt><dd>Moído · 500 g</dd></dl>
+      <div class="buy" data-fade><span class="num">R$ 74,90</span><button class="btn solid" data-quick="cafe-cereja">Adicionar</button><a class="link" href="produto.html?p=cafe-cereja">Detalhes</a></div>
+    </div>
+  </article>
+</div>
+
+<section class="hist">
+  <div class="media"><video src="assets/video/graos.mp4" poster="assets/video/graos.jpg" autoplay muted loop playsinline data-par=".5"></video></div>
+  <div class="in">
+    <h2 class="display xl" data-lines><span class="ln"><span>Do pé de café</span></span><span class="ln"><span>à sua <em class="it">pausa.</em></span></span></h2>
+    <div class="r" data-fade>
+      <p>A história da Fazenda Santa Cruz e de como cada lote da ORA é colhido, separado, secado e torrado.</p>
+      <a class="btn light" href="historia.html">Nossa história <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap t-espresso prep" id="preparo">
+  <div class="pv media" data-open><video src="assets/video/coado.mp4" poster="assets/video/coado.jpg" autoplay muted loop playsinline></video></div>
+  <div class="pt">
+  <div class="top">
+    <h2 class="display lg" data-lines><span class="ln"><span>Como preparar</span></span></h2>
+    <p data-fade>No coador de papel ou de pano.<br>Três números bastam.</p>
+  </div>
+  <div class="n3">
+    <div data-fade><b class="num">10 g</b><span>de café, cerca de duas colheres de sopa rasas.</span></div>
+    <div data-fade data-delay="1"><b class="num">150 ml</b><span>de água para cada xícara.</span></div>
+    <div data-fade data-delay="2"><b class="num">92 °C</b><span>Desligue o fogo nas primeiras bolhas, espere meio minuto e despeje devagar.</span></div>
+  </div>
+  </div>
+</section>
+
+<section class="sec wrap t-butter">
+  <div class="gift">
+    <div class="ph media" data-open><img src="assets/img/p-kit-vertical.jpg" alt="Kit ORA aberto, com café, caneca e sacola"></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Para presentear</p>
+      <h2 class="display lg" data-lines><span class="ln"><span>O café, na</span></span><span class="ln"><span><em class="it">caixa ORA.</em></span></span></h2>
+      <p class="body" data-fade>Kits com café, caneca e jarra térmicas, na caixa com sacola kraft e um cartão com a sua mensagem.</p>
+      <div class="from" data-fade><span>A partir de</span><b class="num">R$ 129,00</b></div>
+      <a class="btn" href="presentes.html" data-fade>Ver os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/logo.js?v=5"></script>
+<script src="js/catalogo.js?v=5"></script>
+<script src="js/site.js?v=5"></script>
+</body>
+</html>

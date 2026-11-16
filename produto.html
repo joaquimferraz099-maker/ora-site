@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Café · ORA</title>
+<meta name="theme-color" content="#F1E1B3">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=5">
+<style>
+.pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
+.gw{grid-column:1/8;min-width:0}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gal .media{aspect-ratio:4/5}
+.gal .media.w{grid-column:1/-1;aspect-ratio:1/1}
+.gal .media.w.wide{aspect-ratio:3/2}
+.gal .pack img{width:34%}
+.gal .media.lblc{background:var(--cream);display:grid;place-items:center}
+.gal .media.lblc img{width:58%;height:auto;object-fit:contain;box-shadow:0 30px 50px -30px rgba(33,29,26,.45);border-radius:4%}
+.gal .media.lblc .cap{color:var(--roast)}
+.gal .cap{position:absolute;left:18px;bottom:16px;z-index:2;color:var(--butter);font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;opacity:.85}
+.gal-n{display:none}
+.info{grid-column:9/13;position:sticky;top:calc(var(--hdr) + 18px);padding-top:clamp(10px,2vw,30px)}
+.crumbs{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.5;display:flex;gap:10px}
+.info h1{margin:28px 0 10px}
+.info .sub{font-family:var(--serif);font-style:italic;font-size:22px;opacity:.72}
+.meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:24px 0 0;font-size:13px}
+.meta .lot{opacity:.55;letter-spacing:.06em}
+.pr{display:flex;align-items:baseline;gap:14px;margin:30px 0 0;padding-top:24px;border-top:1px solid var(--line)}
+.pr b{font-family:var(--serif);font-weight:400;font-size:clamp(34px,2.8vw,44px);letter-spacing:-.01em}
+.pr span{font-size:13px;opacity:.55}
+.info .lede{margin:22px 0 18px;font-size:clamp(21px,1.6vw,25px)}
+.opt{margin-top:30px}
+.opt .lb{display:flex;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:12px}
+.opt .lb span:last-child{opacity:.55;letter-spacing:.04em;text-transform:none;font-weight:400;font-size:13px}
+.sw{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sw button,.sw .fix{border:1px solid var(--line);padding:14px 16px;text-align:left;display:flex;align-items:center;gap:12px;transition:border-color .4s,background .4s,color .4s;border-radius:2px}
+.sw button:hover{border-color:var(--roast)}
+.sw button[aria-pressed="true"],.sw .fix{border-color:var(--roast);box-shadow:inset 0 0 0 1px var(--roast)}
+.sw i{width:26px;height:34px;flex:none;border-radius:3px;background:var(--espresso);display:grid;place-items:center}
+.sw i.mocha{background:var(--mocha)}
+.sw i img{width:70%}
+.sw b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.15}
+.sw small{display:block;font-size:12px;opacity:.6;margin-top:2px}
+.sw .fix{grid-column:1/-1;cursor:default}
+.plans{display:grid;gap:10px}
+.plans label{border:1px solid var(--line);padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;cursor:pointer;transition:border-color .4s,box-shadow .4s;border-radius:2px}
+.plans label:has(input:checked){border-color:var(--roast);box-shadow:inset 0 0 0 1px var(--roast)}
+.plans input{appearance:none;width:16px;height:16px;border:1px solid var(--roast);border-radius:50%;margin:4px 0 0;display:grid;place-items:center}
+.plans input:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--roast)}
+.plans b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
+.plans small{display:block;font-size:13px;opacity:.62;margin-top:3px;line-height:1.45}
+.plans .p{font-family:var(--serif);font-size:18px;white-space:nowrap}
+.buy{display:flex;gap:10px;margin-top:28px}
+.buy .qty{margin:0;height:58px;border-radius:58px}
+.buy .qty button{width:44px;height:56px}
+.buy .btn{flex:1;justify-content:space-between;height:58px}
+.ship{display:flex;gap:10px;align-items:center;font-size:13px;opacity:.62;margin:16px 0 0}
+.ship svg{width:16px}
+.trust{list-style:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.trust li{font-size:12.5px;line-height:1.45;opacity:.7}
+.trust b{display:block;font-family:var(--serif);font-weight:400;font-size:18px;opacity:1;margin-bottom:2px}
+.cup{padding:clamp(90px,11vw,170px) var(--gut);text-align:center;overflow:hidden}
+.cup .eyebrow{justify-content:center}
+.cup .w{font-family:var(--serif);font-style:italic;font-size:clamp(56px,9vw,160px);line-height:.98;letter-spacing:-.03em;margin:30px 0 0}
+.cup .w span{display:block}
+.cup .w span:nth-child(2){opacity:.75}
+.cup .w span:nth-child(3){opacity:.5}
+.cup .row{display:flex;justify-content:center;gap:clamp(24px,5vw,90px);flex-wrap:wrap;margin-top:clamp(50px,6vw,90px);padding-top:30px;border-top:1px solid var(--line)}
+.cup .row div{text-align:left}
+.cup .row small{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.6;margin-bottom:6px}
+.cup .row b{font-family:var(--serif);font-weight:400;font-size:24px}
+.gmsg{margin-top:22px}
+.gmsg summary,.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
+.gmsg summary::-webkit-details-marker,.acc summary::-webkit-details-marker{display:none}
+.gmsg summary::after,.acc summary::after{content:"+";font-size:18px;font-weight:400;letter-spacing:0}
+.gmsg[open] summary::after,.acc details[open] summary::after{content:"−"}
+.gmsg textarea{width:100%;margin-top:14px;background:none;border:1px solid var(--line);padding:14px;font-family:var(--serif);font-size:19px;color:inherit;resize:vertical;outline:none}
+.acc{margin-top:34px}
+.acc details{border-top:1px solid var(--line)}
+.acc details:last-child{border-bottom:1px solid var(--line)}
+.acc summary{padding:19px 0}
+.acc .a{padding:0 0 20px;font-size:15px;line-height:1.65;opacity:.8}
+.acc ul{margin:0;padding-left:18px;display:grid;gap:4px}
+
+/* ficha técnica */
+.spec{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
+.spec .l{grid-column:1/5}
+.spec .l p{margin:22px 0 0;opacity:.72;max-width:22em}
+.spec dl{grid-column:6/13;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(20px,3vw,50px);margin:0}
+.spec dl div{display:grid;grid-template-columns:9.5em 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.spec dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55;padding-top:4px}
+.spec dd{margin:0;font-family:var(--serif);font-size:19px;line-height:1.3}
+
+/* processo */
+.proc{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center}
+.proc .ph{grid-column:1/7;aspect-ratio:5/4}
+.proc .tx{grid-column:8/12}
+.proc .tx h2{margin:22px 0 26px}
+.proc .tx .lede{margin-bottom:34px}
+
+/* o que vem no kit */
+.inbox{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
+.inbox .l{grid-column:1/5}
+.inbox ol{grid-column:6/13;list-style:none;margin:0;padding:0;counter-reset:i}
+.inbox li{counter-increment:i;display:grid;grid-template-columns:3em 1fr;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(22px,1.8vw,28px);line-height:1.2}
+.inbox li::before{content:counter(i,decimal-leading-zero);font-family:var(--sans);font-size:11px;letter-spacing:.2em;font-weight:700;opacity:.5;padding-top:8px}
+
+/* também */
+.more .hd{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)}
+.other{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);margin-bottom:clamp(70px,8vw,120px);align-items:center}
+.other .pk{grid-column:1/6;aspect-ratio:4/3}
+.other .pk.pack img{width:24%}
+.other .tx{grid-column:7/12}
+.other h3{margin:16px 0 8px}
+.other .tx .lede{margin:18px 0 28px}
+
+/* barra fixa */
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:58;background:var(--butter);border-top:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:12px var(--gut);transform:translateY(105%);transition:transform .7s var(--ease)}
+.sbar.on{transform:none}
+.sbar .th{width:40px;height:50px;flex:none;display:grid;place-items:center;background:var(--espresso);overflow:hidden}
+.sbar .th.mocha{background:var(--mocha)}
+.sbar .th img{width:70%}
+.sbar .th.ph img{width:100%;height:100%;object-fit:cover}
+.sbar .n{flex:1;min-width:0}
+.sbar .n b{display:block;font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sbar .n span{font-size:12px;opacity:.6}
+.sbar .num{font-size:22px}
+.sbar .btn{height:46px}
+
+@media (max-width:1100px){.gw{grid-column:1/8}.info{grid-column:8/13}}
+@media (max-width:960px){
+  .pdp{grid-template-columns:1fr;padding-top:var(--hdr)}
+  .gw,.info{grid-column:1/-1}
+  .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;margin-inline:calc(var(--gut) * -1);padding-inline:var(--gut);scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gal .media,.gal .media.w,.gal .media.w.wide{flex:0 0 88%;aspect-ratio:4/5;scroll-snap-align:center}
+  .gal-n{display:block;margin-top:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55}
+  .info{position:static;padding-top:24px}
+  .spec .l,.spec dl,.proc .ph,.proc .tx,.inbox .l,.inbox ol,.other .pk,.other .tx{grid-column:1/-1}
+  .spec dl{margin-top:34px}
+  .proc .tx,.other .tx{margin-top:34px}
+  .inbox ol{margin-top:30px}
+}
+@media (max-width:640px){
+  .spec dl{grid-template-columns:1fr}
+  .spec dl div{grid-template-columns:8.5em 1fr}
+  .sbar .n span,.sbar .num{display:none}
+}
+</style>
+</head>
+<body data-page="produto" data-hdr="light">
+
+<main class="pdp">
+  <div class="gw">
+    <div class="gal" data-gal></div>
+    <p class="gal-n" data-galn></p>
+  </div>
+  <div class="info" data-info></div>
+</main>
+
+<div data-below></div>
+
+<div class="sbar" data-sbar aria-hidden="true"></div>
+
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/logo.js?v=5"></script>
+<script src="js/catalogo.js?v=5"></script>
+<script>
+window.ORA_PAGE = () => {
+  const $ = s => document.querySelector(s);
+  const C = ORA_CATALOGO, q = new URLSearchParams(location.search);
+  const ARR = ORA_ARR;
+  const TRUCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>';
+  let p = oraProd(q.get('p')) || oraProd('cafe-natural');
+  let st = { qty: 1, sub: false, v: oraCafe(q.get('c')) ? q.get('c') : 'natural' };
+
+  const media = (src, cls = '', cap = '') => {
+    const isV = src.endsWith('.mp4');
+    const el = isV ? `<video src="${src}" poster="${src.replace('.mp4', '.jpg')}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${p.nome}">`;
+    return `<div class="media ${cls}">${el}${cap ? `<span class="cap">${cap}</span>` : ''}</div>`;
+  };
+  const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.id === 'natural' ? 'Mais doce' : 'Mais cítrico'}</small></span></button>`;
+
+  function render() {
+    const isCafe = p.tipoLoja === 'cafe';
+    const c = oraCafe(isCafe ? p.cafe : st.v);
+    document.title = (isCafe ? 'Café ' + p.nome : p.nome) + ' · ORA';
+
+    /* galeria */
+    const g = isCafe
+      ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : '')), media('assets/video/po.mp4', '', 'Moído para coado'), media(c.rotulo, 'lblc', 'O rótulo'), media('assets/img/cartao-origem.jpg', 'w wide', 'Fazenda Santa Cruz · Sul de Minas')]
+      : [media(p.img, 'w'), media(p.img2), media('assets/img/sacola.jpg'), media('assets/img/caixa-slogan.jpg', 'w wide', 'Caixa ORA')];
+    $('[data-gal]').innerHTML = g.join('');
+    if (isCafe) $('[data-gal] .pack').innerHTML = `<img src="${c.img}" alt="Pacote do ${c.nomeCompleto}, 500 g">`;
+    $('[data-galn]').textContent = `${g.length} imagens · deslize`;
+
+    /* informações e compra */
+    const total = () => brl(p.preco * st.qty);
+    $('[data-info]').innerHTML = `
+      <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
+      <h1 class="display lg">${isCafe ? p.nome.replace(' Descascado', ' <em class="it">Descascado</em>') : p.nome}</h1>
+      <span class="sub">${isCafe ? c.sub : p.tipo}</span>
+      ${isCafe ? `<div class="meta"><span class="score">SCA <b>${c.pontos}</b></span><span class="lot">Lote ${c.lote} · Safra 2026/27</span></div>` : ''}
+      <div class="pr"><b class="num">${brl(p.preco)}</b><span>${isCafe ? '500 g' : 'kit completo, na caixa'}</span></div>
+      <p class="lede">${isCafe ? c.frase : p.resumo}</p>
+      ${isCafe ? `<div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>` : ''}
+      <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Dois cafés, mesma fazenda' : c.notas.join(', ').toLowerCase()}</span></div>
+        <div class="sw">${C.cafes.map(x => sw(x, x.id === c.id)).join('')}</div></div>
+      ${isCafe ? `
+      <div class="opt"><div class="lb"><span>Formato</span></div><div class="sw"><span class="fix"><span><b>Moído para coado · 500 g</b><small>Moagem média, para coador de papel ou de pano</small></span></span></div></div>
+      <div class="opt"><div class="lb"><span>Forma de compra</span></div>
+        <div class="plans">
+          <label><input type="radio" name="plan" value="0" ${st.sub ? '' : 'checked'}><span><b>Compra única</b><small>Um pacote, entregue uma vez.</small></span><span class="p num">${brl(p.preco)}</span></label>
+          <label><input type="radio" name="plan" value="1" ${st.sub ? 'checked' : ''}><span><b>Assinatura mensal</b><small>Um pacote por mês, na mesma data. Pause ou cancele quando quiser.</small></span><span class="p num">${brl(p.preco)}<small style="display:inline;opacity:.6"> /mês</small></span></label>
+        </div></div>` : ''}
+      <div class="buy" data-buyrow>
+        <div class="qty"><button aria-label="Diminuir" data-qd="-1">−</button><span data-qty>${st.qty}</span><button aria-label="Aumentar" data-qd="1">+</button></div>
+        <button class="btn solid" data-buy><span>Adicionar</span><span class="num" data-total style="font-size:17px;letter-spacing:0">${total()}</span></button>
+      </div>
+      <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP no fechamento.</p>
+      ${isCafe ? `<ul class="trust"><li><b>Origem única</b>Fazenda Santa Cruz</li><li><b>Pequenos lotes</b>Torra acompanhada</li><li><b>Laudo SCA</b>${c.pontos} pontos</li></ul>` : ''}
+      ${isCafe ? '' : `<details class="gmsg"><summary>Incluir cartão com mensagem</summary><textarea rows="3" maxlength="180" placeholder="Escreva sua mensagem" data-msg></textarea></details>`}
+      <div class="acc">
+        ${isCafe ? '' : `<details open><summary>O que vem</summary><div class="a"><ul>${p.contem.map(x => `<li>${x}</li>`).join('')}</ul></div></details>`}
+        <details><summary>Como preparar</summary><div class="a">10 g de café para cada 150 ml de água a 92 °C, em coador de papel ou de pano. Molhe o pó, espere 30 segundos e complete devagar.</div></details>
+        <details><summary>Conservação</summary><div class="a">Depois de aberto, feche bem o pacote e guarde longe da luz e do calor. O sabor fica melhor nas primeiras semanas.</div></details>
+        <details><summary>Entrega e trocas</summary><div class="a">Enviamos para todo o Brasil. Prazo e valor aparecem pelo seu CEP no fechamento do pedido.</div></details>
+      </div>`;
+
+    /* abaixo da dobra */
+    const other = C.cafes.find(x => x.id !== c.id), op = C.produtos.find(x => x.cafe === other.id);
+    const kits = C.produtos.filter(x => x.tipoLoja === 'kit' && x.handle !== p.handle);
+    const specRows = [['Fazenda', 'Santa Cruz'], ['Região', 'Sul de Minas, MG'], ['Processo', c.processo], ['Variedade', c.variedade], ['Safra', '2026/27'], ['Lote', c.lote],
+      ['Pontuação', c.pontos + ' pontos, escala SCA'], ['Notas', c.notas.join(', ')], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', 'Moído, 500 g'], ['Preparo', 'Coado, papel ou pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
+    $('[data-below]').innerHTML = `
+      ${isCafe ? `<section class="cup t-espresso"><p class="eyebrow" data-fade>Na xícara</p>
+        <p class="w" data-lines>${c.notas.map(n => `<span class="ln"><span>${n}</span></span>`).join('')}</p>
+        <div class="row" data-fade><div><small>Acidez</small><b>${c.acidez}</b></div><div><small>Corpo</small><b>${c.corpo}</b></div><div><small>Final</small><b>${c.final}</b></div></div></section>` : ''}
+      ${isCafe ? '' : `<section class="sec wrap t-cream"><div class="inbox"><div class="l"><p class="eyebrow ln-l" data-fade>O kit</p><h2 class="display md" data-fade style="margin-top:20px">O que vem<br>na caixa</h2></div>
+        <ol data-fade>${p.contem.map(x => `<li>${x}</li>`).join('')}</ol></div></section>`}
+      <section class="sec wrap ${isCafe ? 't-cream' : 't-butter'}">
+        <div class="spec">
+          <div class="l"><p class="eyebrow ln-l" data-fade>${isCafe ? 'Ficha técnica' : 'Café ' + c.nome}</p><h2 class="display md" data-fade style="margin-top:20px">${isCafe ? 'Tudo sobre<br>este café' : 'O café que<br>vai no kit'}</h2>
+            <p data-fade>Dados do laudo de classificação da safra 2026/27, de 11/11/2026.</p></div>
+          <dl data-fade>${specRows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+        </div>
+      </section>
+      <section class="sec wrap t-butter">
+        <div class="proc">
+          <div class="ph media" data-open><video src="assets/video/graos.mp4" poster="assets/video/graos.jpg" autoplay muted loop playsinline></video></div>
+          <div class="tx">
+            <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : 'Cereja descascado'}</p>
+            <h2 class="display md" data-fade>${c.processo === 'Natural' ? 'Seca inteiro,<br><em class="it">com a fruta.</em>' : 'Sem a casca,<br><em class="it">mais limpo.</em>'}</h2>
+            <p class="lede" data-fade>${c.sobre}</p>
+            <a class="link" href="historia.html" data-fade>Nossa história ${ARR}</a>
+          </div>
+        </div>
+      </section>
+      <section class="sec wrap t-butter more" style="padding-top:0">
+        ${isCafe ? `<div class="other">
+          <a class="pk media pack ${other.cor === 'mocha' ? 'mocha' : ''}" href="produto.html?p=${op.handle}" data-open><img src="${other.img}" alt="Café ${other.nome}"></a>
+          <div class="tx"><p class="eyebrow ln-l" data-fade>O outro café da fazenda</p><h3 class="display md" data-fade>${other.nome}</h3><span class="sub" data-fade style="font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7">${other.sub}</span>
+            <p class="lede" data-fade>${other.frase}</p>
+            <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Detalhes</a></div></div>
+        </div>` : ''}
+        <div class="hd"><h2 class="display md" data-fade>${isCafe ? 'Para presentear' : 'Outros presentes'}</h2><a class="link" href="presentes.html" data-fade>Ver presentes ${ARR}</a></div>
+        <div class="kgrid">${kits.map(oraKitCard).join('')}</div>
+      </section>`;
+
+    /* barra fixa */
+    $('[data-sbar]').innerHTML = `<div class="th ${isCafe ? (c.cor === 'mocha' ? 'mocha' : '') : 'ph'}"><img src="${isCafe ? c.img : p.thumb}" alt=""></div>
+      <div class="n"><b>${isCafe ? 'Café ' + p.nome : p.nome}</b><span>${isCafe ? 'Moído · 500 g' : 'Café ' + c.nome}</span></div>
+      <span class="num" data-total>${total()}</span><button class="btn solid" data-buy>Adicionar</button>`;
+    ORA.reveals && ORA.reveals();
+    document.querySelectorAll('[data-below] video,[data-gal] video').forEach(v => { v.muted = true; v.play().catch(() => {}); });
+  }
+
+  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl(p.preco * st.qty));
+  document.addEventListener('click', e => {
+    const s = e.target.closest('[data-sw]');
+    if (s) {
+      if (p.tipoLoja === 'cafe') { p = C.produtos.find(x => x.cafe === s.dataset.sw); history.replaceState(null, '', '?p=' + p.handle); render(); }
+      else { st.v = s.dataset.sw; history.replaceState(null, '', '?p=' + p.handle + '&c=' + st.v); render(); }
+      return;
+    }
+    const d = e.target.closest('[data-qd]');
+    if (d) { st.qty = Math.max(1, Math.min(20, st.qty + +d.dataset.qd)); document.querySelector('[data-qty]').textContent = st.qty; upd(); }
+    if (e.target.closest('[data-buy]')) { const m = document.querySelector('[data-msg]'); ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, msg: m ? m.value.trim() : '' }); }
+  });
+  document.addEventListener('change', e => { if (e.target.name === 'plan') st.sub = e.target.value === '1'; });
+
+  render();
+  const bar = document.querySelector('[data-sbar]');
+  const io = new IntersectionObserver(([en]) => { const on = !en.isIntersecting && en.boundingClientRect.top < 0; bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', !on); });
+  const watch = () => { io.disconnect(); io.observe(document.querySelector('[data-buyrow]')); };
+  watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
+};
+</script>
+<script src="js/site.js?v=5"></script>
+</body>
+</html>

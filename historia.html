@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nossa história · ORA</title>
+<meta name="description" content="A Fazenda Santa Cruz, no Sul de Minas, e o caminho de cada lote da ORA: colheita, seleção, processo, secagem e torra.">
+<meta name="theme-color" content="#211D1A">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=5">
+<style>
+.hhero{position:relative;height:100svh;min-height:620px;color:var(--butter);overflow:hidden;background:var(--roast)}
+.hhero .bg{position:absolute;inset:-8% 0}
+.hhero video{width:100%;height:100%;object-fit:cover}
+.hhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.4),rgba(33,29,26,.1) 40%,rgba(33,29,26,.75))}
+.hhero .in{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(40px,6vw,90px)}
+.hhero .eyebrow{margin-bottom:28px}
+.chap{font-family:var(--serif);font-style:italic;font-size:18px;opacity:.6;display:block;margin-bottom:18px}
+
+.farm{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:start}
+.farm .l{grid-column:1/6}
+.farm .r{grid-column:7/13}
+.farm .r .lede{font-size:clamp(25px,2.4vw,38px);line-height:1.3;max-width:none}
+.farm .r .body{margin-top:34px;opacity:.8}
+.farm .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:54px;border-top:1px solid var(--line)}
+.farm .facts div{padding-top:22px}
+.farm .facts b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.4vw,56px);line-height:1;letter-spacing:-.02em}
+.farm .facts span{display:block;margin-top:8px;font-size:13px;opacity:.6}
+.wide{height:min(90svh,860px);margin:0 var(--gut)}
+.wide video{position:absolute;inset:-10% 0;height:120%}
+
+.steps{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:start}
+.steps .l{grid-column:1/6;position:sticky;top:calc(var(--hdr) + 30px)}
+.steps .l .media{aspect-ratio:4/5;margin-top:40px;max-width:440px}
+.steps ol{grid-column:7/13;list-style:none;margin:0;padding:0}
+.steps li{display:grid;grid-template-columns:4.2em 1fr;gap:10px;padding:clamp(30px,3.4vw,52px) 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li i{font-family:var(--serif);font-size:clamp(30px,2.6vw,42px);line-height:1;opacity:.45}
+.steps h3{margin:0 0 12px;font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.6vw,42px);line-height:1;letter-spacing:-.015em}
+.steps p{margin:0;font-size:16px;line-height:1.7;opacity:.78;max-width:30em}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,30px);margin-top:clamp(40px,5vw,80px)}
+.duo a{display:block}
+.duo .pk{aspect-ratio:5/4}
+.duo .pk img{width:24%;transition:transform 1.4s var(--ease-out)}
+.duo a:hover .pk img{transform:translateY(-10px)}
+.duo .b{display:flex;justify-content:space-between;gap:20px;padding-top:22px;margin-top:20px;border-top:1px solid var(--line)}
+.duo h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.6vw,42px);line-height:1}
+.duo p{margin:10px 0 0;opacity:.75;max-width:26em;font-size:15px}
+
+.cup{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
+.cup .l{grid-column:1/5}
+.cup .l p{margin:22px 0 0;opacity:.75;max-width:22em}
+.cup .lots{grid-column:6/13}
+.lot{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,70px);align-items:baseline;padding:30px 0;border-top:1px solid var(--line)}
+.lot:last-child{border-bottom:1px solid var(--line)}
+.lot b{font-family:var(--serif);font-weight:400;font-size:clamp(70px,8vw,140px);line-height:.85;letter-spacing:-.04em}
+.lot small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55;margin-bottom:10px}
+.lot p{margin:0;font-family:var(--serif);font-size:clamp(20px,1.7vw,26px);line-height:1.35}
+
+.name{text-align:center;display:grid;justify-items:center}
+.name .mg{width:clamp(60px,6vw,90px);color:var(--butter);margin-bottom:40px}
+.name h2{max-width:10em}
+.name .body{margin:34px auto 0;opacity:.82;text-align:center}
+.name .btn{margin-top:46px}
+
+@media (max-width:960px){
+  .farm .l,.farm .r,.steps .l,.steps ol,.cup .l,.cup .lots{grid-column:1/-1}
+  .farm .r,.cup .lots{margin-top:30px}
+  .steps .l{position:static}
+  .steps .l .media{max-width:none;aspect-ratio:3/2}
+  .steps ol{margin-top:40px}
+}
+@media (max-width:640px){
+  .duo{grid-template-columns:1fr;gap:50px}
+  .farm .facts{grid-template-columns:1fr 1fr;row-gap:24px}
+  .lot{grid-template-columns:1fr;gap:14px}
+  .steps li{grid-template-columns:3em 1fr}
+}
+</style>
+</head>
+<body data-page="historia">
+
+<section class="hhero">
+  <div class="bg" data-par=".6"><video src="assets/video/mesa.mp4" poster="assets/video/mesa.jpg" autoplay muted loop playsinline></video></div>
+  <div class="in">
+    <p class="eyebrow ln-l" data-fade>Nossa história</p>
+    <h1 class="display xxl" data-lines><span class="ln"><span>Do pé de café</span></span><span class="ln"><span>à sua <em class="it">pausa.</em></span></span></h1>
+  </div>
+</section>
+
+<section class="sec wrap t-butter">
+  <div class="farm">
+    <div class="l">
+      <span class="chap" data-fade>i.</span>
+      <h2 class="display lg" data-lines><span class="ln"><span>Fazenda</span></span><span class="ln"><span><em class="it">Santa Cruz.</em></span></span></h2>
+    </div>
+    <div class="r">
+      <p class="lede" data-fade>A ORA nasce na Fazenda Santa Cruz, no Sul de Minas. É de lá que vêm todos os nossos grãos, de uma única origem.</p>
+      <p class="body" data-fade>A região reúne o que o café arábica pede: montanha, noites frescas e estações bem marcadas. Com o frio, o fruto amadurece devagar e chega à colheita com mais açúcar. É esse tempo a mais no pé que aparece depois na xícara, como chocolate e caramelo.</p>
+      <div class="facts" data-fade>
+        <div><b class="num">1</b><span>fazenda de origem</span></div>
+        <div><b class="num">4</b><span>variedades de arábica</span></div>
+        <div><b class="num">2026/27</b><span>safra atual</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wide media" data-open><video src="assets/video/graos.mp4" poster="assets/video/graos.jpg" autoplay muted loop playsinline></video></div>
+
+<section class="sec wrap t-butter">
+  <div class="steps">
+    <div class="l">
+      <span class="chap" data-fade>ii.</span>
+      <h2 class="display lg" data-lines><span class="ln"><span>Do pé</span></span><span class="ln"><span><em class="it">ao pacote.</em></span></span></h2>
+      <div class="media" data-open><video src="assets/video/po.mp4" poster="assets/video/po.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+    <ol>
+      <li data-fade><i>i</i><div><h3>Colheita</h3><p>O fruto é colhido maduro, quando a casca fica vermelha ou amarela. É nesse ponto que o açúcar dentro dele está mais desenvolvido.</p></div></li>
+      <li data-fade><i>ii</i><div><h3>Seleção</h3><p>Frutos verdes, secos demais ou com defeito ficam para trás. Segue adiante só o que pode virar café especial.</p></div></li>
+      <li data-fade><i>iii</i><div><h3>Processo</h3><p>Aqui os dois cafés se separam. O Natural seca com o fruto inteiro. O Cereja Descascado tem a casca retirada antes de secar.</p></div></li>
+      <li data-fade><i>iv</i><div><h3>Secagem e descanso</h3><p>Os grãos secam devagar até a umidade certa e descansam antes da torra, para o sabor se assentar.</p></div></li>
+      <li data-fade><i>v</i><div><h3>Torra em pequenos lotes</h3><p>Lotes pequenos deixam acompanhar cada torra de perto, até o ponto em que chocolate e caramelo aparecem.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec wrap t-cream">
+  <span class="chap" data-fade>iii.</span>
+  <h2 class="display lg" data-lines><span class="ln"><span>Uma origem,</span></span><span class="ln"><span><em class="it">dois cafés.</em></span></span></h2>
+  <div class="duo">
+    <a href="produto.html?p=cafe-natural" data-fade>
+      <div class="pk media pack"><img src="assets/img/pacote-natural.webp" alt="Pacote do Café Natural"></div>
+      <div class="b"><div><h3>Natural</h3><p>Seca inteiro, com a fruta. Mais doce, corpo mais presente.</p></div><span class="link">Ver</span></div>
+    </a>
+    <a href="produto.html?p=cafe-cereja" data-fade data-delay="1">
+      <div class="pk media pack mocha"><img src="assets/img/pacote-cereja.webp" alt="Pacote do Café Cereja Descascado"></div>
+      <div class="b"><div><h3>Cereja Descascado</h3><p>Sem a casca antes de secar. Mais limpo, acidez mais clara.</p></div><span class="link">Ver</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="sec wrap t-butter">
+  <div class="cup">
+    <div class="l">
+      <span class="chap" data-fade>iv.</span>
+      <h2 class="display lg" data-lines><span class="ln"><span>A prova.</span></span></h2>
+      <p data-fade>Cada lote passa por classificação e prova. A nota segue a escala de 100 pontos da Specialty Coffee Association. Acima de 80, o café é considerado especial.</p>
+    </div>
+    <div class="lots">
+      <div class="lot" data-fade><b class="num">84</b><div><small>Lote V09706-00</small><p>Chocolate e caramelo, doce. Acidez média, corpo médio. Retrogosto agradável.</p></div></div>
+      <div class="lot" data-fade><b class="num">83,5</b><div><small>Lote V09638-00</small><p>Chocolate, caramelo. Acidez cítrica média, corpo médio. Retrogosto prazeroso e prolongado.</p></div></div>
+      <p data-fade style="font-size:13px;opacity:.55;margin:16px 0 0">Laudos de classificação de 11/11/2026, safra 2026/27.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap t-espresso name">
+  <div class="mg" data-fade data-mg></div>
+  <span class="chap" data-fade>v.</span>
+  <h2 class="display xl" data-lines><span class="ln"><span>ORA, de hora.</span></span><span class="ln"><span><em class="it">E de agora.</em></span></span></h2>
+  <p class="body" data-fade>Preparar um café coado leva poucos minutos. Tomar, mais alguns. É a pausa que cabe em qualquer dia, e é para ela que a ORA existe.</p>
+  <a class="btn" href="loja.html" data-fade>Conhecer os cafés <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+</section>
+
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/logo.js?v=5"></script>
+<script src="js/catalogo.js?v=5"></script>
+<script>document.querySelector('[data-mg]').innerHTML = oraGrain();</script>
+<script src="js/site.js?v=5"></script>
+</body>
+</html>

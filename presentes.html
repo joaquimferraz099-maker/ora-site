@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Presentes · ORA</title>
+<meta name="description" content="Kits ORA para presentear: café especial, caneca e jarra térmicas, na caixa ORA com cartão de mensagem.">
+<meta name="theme-color" content="#4A3025">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=5">
+<style>
+.ghero{position:relative;height:74svh;min-height:520px;overflow:hidden;background:var(--espresso);color:var(--butter)}
+.ghero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ghero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,29,26,.65),rgba(33,29,26,.1) 60%)}
+.ghero .in{position:absolute;z-index:2;left:var(--gut);bottom:clamp(36px,5vw,70px);max-width:600px}
+.ghero p{margin:18px 0 0;font-size:17px;max-width:26em}
+.box4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px)}
+.box4 figure{margin:0}
+.box4 .media{aspect-ratio:4/5}
+.box4 figcaption{padding-top:14px}
+.box4 b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
+.box4 span{font-size:14px;opacity:.7}
+
+.msg{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:center}
+.msg .l{grid-column:1/6}
+.msg .r{grid-column:7/13}
+.fld label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.65;margin-top:22px}
+.fld input,.fld textarea,.fld select{width:100%;background:none;border:0;border-bottom:1px solid var(--line);color:inherit;font-family:var(--serif);font-size:20px;padding:10px 0;outline:none;resize:none;border-radius:0}
+.fld :is(input,textarea,select):focus{border-bottom-color:currentColor}
+.fld select option{color:var(--roast)}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.card-pv{aspect-ratio:1.48;background:var(--butter);color:var(--espresso);padding:clamp(24px,3vw,46px);display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 40px 80px -40px rgba(0,0,0,.6);position:relative}
+.card-pv::before{content:"";position:absolute;inset:12px;border:1px solid rgba(74,48,37,.45);pointer-events:none}
+.card-pv .top svg{width:62px}
+.card-pv .txt{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,28px);line-height:1.35;align-self:center;white-space:pre-wrap;word-break:break-word;margin:0}
+.card-pv .sig{display:flex;justify-content:space-between;align-items:end;font-family:var(--serif);font-size:18px}
+.card-pv .sig small{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55}
+
+
+@media (max-width:1100px){.box4{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){
+  .msg .l,.msg .r{grid-column:1/-1}
+  .msg .r{margin-top:20px}
+}
+</style>
+</head>
+<body data-page="presentes">
+
+<section class="ghero">
+  <img src="assets/img/caixa-slogan.jpg" alt="Caixa ORA aberta, com o slogan na tampa interna">
+  <div class="in">
+    <p class="eyebrow ln-l" data-fade style="margin-bottom:24px">Para presentear</p>
+    <h1 class="display xl" data-lines><span class="ln"><span>Presentes</span></span></h1>
+    <p data-fade data-delay="1">Café especial e peças para o dia a dia, na caixa ORA, com sacola kraft e um cartão para a sua mensagem.</p>
+  </div>
+</section>
+
+<section class="sec wrap t-butter" style="padding-block:clamp(70px,8vw,120px)">
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)"><h2 class="display lg" data-lines><span class="ln"><span>Escolha o kit</span></span></h2><p data-fade style="margin:0;opacity:.72;max-width:24em">Todos levam um pacote de 500 g, Natural ou Cereja Descascado, à sua escolha.</p></div>
+  <div class="kgrid" data-grid></div>
+</section>
+
+<section class="sec wrap t-butter" style="padding-top:0">
+  <h2 class="display md" data-fade style="margin-bottom:clamp(30px,3vw,48px)">O que vem na caixa</h2>
+  <div class="box4">
+    <figure data-fade><div class="media"><img src="assets/img/sacola.jpg" alt="Sacola kraft ORA"></div><figcaption><b>Sacola kraft</b><span>Para entregar em mãos.</span></figcaption></figure>
+    <figure data-fade data-delay="1"><div class="media"><img src="assets/img/p-caixa.jpg" alt="Caixa ORA"></div><figcaption><b>Caixa ORA</b><span>Com o slogan na tampa interna.</span></figcaption></figure>
+    <figure data-fade data-delay="2"><div class="media"><img src="assets/img/p-cafe-caneca.jpg" alt="Café e caneca dentro da caixa"></div><figcaption><b>Café e peças</b><span>Conforme o kit escolhido.</span></figcaption></figure>
+    <figure data-fade data-delay="3"><div class="media"><img src="assets/img/cartao-origem.jpg" alt="Cartão Nossa origem" style="object-position:80% 50%"></div><figcaption><b>Cartão</b><span>A origem do café e a sua mensagem.</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="sec wrap t-roast" id="cartao" style="padding-block:clamp(80px,9vw,130px)">
+  <div class="msg">
+    <div class="l fld">
+      <h2 class="display md" data-fade>Cartão de mensagem</h2>
+      <p class="body" data-fade style="opacity:.8;margin-top:14px">Escreva aqui e veja como fica. O texto vai junto com o kit.</p>
+      <label for="mTo">Para</label><input id="mTo" maxlength="40" value="Helena">
+      <label for="mTx">Mensagem</label><textarea id="mTx" rows="3" maxlength="180">Para as suas pausas de domingo. Com carinho.</textarea>
+      <label for="mFr">De</label><input id="mFr" maxlength="40" value="Marina">
+      <div class="two2"><div><label for="mKit">Kit</label><select id="mKit"></select></div><div><label for="mCf">Café</label><select id="mCf"><option value="natural">Natural</option><option value="cereja">Cereja Descascado</option></select></div></div>
+      <div style="margin-top:30px"><button class="btn solid" data-msg-add>Adicionar com este cartão</button></div>
+    </div>
+    <div class="r" data-fade>
+      <div class="card-pv" aria-live="polite">
+        <div class="top" data-pv-logo></div>
+        <p class="txt" data-pv-tx></p>
+        <div class="sig"><span data-pv-fr></span><small>todo momento tem sua ORA</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/logo.js?v=5"></script>
+<script src="js/catalogo.js?v=5"></script>
+<script>
+(() => {
+  const $ = s => document.querySelector(s), K = ORA_CATALOGO.produtos.filter(p => p.tipoLoja === 'kit');
+  $('[data-grid]').innerHTML = K.map(oraKitCard).join('');
+  $('#mKit').innerHTML = K.map(p => `<option value="${p.handle}">${p.nome} · ${brl(p.preco)}</option>`).join('');
+  $('[data-pv-logo]').innerHTML = oraLogo();
+  const upd = () => {
+    const to = $('#mTo').value.trim(), tx = $('#mTx').value;
+    $('[data-pv-tx]').textContent = (to ? to + ',\n' : '') + (tx || 'Sua mensagem aparece aqui.');
+    $('[data-pv-fr]').textContent = $('#mFr').value.trim();
+  };
+  ['#mTo', '#mTx', '#mFr'].forEach(s => $(s).addEventListener('input', upd)); upd();
+  $('[data-msg-add]').addEventListener('click', () => ORA.add($('#mKit').value, { v: $('#mCf').value, msg: ($('#mTo').value.trim() ? $('#mTo').value.trim() + ', ' : '') + ($('#mTx').value.trim() || ' ') + ($('#mFr').value.trim() ? ' · ' + $('#mFr').value.trim() : '') }));
+})();
+</script>
+<script src="js/site.js?v=5"></script>
+</body>
+</html>

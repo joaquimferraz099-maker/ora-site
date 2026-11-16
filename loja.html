@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Cafés · ORA</title>
+<meta name="description" content="Os cafés da ORA: Natural e Cereja Descascado, da Fazenda Santa Cruz, Sul de Minas. 500 g, moído para coado.">
+<meta name="theme-color" content="#F1E1B3">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=5">
+<style>
+.lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
+.lhead h1{grid-column:1/8}
+.lhead .r{grid-column:9/13}
+.lhead .r p{margin:0;opacity:.75}
+.lhead .r .eyebrow{margin-bottom:16px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,30px)}
+.ct .pk{display:block;aspect-ratio:4/5;position:relative}
+.ct .pk .pack{position:absolute;inset:0;transition:transform 1.4s var(--ease-out)}
+.ct .pk .pack img{width:36%;transition:transform 1.4s var(--ease-out)}
+.ct .pk:hover .pack img{transform:translateY(-10px) rotate(-1.5deg)}
+.ct .pk video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease-out)}
+.ct .pk:hover video{opacity:1}
+.ct .pk .score{position:absolute;right:20px;top:20px;z-index:2;color:var(--butter)}
+.ct .pk .ix{position:absolute;left:22px;top:22px;z-index:2;color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.8}
+.ct .b{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding-top:24px;margin-top:20px;border-top:1px solid var(--line)}
+.ct h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3vw,50px);line-height:1;letter-spacing:-.02em}
+.ct .sub{font-family:var(--serif);font-style:italic;font-size:19px;opacity:.7;grid-column:1}
+.ct .pr{font-family:var(--serif);font-size:28px;grid-row:1;grid-column:2;text-align:right}
+.ct .fr{grid-column:1/-1;margin:14px 0 0;font-size:16px;opacity:.78;max-width:30em}
+.ct .act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+
+.cmp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
+.cmp .l{grid-column:1/5}
+.cmp table{grid-column:6/13;width:100%;border-collapse:collapse}
+.cmp th{text-align:left;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;padding:0 12px 14px 0;border-bottom:1px solid var(--line)}
+.cmp th:first-child{opacity:.5}
+.cmp td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:19px;vertical-align:top}
+.cmp td:first-child{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55;padding-top:20px;width:9em}
+.ghd{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)}
+
+@media (max-width:960px){
+  .lhead h1,.lhead .r{grid-column:1/-1}
+  .lhead .r{margin-top:26px}
+  .cmp .l,.cmp table{grid-column:1/-1}
+  .cmp table{margin-top:30px}
+}
+@media (max-width:700px){.two{grid-template-columns:1fr;gap:64px}}
+</style>
+</head>
+<body data-page="loja" data-hdr="light">
+
+<header class="lhead">
+  <h1 class="display xl" data-lines><span class="ln"><span>Cafés</span></span></h1>
+  <div class="r" data-fade><p class="eyebrow ln-l">Safra 2026/27</p><p>Dois cafés especiais da Fazenda Santa Cruz, no Sul de Minas. Mesma terra e mesma colheita, separados pelo processo.</p></div>
+</header>
+
+<section class="wrap" style="padding-bottom:clamp(90px,11vw,170px)">
+  <div class="two" data-cafes></div>
+</section>
+
+<section class="sec wrap t-cream">
+  <div class="cmp">
+    <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display md" data-fade style="margin-top:20px">Qual escolher</h2>
+      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm chocolate e caramelo. O Natural puxa para o doce; o Cereja Descascado, para o cítrico.</p></div>
+    <table data-fade>
+      <thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
+      <tbody data-cmp></tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec wrap t-butter">
+  <div class="ghd"><h2 class="display md" data-fade>Para presentear</h2><a class="link" href="presentes.html" data-fade>Ver presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
+  <div class="kgrid" data-kits></div>
+</section>
+
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/logo.js?v=5"></script>
+<script src="js/catalogo.js?v=5"></script>
+<script>
+(() => {
+  const C = ORA_CATALOGO, $ = s => document.querySelector(s);
+  const vids = { natural: 'assets/video/xicara', cereja: 'assets/video/coado' };
+  $('[data-cafes]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'cafe').map((p, i) => {
+    const c = oraCafe(p.cafe);
+    return `<article class="ct" data-fade ${i ? 'data-delay="1"' : ''}>
+      <a class="pk media" href="produto.html?p=${p.handle}" aria-label="Café ${p.nome}">
+        <div class="pack ${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}"></div>
+        <video src="${vids[c.id]}.mp4" muted loop playsinline preload="none" data-hover></video>
+        <span class="ix">0${i + 1}</span><span class="score">SCA <b>${c.pontos}</b></span>
+      </a>
+      <div class="b">
+        <h2><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
+        <span class="pr num">${brl(p.preco)}</span>
+        <span class="sub">${c.sub}</span>
+        <p class="fr">${c.frase}</p>
+        <div class="act"><div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div><button class="btn solid" data-quick="${p.handle}">Adicionar</button></div>
+      </div>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('.ct .pk').forEach(a => {
+    const v = a.querySelector('video');
+    a.addEventListener('mouseenter', () => v.play().catch(() => {}));
+    a.addEventListener('mouseleave', () => v.pause());
+  });
+  const [n, c] = C.cafes;
+  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => x.notas.join(', ')], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final'], ['Pontuação', x => x.pontos + ' pontos']]
+    .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
+  $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
+})();
+</script>
+<script src="js/site.js?v=5"></script>
+</body>
+</html>
