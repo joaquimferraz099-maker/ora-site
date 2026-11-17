@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Cafés · ORA</title>
-<meta name="description" content="Os cafés da ORA: Natural e Cereja Descascado, da Fazenda Santa Cruz, Sul de Minas. 500 g, moído para coado.">
+<meta name="description" content="Os cafés da ORA: Natural e Cereja Descascado, da Fazenda Santa Cruz, Sul de Minas. 250 g e 500 g, moído para coado.">
 <meta name="theme-color" content="#F1E1B3">
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=5">
+<link rel="stylesheet" href="css/ora.css?v=6">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -56,7 +56,7 @@
 
 <header class="lhead">
   <h1 class="display xl" data-lines><span class="ln"><span>Cafés</span></span></h1>
-  <div class="r" data-fade><p class="eyebrow ln-l">Safra 2026/27</p><p>Dois cafés especiais da Fazenda Santa Cruz, no Sul de Minas. Mesma terra e mesma colheita, separados pelo processo.</p></div>
+  <div class="r" data-fade><p class="eyebrow ln-l">Safra 2026/27</p><p>Dois cafés especiais da Fazenda Santa Cruz, na região do Sul de Minas, a no mínimo 1.500 m de altitude. Mesma terra e mesma colheita, separados pelo processo.</p></div>
 </header>
 
 <section class="wrap" style="padding-bottom:clamp(90px,11vw,170px)">
@@ -66,7 +66,7 @@
 <section class="sec wrap t-cream">
   <div class="cmp">
     <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display md" data-fade style="margin-top:20px">Qual escolher</h2>
-      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm chocolate e caramelo. O Natural puxa para o doce; o Cereja Descascado, para o cítrico.</p></div>
+      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois são doces, com caramelo. O Natural puxa para o chocolate; o Cereja Descascado, para a avelã e o cítrico.</p></div>
     <table data-fade>
       <thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
       <tbody data-cmp></tbody>
@@ -80,8 +80,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=5"></script>
-<script src="js/catalogo.js?v=5"></script>
+<script src="js/logo.js?v=6"></script>
+<script src="js/catalogo.js?v=6"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -96,7 +96,7 @@
       </a>
       <div class="b">
         <h2><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
-        <span class="pr num">${brl(p.preco)}</span>
+        <span class="pr num">${p.p250 ? 'R$ ' + p.p250 / 100 + '–' + p.preco / 100 : brl(p.preco)}</span>
         <span class="sub">${c.sub}</span>
         <p class="fr">${c.frase}</p>
         <div class="act"><div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div><button class="btn solid" data-quick="${p.handle}">Adicionar</button></div>
@@ -114,6 +114,6 @@
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=5"></script>
+<script src="js/site.js?v=6"></script>
 </body>
 </html>
