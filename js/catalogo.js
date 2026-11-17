@@ -4,7 +4,7 @@ window.ORA_CATALOGO = {
   cafes: [
     {
       id: 'natural', nome: 'Natural', nomeCompleto: 'Café Natural', sub: 'Variedade Bourbon',
-      processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00', pontos: '84',
+      processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00',
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
       frase: 'Chocolate e caramelo em primeiro plano, corpo aveludado e doçura de fruta madura.',
       sobre: 'O fruto seca inteiro, com a casca e a polpa, por vários dias ao sol. O açúcar da fruta acompanha o grão durante a secagem, e é daí que vem a doçura e o corpo mais presente deste café.',
@@ -12,7 +12,7 @@ window.ORA_CATALOGO = {
     },
     {
       id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Catucaí, Mundo Novo e Catuaí',
-      processo: 'Cereja descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00', pontos: '83,5',
+      processo: 'Cereja descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00',
       notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
       frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',
       sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem. Sem a fruta inteira, o sabor fica mais limpo e a acidez aparece com mais clareza na xícara.',
