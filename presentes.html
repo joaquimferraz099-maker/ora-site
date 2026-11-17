@@ -10,7 +10,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=5">
+<link rel="stylesheet" href="css/ora.css?v=6">
 <style>
 .ghero{position:relative;height:74svh;min-height:520px;overflow:hidden;background:var(--espresso);color:var(--butter)}
 .ghero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -96,8 +96,8 @@
 
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=5"></script>
-<script src="js/catalogo.js?v=5"></script>
+<script src="js/logo.js?v=6"></script>
+<script src="js/catalogo.js?v=6"></script>
 <script>
 (() => {
   const $ = s => document.querySelector(s), K = ORA_CATALOGO.produtos.filter(p => p.tipoLoja === 'kit');
@@ -113,6 +113,6 @@
   $('[data-msg-add]').addEventListener('click', () => ORA.add($('#mKit').value, { v: $('#mCf').value, msg: ($('#mTo').value.trim() ? $('#mTo').value.trim() + ', ' : '') + ($('#mTx').value.trim() || ' ') + ($('#mFr').value.trim() ? ' · ' + $('#mFr').value.trim() : '') }));
 })();
 </script>
-<script src="js/site.js?v=5"></script>
+<script src="js/site.js?v=6"></script>
 </body>
 </html>
