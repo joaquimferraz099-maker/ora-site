@@ -6,23 +6,23 @@ window.ORA_CATALOGO = {
       id: 'natural', nome: 'Natural', nomeCompleto: 'Café Natural', sub: 'Variedade Bourbon',
       processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00', pontos: '84',
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
-      frase: 'Doce e redondo, com acidez equilibrada e um final que fica.',
+      frase: 'Chocolate e caramelo em primeiro plano, corpo aveludado e doçura de fruta madura.',
       sobre: 'O fruto seca inteiro, com a casca e a polpa, por vários dias ao sol. O açúcar da fruta acompanha o grão durante a secagem, e é daí que vem a doçura e o corpo mais presente deste café.',
       img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.jpg', cor: 'espresso'
     },
     {
       id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Catucaí, Mundo Novo e Catuaí',
       processo: 'Cereja descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00', pontos: '83,5',
-      notas: ['Chocolate', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
-      frase: 'Limpo e vivo, com uma acidez cítrica delicada e final longo.',
+      notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
+      frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',
       sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem. Sem a fruta inteira, o sabor fica mais limpo e a acidez aparece com mais clareza na xícara.',
-      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha'
+      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha', img250: 'assets/img/pacote-250.jpg'
     }
   ],
   produtos: [
-    { handle: 'cafe-natural', tipoLoja: 'cafe', cafe: 'natural', nome: 'Natural', tipo: 'Café especial · 500 g', preco: 7490,
+    { handle: 'cafe-natural', tipoLoja: 'cafe', cafe: 'natural', nome: 'Natural', tipo: 'Café especial · 500 g', preco: 8900,
       img: 'assets/img/pacote-natural.webp', tile: 'lbl', thumb: 'assets/img/pacote-natural.webp' },
-    { handle: 'cafe-cereja', tipoLoja: 'cafe', cafe: 'cereja', nome: 'Cereja Descascado', tipo: 'Café especial · 500 g', preco: 7490,
+    { handle: 'cafe-cereja', tipoLoja: 'cafe', cafe: 'cereja', nome: 'Cereja Descascado', tipo: 'Café especial · 500 g', preco: 8900, p250: 5900,
       img: 'assets/img/pacote-cereja.webp', tile: 'lbl alt', thumb: 'assets/img/pacote-cereja.webp' },
     { handle: 'cafe-caneca', tipoLoja: 'kit', nome: 'Café e caneca', tipo: 'Kit presente', preco: 12900,
       img: 'assets/img/p-pacote.jpg', img2: 'assets/img/p-cafe-caneca.jpg', thumb: 'assets/img/p-pacote.jpg',
