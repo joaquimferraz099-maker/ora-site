@@ -95,10 +95,10 @@
   const showToast = (html, ms = 3600) => { toast.innerHTML = html; toast.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toast.classList.remove('show'), ms); };
   const linha = i => {
     const p = oraProd(i.h);
-    if (p.tipoLoja === 'cafe') return 'Moído · ' + (i.t || '500') + ' g' + (i.sub ? ' · assinatura mensal (−10%)' : '');
+    if (p.tipoLoja === 'cafe') return 'Moído · ' + (i.t || '500') + ' g' + (i.sub ? ' · assinatura mensal (−15%)' : '');
     return 'Café ' + oraCafe(i.v).nome + (i.msg ? ' · com cartão' : '');
   };
-  const precoItem = i => { const p = oraProd(i.h); let v = (i.t === '250' && p.p250) ? p.p250 : p.preco; if (i.sub) v = Math.round(v * .9); return v; };
+  const precoItem = i => { const p = oraProd(i.h); let v = (i.t === '250' && p.p250) ? p.p250 : p.preco; if (i.sub) v = Math.round(v * .85); return v; };
   function renderBag() {
     bag = bag.filter(i => oraProd(i.h));
     $$('.bag-count').forEach(e => e.textContent = bag.reduce((a, i) => a + i.qty, 0));
