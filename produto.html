@@ -206,7 +206,7 @@ window.ORA_PAGE = () => {
       <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
       <h1 class="display lg">${isCafe ? p.nome.replace(' Descascado', ' <em class="it">Descascado</em>') : p.nome}</h1>
       <span class="sub">${isCafe ? c.sub : p.tipo}</span>
-      ${isCafe ? `<div class="meta"><span class="score">SCA <b>${c.pontos}</b></span><span class="lot">Lote ${c.lote} · Safra 2026/27</span></div>` : ''}
+      ${isCafe ? `<div class="meta"><span class="lot">Lote ${c.lote} · Safra 2026/27</span></div>` : ''}
       <div class="pr"><b class="num">${brl(precoBase())}</b><span>${isCafe ? st.t + ' g' : 'kit completo, na caixa'}</span></div>
       <p class="lede">${isCafe ? c.frase : p.resumo}</p>
       ${isCafe ? `<div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>` : ''}
@@ -230,7 +230,7 @@ window.ORA_PAGE = () => {
         <button class="btn solid" data-buy><span>Adicionar</span><span class="num" data-total style="font-size:17px;letter-spacing:0">${total()}</span></button>
       </div>
       <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP no fechamento.</p>
-      ${isCafe ? `<ul class="trust"><li><b>Origem única</b>Fazenda Santa Cruz, Sul de Minas · acima de 1.500 m</li><li><b>Pequenos lotes</b>Torra acompanhada</li><li><b>Laudo SCA</b>${c.pontos} pontos</li></ul>` : ''}
+      ${isCafe ? `<ul class="trust"><li><b>Origem única</b>Fazenda Santa Cruz, Sul de Minas · acima de 1.500 m</li><li><b>Pequenos lotes</b>Torra acompanhada</li><li><b>Moagem média</b>Para coador de papel ou de pano</li></ul>` : ''}
       ${isCafe ? '' : `<details class="gmsg"><summary>Incluir cartão com mensagem</summary><textarea rows="3" maxlength="180" placeholder="Escreva sua mensagem" data-msg></textarea></details>`}
       <div class="acc">
         ${isCafe ? '' : `<details open><summary>O que vem</summary><div class="a"><ul>${p.contem.map(x => `<li>${x}</li>`).join('')}</ul></div></details>`}
@@ -243,7 +243,7 @@ window.ORA_PAGE = () => {
     const other = C.cafes.find(x => x.id !== c.id), op = C.produtos.find(x => x.cafe === other.id);
     const kits = C.produtos.filter(x => x.tipoLoja === 'kit' && x.handle !== p.handle);
     const specRows = [['Fazenda', 'Santa Cruz'], ['Região', 'Sul de Minas, MG'], ['Processo', c.processo], ['Variedade', c.variedade], ['Safra', '2026/27'], ['Lote', c.lote],
-      ['Altitude', 'A partir de 1.500 m'], ['Pontuação', c.pontos + ' pontos, escala SCA'], ['Notas', c.notas.join(', ')], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coado, papel ou pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
+      ['Altitude', 'A partir de 1.500 m'], ['Notas', c.notas.join(', ')], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coado, papel ou pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
     $('[data-below]').innerHTML = `
       ${isCafe ? `<section class="cup t-espresso"><p class="eyebrow" data-fade>Na xícara</p>
         <p class="w" data-lines>${c.notas.map(n => `<span class="ln"><span>${n}</span></span>`).join('')}</p>
@@ -253,7 +253,7 @@ window.ORA_PAGE = () => {
       <section class="sec wrap ${isCafe ? 't-cream' : 't-butter'}">
         <div class="spec">
           <div class="l"><p class="eyebrow ln-l" data-fade>${isCafe ? 'Ficha técnica' : 'Café ' + c.nome}</p><h2 class="display md" data-fade style="margin-top:20px">${isCafe ? 'Tudo sobre<br>este café' : 'O café que<br>vai no kit'}</h2>
-            <p data-fade>Dados do laudo de classificação da safra 2026/27, de 11/11/2026.</p></div>
+            </div>
           <dl data-fade>${specRows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         </div>
       </section>
