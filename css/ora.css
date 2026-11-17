@@ -83,6 +83,7 @@ a:hover > .arr,button:hover > .arr{transform:translateX(5px)}
 .hdr::before{content:"";position:absolute;inset:0;background:var(--butter);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease);z-index:-1}
 .hdr::after{content:"";position:absolute;left:var(--gut);right:var(--gut);bottom:0;height:1px;background:currentColor;opacity:0;transition:opacity .6s}
 .hdr.is-solid,.hdr.on-light{color:var(--roast)}
+.hdr.is-solid{top:0}
 .hdr.is-solid::before{transform:scaleY(1)}
 .hdr.is-solid::after{opacity:.12}
 .hdr.is-hidden{transform:translateY(-100%)}
