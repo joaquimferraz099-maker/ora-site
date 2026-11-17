@@ -29,7 +29,7 @@ window.ORA_CATALOGO = {
       resumo: 'Um pacote de café e a caneca térmica ORA, na caixa com sacola e cartão.',
       contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão de origem e cartão de mensagem'] },
     { handle: 'cafe-jarra', tipoLoja: 'kit', nome: 'Café e jarra', tipo: 'Kit presente', preco: 16900,
-      img: 'assets/img/p-cafe-jarra.jpg', img2: 'assets/img/p-caixa.jpg', thumb: 'assets/img/p-cafe-jarra.jpg',
+      img: 'assets/img/caixa-slogan.jpg', img2: 'assets/img/p-caixa.jpg', thumb: 'assets/img/caixa-slogan.jpg',
       resumo: 'Um pacote de café e a jarra térmica ORA, para servir à mesa.',
       contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão de origem e cartão de mensagem'] },
     { handle: 'kit-completo', tipoLoja: 'kit', nome: 'Kit completo', tipo: 'Kit presente', preco: 24900, destaque: 'Mais completo',
@@ -53,6 +53,6 @@ window.oraKitCard = p => `
     </a>
     <div class="kc-b">
       <div><h3><a href="produto.html?p=${p.handle}">${p.nome}</a></h3><p>${p.resumo}</p></div>
-      <span class="num">${brl(p.preco)}</span>
+      <span class="num">${'R$ ' + p.preco/100}</span>
     </div>
   </article>`;
