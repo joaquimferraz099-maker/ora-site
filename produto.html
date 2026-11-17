@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=6">
+<link rel="stylesheet" href="css/ora.css?v=7">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -167,8 +167,8 @@
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=6"></script>
-<script src="js/catalogo.js?v=6"></script>
+<script src="js/logo.js?v=7"></script>
+<script src="js/catalogo.js?v=7"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
@@ -200,7 +200,7 @@ window.ORA_PAGE = () => {
 
     /* informações e compra */
     const precoBase = () => (st.t === '250' && p.p250) ? p.p250 : p.preco;
-    const precoCompra = () => st.sub ? Math.round(precoBase() * .9) : precoBase();
+    const precoCompra = () => st.sub ? Math.round(precoBase() * .85) : precoBase();
     const total = () => brl(precoCompra() * st.qty);
     $('[data-info]').innerHTML = `
       <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
@@ -223,7 +223,7 @@ window.ORA_PAGE = () => {
       <div class="opt"><div class="lb"><span>Forma de compra</span></div>
         <div class="plans">
           <label><input type="radio" name="plan" value="0" ${st.sub ? '' : 'checked'}><span><b>Compra única</b><small>Um pacote, entregue uma vez.</small></span><span class="p num">${brl(precoBase())}</span></label>
-          <label><input type="radio" name="plan" value="1" ${st.sub ? 'checked' : ''}><span><b>Assinatura mensal</b><small>Um pacote por mês, na mesma data, com 10% de desconto. Pause ou cancele quando quiser.</small></span><span class="p num">${brl(Math.round(precoBase() * .9))}<small style="display:inline;opacity:.6"> /mês</small></span></label>
+          <label><input type="radio" name="plan" value="1" ${st.sub ? 'checked' : ''}><span><b>Assinatura mensal</b><small>Um pacote por mês, na mesma data, com 15% de desconto. Pause ou cancele quando quiser.</small></span><span class="p num">${brl(Math.round(precoBase() * .85))}<small style="display:inline;opacity:.6"> /mês</small></span></label>
         </div></div>` : ''}
       <div class="buy" data-buyrow>
         <div class="qty"><button aria-label="Diminuir" data-qd="-1">−</button><span data-qty>${st.qty}</span><button aria-label="Aumentar" data-qd="1">+</button></div>
@@ -287,7 +287,7 @@ window.ORA_PAGE = () => {
     document.querySelectorAll('[data-below] video,[data-gal] video').forEach(v => { v.muted = true; v.play().catch(() => {}); });
   }
 
-  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl((st.sub ? Math.round(precoBase() * .9) : precoBase()) * st.qty));
+  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl((st.sub ? Math.round(precoBase() * .85) : precoBase()) * st.qty));
   document.addEventListener('click', e => {
     const s = e.target.closest('[data-sw]');
     if (s) {
@@ -310,6 +310,6 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=6"></script>
+<script src="js/site.js?v=7"></script>
 </body>
 </html>
