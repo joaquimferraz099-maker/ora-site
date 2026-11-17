@@ -53,7 +53,7 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 
 /* layout */
 .wrap{padding-inline:var(--gut)}
-.sec{position:relative;padding-block:clamp(90px,12vw,190px)}
+.sec{position:relative;padding-block:clamp(72px,9vw,148px)}
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
 .media{position:relative;overflow:hidden;background:var(--espresso)}
 .media > img,.media > video{width:100%;height:100%;object-fit:cover}
