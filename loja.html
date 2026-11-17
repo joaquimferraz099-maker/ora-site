@@ -92,7 +92,7 @@
       <a class="pk media" href="produto.html?p=${p.handle}" aria-label="Café ${p.nome}">
         <div class="pack ${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}"></div>
         <video src="${vids[c.id]}.mp4" muted loop playsinline preload="none" data-hover></video>
-        <span class="ix">0${i + 1}</span><span class="score">SCA <b>${c.pontos}</b></span>
+        <span class="ix">0${i + 1}</span>
       </a>
       <div class="b">
         <h2><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
@@ -109,7 +109,7 @@
     a.addEventListener('mouseleave', () => v.pause());
   });
   const [n, c] = C.cafes;
-  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => x.notas.join(', ')], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final'], ['Pontuação', x => x.pontos + ' pontos']]
+  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => x.notas.join(', ')], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
