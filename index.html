@@ -94,7 +94,7 @@
 .prep .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
 .prep .top p{margin:0;opacity:.75;max-width:24em}
 .prep .n3{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
-.prep .n3 div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line)}
+.prep .n3 div{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(28px,3vw,48px);align-items:baseline;padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line)}
 .prep .n3 b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(54px,5.6vw,96px);line-height:.9;letter-spacing:-.03em}
 .prep .n3 span{display:block;font-size:16px;opacity:.8;max-width:18em}
 
@@ -142,7 +142,7 @@
 <body data-page="home">
 
 <section class="hero">
-  <div class="bg" data-par=".6"><video src="assets/video/3-hero-colheita.mp4" poster="assets/video/4-hero-colheita.jpg" autoplay muted loop playsinline></video></div>
+  <div class="bg" data-par=".6"><video src="assets/video/1-hero-full.mp4" poster="assets/video/2-hero-full.jpg" autoplay muted loop playsinline></video></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Café especial · Sul de Minas</p>
@@ -161,9 +161,9 @@
 </section>
 
 <section class="creds t-roast" aria-label="Sobre os cafés">
-  <div data-fade><b class="num">1</b><span>Origem única<br>Fazenda Santa Cruz</span></div>
+  <div data-fade><b class="num">01</b><span>Origem única<br>Fazenda Santa Cruz</span></div>
   <div data-fade data-delay="1"><b class="num">1.500 m</b><span>Altitude mínima<br>Região Sul de Minas</span></div>
-  <div data-fade data-delay="2"><b class="num">2</b><span>Processos<br>Natural e Cereja Descascado</span></div>
+  <div data-fade data-delay="2"><b class="num">02</b><span>Processos<br>Natural e Cereja Descascado</span></div>
   <div data-fade data-delay="3"><b class="num">500 g</b><span>Moído para coado<br>Também em 250 g</span></div>
 </section>
 
