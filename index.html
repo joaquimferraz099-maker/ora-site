@@ -10,13 +10,16 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=6">
+<link rel="stylesheet" href="css/ora.css?v=7">
 <style>
 /* abertura */
 .hero{position:relative;height:100svh;min-height:640px;color:var(--butter);overflow:hidden;background:var(--roast)}
 .hero .bg{position:absolute;inset:-8% 0;}
 .hero video{width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.45) 0%,rgba(33,29,26,0) 28%,rgba(33,29,26,.05) 50%,rgba(33,29,26,.72) 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.66) 0%,rgba(33,29,26,.30) 30%,rgba(33,29,26,.38) 55%,rgba(33,29,26,.9) 100%)}
+.hero video{filter:brightness(.92) saturate(1.06)}
+.hero .eyebrow,.hero h1,.hero .side p{text-shadow:0 2px 30px rgba(20,16,12,.55)}
+.hero .btn{box-shadow:0 14px 44px rgba(20,16,12,.45)}
 .hero .in{position:absolute;z-index:2;inset:auto var(--gut) clamp(34px,5vw,64px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
 .hero .eyebrow{margin-bottom:clamp(20px,2.4vw,34px)}
 .hero .side{max-width:330px;padding-bottom:8px}
@@ -34,7 +37,7 @@
 .creds span{font-size:13px;line-height:1.45;opacity:.75}
 
 /* cabeçalho dos cafés */
-.chd{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;padding-top:clamp(90px,11vw,170px);padding-bottom:clamp(50px,6vw,90px)}
+.chd{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;padding-top:clamp(56px,7vw,110px);padding-bottom:clamp(44px,5vw,80px)}
 .chd > p{margin:0;max-width:24em;font-size:17px;opacity:.78}
 
 /* manifesto curto */
@@ -119,7 +122,7 @@
 <body data-page="home">
 
 <section class="hero">
-  <div class="bg" data-par=".6"><video src="assets/video/fazenda.mp4" poster="assets/video/fazenda.jpg" autoplay muted loop playsinline></video></div>
+  <div class="bg" data-par=".6"><video src="assets/video/hero.mp4" poster="assets/video/hero.jpg" autoplay muted loop playsinline></video></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Café especial · Sul de Minas</p>
@@ -212,8 +215,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=6"></script>
-<script src="js/catalogo.js?v=6"></script>
-<script src="js/site.js?v=6"></script>
+<script src="js/logo.js?v=7"></script>
+<script src="js/catalogo.js?v=7"></script>
+<script src="js/site.js?v=7"></script>
 </body>
 </html>
