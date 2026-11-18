@@ -10,6 +10,9 @@ Os originais em alta ficam em assets/originais/ e não são carregados pelo site
 """
 import glob, os, re, shutil
 from PIL import Image
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from grade import grade, tratar
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(RAIZ)
@@ -25,9 +28,11 @@ for pasta in ('assets/img', 'assets/video'):
 
 # 2. gera os WebP a partir dos originais (e re-encoda WebP grandes já existentes)
 dims = {}
-def gera(src, base):
+def gera(src, base, tratada=False):
     im = Image.open(src)
     im = im.convert('RGBA') if im.mode in ('RGBA', 'LA', 'P') else im.convert('RGB')
+    if tratada:  # mesma correção de cor em todas as fotos de banco (ver ferramentas/grade.py)
+        im = grade(im)
     w, h = im.size
     for alvo, nome in ((MAX, f'{base}.webp'), (1200, f'{base}-1200.webp'), (MEIO, f'{base}-800.webp'), (PEQ, f'{base}-400.webp')):
         if nome.endswith('-1200.webp') and w <= 1300:
@@ -39,7 +44,7 @@ def gera(src, base):
 
 for f in sorted(glob.glob(f'{ORIG}/*')):
     pasta, nome = os.path.basename(f).split('__', 1)
-    gera(f, os.path.join('assets', pasta, os.path.splitext(nome)[0]))
+    gera(f, os.path.join('assets', pasta, os.path.splitext(nome)[0]), pasta == 'img' and tratar(nome))
 for f in glob.glob('assets/img/*.webp'):
     base = f[:-5]
     if base.endswith(('-800', '-400', '-1200')) or os.path.basename(base) in dims:

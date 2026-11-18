@@ -374,7 +374,7 @@ body{background:var(--roast)}
 /* ii. origem + etapas */
 .minas{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));min-height:min(92svh,820px)}
 .minas .m{grid-column:1/8;position:relative;overflow:hidden}
-.minas .m img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover}
+.minas .m img,.minas .m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .minas .t{grid-column:8/13;padding:clamp(56px,6vw,110px) var(--gut) clamp(56px,6vw,110px) clamp(34px,4vw,72px);display:flex;flex-direction:column;justify-content:center}
 .minas .t h2{margin:0 0 28px}
 .minas .t p{margin:0 0 18px;opacity:.85;font-size:16.5px;line-height:1.7}
@@ -410,7 +410,7 @@ body{background:var(--roast)}
   .nome .p{order:-1;margin-bottom:34px}
   .hhero video{object-position:57% 50%}
   .minas .m{min-height:0;height:52svh}
-  .minas .m img{object-position:50% 72%}
+  .minas .m img,.minas .m video{object-position:50% 50%}
   .etapas .hd > div,.etapas .hd > p{grid-column:1/-1}
   .etapas .fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nome .t,.nome .p{grid-column:1/-1}
@@ -422,19 +422,28 @@ body{background:var(--roast)}
   .minas .t{padding:56px var(--gut)}
 }
 .alt{margin:0 0 26px!important;opacity:1!important;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}.alt b{font-family:var(--serif);font-weight:400;font-size:clamp(84px,9vw,150px);line-height:.9;letter-spacing:-.03em;font-variant-numeric:lining-nums}.alt b::after{content:" m";font-size:.38em;letter-spacing:0}.alt span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.65}
-.esc-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
-.esc-in .chap{grid-column:1/-1}
-.esc-in h2{grid-column:1/8;margin:0}
-.esc-tx{grid-column:8/13}
-.esc-tx .lede{margin:0 0 20px}.esc-tx .body{margin:0 0 14px;opacity:.8}.esc-tx .body:last-child{margin:0}
-@media (max-width:900px){.esc-in h2,.esc-tx{grid-column:1/-1}.esc-tx{margin-top:34px}}
+.esc{min-height:min(100svh,920px);display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.esc .bg{position:absolute;inset:-8% 0;z-index:-2}
+.esc .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 46%;filter:brightness(.82) saturate(.9)}
+.esc::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(33,29,26,.96) 0%,rgba(33,29,26,.9) 36%,rgba(33,29,26,.35) 62%,rgba(33,29,26,.1) 100%)}
+.esc-in{width:100%;max-width:560px}
+.esc-in h2{margin:14px 0 34px}
+.esc-tx .lede{margin:0 0 22px}.esc-tx .body{margin:0 0 14px;opacity:.82}.esc-tx .body:last-child{margin:0}
+@media (max-width:900px){
+  .esc{display:block;min-height:0;padding-top:0}
+  .esc .bg{position:relative;inset:auto;height:62svh;margin:0 calc(-1 * var(--gut))}
+  .esc .bg img{object-position:60% 50%}
+  .esc::before{display:none}
+  .esc .bg img{-webkit-mask-image:linear-gradient(180deg,#000 58%,transparent);mask-image:linear-gradient(180deg,#000 58%,transparent)}
+  .esc-in{margin-top:-48px;position:relative}
+}
 </style>
 </head>
 <body data-page="historia">
 <div class="ann"><span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span></div>
 
 <section class="hhero">
-  <div class="bg" data-par=".6"><picture><source media="(max-width: 760px)" srcset="assets/img/cel/cel-graos-tigelas-760.webp 760w, assets/img/cel/cel-graos-tigelas-1147.webp 1147w" sizes="100vw"><source media="(orientation: portrait)" srcset="assets/img/cel-graos-tigelas-800.webp 800w, assets/img/cel-graos-tigelas.webp 1600w" sizes="100vw"><img decoding="async" width="1600" height="1066" fetchpriority="high" src="assets/img/px-maos-graos.webp" srcset="assets/img/px-maos-graos-400.webp 400w, assets/img/px-maos-graos-800.webp 800w, assets/img/px-maos-graos-1200.webp 1200w, assets/img/px-maos-graos.webp 1600w" sizes="(max-width: 760px) 100vw, 128vw" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%"></picture></div>
+  <div class="bg" data-par=".6"><picture><source media="(max-width: 760px)" srcset="assets/img/cel/cel-maos-torrados-760.webp 760w, assets/img/cel/cel-maos-torrados-1147.webp 1147w" sizes="100vw"><source media="(orientation: portrait)" srcset="assets/img/cel-maos-torrados-800.webp 800w, assets/img/cel-maos-torrados.webp 1600w" sizes="100vw"><img decoding="async" width="1600" height="1066" fetchpriority="high" src="assets/img/px-maos-graos.webp" srcset="assets/img/px-maos-graos-400.webp 400w, assets/img/px-maos-graos-800.webp 800w, assets/img/px-maos-graos-1200.webp 1200w, assets/img/px-maos-graos.webp 1600w" sizes="(max-width: 760px) 100vw, 128vw" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%"></picture></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Nossa origem</p>
@@ -460,7 +469,7 @@ body{background:var(--roast)}
 </section>
 
 <section class="minas t-roast">
-  <div class="m"><img decoding="async" width="1600" height="1066" src="assets/img/px-pergaminho.webp" srcset="assets/img/px-pergaminho-400.webp 400w, assets/img/px-pergaminho-800.webp 800w, assets/img/px-pergaminho-1200.webp 1200w, assets/img/px-pergaminho.webp 1600w" sizes="(max-width: 760px) 100vw, 116vw" alt="Grãos de café verde, antes da torra, de perto" data-par=".3" loading="lazy"></div>
+  <div class="m"><picture><source media="(max-width: 760px)" srcset="assets/video/altitude-poster-cel.webp" width="1024" height="540"><img decoding="async" width="1600" height="844" src="assets/video/altitude-poster.webp" srcset="assets/video/altitude-poster-800.webp 800w, assets/video/altitude-poster-1200.webp 1200w, assets/video/altitude-poster.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Vista aérea de um cafezal em fileiras, nas montanhas, no fim da tarde" loading="lazy"></picture><video muted loop playsinline preload="none" aria-hidden="true"><source src="assets/video/altitude-cel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="assets/video/altitude.mp4" type="video/mp4"></video></div>
   <div class="t">
     <span class="chap" data-fade>ii.</span>
     <h2 class="display lg" data-lines><span class="ln"><span>Café de</span></span><span class="ln"><span><em class="it">altitude.</em></span></span></h2>
@@ -470,7 +479,8 @@ body{background:var(--roast)}
   </div>
 </section>
 
-<section class="sec wrap t-espresso esc">
+<section class="sec wrap t-roast esc">
+  <div class="bg" data-par=".25"><img decoding="async" width="1600" height="2397" src="assets/img/px-prova.webp" srcset="assets/img/px-prova-400.webp 400w, assets/img/px-prova-800.webp 800w, assets/img/px-prova-1200.webp 1200w, assets/img/px-prova.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" sizes="100vw" alt="" loading="lazy"></div>
   <div class="esc-in">
     <span class="chap" data-fade>iii.</span>
     <h2 class="display xl" data-lines><span class="ln"><span>Escolhido</span></span><span class="ln"><span><em class="it">na xícara.</em></span></span></h2>
@@ -495,11 +505,11 @@ body{background:var(--roast)}
 </section>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=44"></script>
-<script defer src="js/catalogo.js?v=44"></script>
+<script defer src="js/logo.js?v=45"></script>
+<script defer src="js/catalogo.js?v=45"></script>
 
-<script defer src="js/loja.js?v=44"></script>
-<script defer src="js/site.js?v=44"></script>
+<script defer src="js/loja.js?v=45"></script>
+<script defer src="js/site.js?v=45"></script>
 
 
 </body>
