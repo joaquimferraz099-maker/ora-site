@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=38">
+<link rel="stylesheet" href="css/ora.css?v=40">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -111,7 +111,7 @@
   <div class="bg" data-par=".5"><img src="assets/img/px-graos-torrados.jpg" alt="" style="object-position:50% 60%"></div>
   <div class="in">
     <div><p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p><h1 class="display xxl" data-lines style="margin-top:24px"><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1></div>
-    <p data-fade data-delay="2">Dois cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p>
+    <p data-fade data-delay="2">Cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p>
   </div>
   <nav class="jump" data-fade data-delay="3" aria-label="Nesta página"><a href="#c-natural">Natural</a><a href="#c-cereja">Cereja Descascado</a><a href="#drip">Drip Coffee</a><a href="#preparo">Como preparar</a><a href="#kits">Presentes</a></nav>
 </header>
@@ -150,8 +150,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=38"></script>
-<script src="js/catalogo.js?v=38"></script>
+<script src="js/logo.js?v=40"></script>
+<script src="js/catalogo.js?v=40"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -211,6 +211,7 @@
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
 })();
 </script>
-<script src="js/site.js?v=38"></script>
+<script src="js/loja.js?v=40"></script>
+<script src="js/site.js?v=40"></script>
 </body>
 </html>

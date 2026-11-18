@@ -75,7 +75,7 @@
       <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="giant">${oraLogo()}</div>
-    <div class="base"><span>© 2026 ORA Café Especial</span></div>`;
+    <div class="base"><span>© 2026 ORA Café Especial</span>${(() => { const E = window.ORA_LOJA && ORA_LOJA.empresa; return E && E.cnpj ? `<span>${[E.razaoSocial, 'CNPJ ' + E.cnpj, E.endereco].filter(Boolean).join(' · ')}</span>` : ''; })()}</div>`;
   B.append(ftr);
 
   /* sacola */
@@ -117,10 +117,27 @@
         <div class="pr num">${brl(precoItem(i) * i.qty)}${i.sub ? '<small style="font-size:.6em;opacity:.7">/mês</small>' : ''}</div>${i.msg && i.msg.trim() ? `<p class="cmsg"><b>Cartão:</b> “${i.msg.trim().replace(/</g, '&lt;')}”</p>` : ''}</div>`;
     }).join('');
     const tot = bag.reduce((a, i) => a + precoItem(i) * i.qty, 0);
+    const L = window.ORA_LOJA, fg = L ? L.freteGratisTexto(tot) : '', cep = store.get('ora-cep', '');
     pf.innerHTML = `<div class="tot"><span class="eyebrow">Subtotal</span><b class="num">${brl(tot)}</b></div>
-      ${bag.some(i => i.sub) ? `<p class="note" style="margin-bottom:6px">Inclui a 1ª mensalidade da assinatura; as próximas, todo mês.</p>` : ''}<p class="note">Frete e cupom na finalização da compra. <span class="nl-x">Um cupom por pedido: BEMVINDO (5% na primeira compra) ou ORAPORSCHE (10%).</span></p>
+      <p class="pay">${L ? L.pagamentoTexto(tot) : 'Pix ou cartão de crédito'}</p>
+      ${fg ? `<p class="fg">${fg}</p>` : ''}
+      <form class="cepf" data-cepf novalidate><label for="bagCep">Entrega</label><input id="bagCep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="Seu CEP" value="${cep}"><button type="submit" class="link">Calcular</button></form>
+      <p class="cep-r" data-cepr aria-live="polite"></p>
+      ${bag.some(i => i.sub) ? `<p class="note" style="margin-bottom:6px">Inclui a 1ª mensalidade da assinatura; as próximas, todo mês.</p>` : ''}<p class="note">Frete, cupom e pagamento na finalização da compra. <span class="nl-x">Um cupom por pedido: BEMVINDO (5% na primeira compra) ou ORAPORSCHE (10%).</span></p>
       <button class="btn solid" style="width:100%;justify-content:center" data-checkout>Finalizar compra ${ARR}</button>`;
   }
+  /* CEP na sacola e na página de produto */
+  document.addEventListener('submit', async e => {
+    const f = e.target.closest('[data-cepf]'); if (!f) return; e.preventDefault();
+    const out = f.nextElementSibling, v = f.querySelector('input').value;
+    if (!window.ORA_LOJA) return;
+    out.textContent = 'Consultando…';
+    const r = await ORA_LOJA.cep(v);
+    if (r.erro) { out.textContent = r.erro; return; }
+    store.set('ora-cep', r.cep); document.querySelectorAll('[data-cepf] input').forEach(i => i.value = r.cep);
+    out.textContent = `Entregamos em ${r.cidade}, ${r.uf}. O valor e o prazo aparecem na finalização da compra.`;
+  });
+  document.addEventListener('input', e => { const i = e.target.closest('[data-cepf] input'); if (!i) return; const d = i.value.replace(/\D/g, '').slice(0, 8); i.value = d.length > 5 ? d.slice(0, 5) + '-' + d.slice(5) : d; });
   const save = () => { store.set('ora-bag3', bag); renderBag(); };
   const openBag = () => { toast.classList.remove('show'); bagEl.classList.add('open'); lenis && lenis.stop(); };
   const closeBag = () => { bagEl.classList.remove('open'); lenis && lenis.start(); };
@@ -128,7 +145,16 @@
     const q = e.target.closest('[data-q]'), r = e.target.closest('[data-rm]');
     if (q) { const i = bag[+q.dataset.q]; i.qty = Math.max(1, Math.min(oraProd(i.h).max || 20, i.qty + +q.dataset.d)); save(); }
     if (r) { bag.splice(+r.dataset.rm, 1); save(); }
-    if (e.target.closest('[data-checkout]')) showToast('A finalização da compra estará disponível em breve.', 5200);
+    const ck = e.target.closest('[data-checkout]');
+    if (ck && !ck.disabled) {
+      ck.disabled = true; ck.style.opacity = '.6';
+      (window.ORA_LOJA ? ORA_LOJA.checkout(bag) : Promise.resolve({ previa: true })).then(r => {
+        ck.disabled = false; ck.style.opacity = '';
+        if (r.url) location.href = r.url;
+        else if (r.previa) showToast('A loja está em preparação. Em breve você finaliza a compra por aqui.', 5200);
+        else showToast(r.erro, 6000);
+      });
+    }
     if (e.target.closest('[data-bag-close]')) closeBag();
   });
   document.addEventListener('click', e => {

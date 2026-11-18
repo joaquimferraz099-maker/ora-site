@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=38">
+<link rel="stylesheet" href="css/ora.css?v=40">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -166,6 +166,7 @@
 @media (max-width:700px){.cup .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}.cup .row b{font-size:19px}}
 .kgrid.k2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 .gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
+.info .cepf{margin-top:14px}.info .cepf label{display:flex;gap:8px;align-items:center}.info .cepf label svg{width:15px}
 </style>
 <style>
 
@@ -329,8 +330,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=38"></script>
-<script src="js/catalogo.js?v=38"></script>
+<script src="js/logo.js?v=40"></script>
+<script src="js/catalogo.js?v=40"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
@@ -372,7 +373,7 @@ window.ORA_PAGE = () => {
       <span class="sub">${isCafe ? c.sub : p.tipo}</span>
       <div class="pr"><b class="num">${isCafe && st.sub ? brl(Math.round(precoBase() * .85)) + '<small style="font-size:.5em;opacity:.7">/mês</small>' : brl(precoBase())}</b><span>${isCafe ? st.t + ' g' + (st.sub ? ' · assinatura; avulso ' + brl(precoBase()) : '') : ''}</span></div>
       <p class="lede">${isCafe ? c.lede : p.resumo}</p>
-      <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Dois cafés, dois processos' : (c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase())}</span></div>
+      <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Escolha o café' : (c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase())}</span></div>
         <div class="sw">${C.cafes.map(x => sw(x, x.id === c.id)).join('')}</div></div>
       ${isCafe && p.p250 ? `
       <div class="opt"><div class="lb"><span>Tamanho</span><span>Moído para coado</span></div>
@@ -393,7 +394,9 @@ window.ORA_PAGE = () => {
         <div class="qty"><button aria-label="Diminuir" data-qd="-1">−</button><span data-qty>${st.qty}</span><button aria-label="Aumentar" data-qd="1">+</button></div>
         <button class="btn solid" data-buy><span>Adicionar</span><span class="num" data-total style="font-size:17px;letter-spacing:0">${total()}</span></button>
       </div>
-      <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP na finalização da compra.</p>
+      <p class="ship pay-l">${window.ORA_LOJA ? ORA_LOJA.pagamentoTexto(precoCompra()) : 'Pix ou cartão de crédito'}. Enviamos para todo o Brasil.</p>
+      <form class="cepf" data-cepf novalidate><label for="pdCep">${TRUCK}Calcular entrega</label><input id="pdCep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="Seu CEP" value="${(() => { try { return JSON.parse(localStorage.getItem('ora-cep')) || ''; } catch (e) { return ''; } })()}"><button type="submit" class="link">Calcular</button></form>
+      <p class="cep-r" data-cepr aria-live="polite"></p>
       ${isCafe ? '' : `<details class="gmsg" open><summary>Mensagem do cartão (incluso)</summary><textarea rows="3" maxlength="140" placeholder="Escreva sua mensagem" data-msg>${(st.msg || '').replace(/</g, '&lt;')}</textarea><small data-kcnt style="display:block;text-align:right;font-size:12px;opacity:.6;margin-top:6px">${(st.msg || '').length}/140</small></details>`}
       <div class="acc">
         <details><summary>Como preparar</summary><div class="a">A receita da ORA para o coado, passo a passo, está na página dos cafés. <a href="loja.html#preparo" style="text-decoration:underline">Ver como preparar</a>.</div></details>
@@ -490,6 +493,7 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=38"></script>
+<script src="js/loja.js?v=40"></script>
+<script src="js/site.js?v=40"></script>
 </body>
 </html>
