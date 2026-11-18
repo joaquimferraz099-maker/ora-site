@@ -407,7 +407,7 @@ body{background:var(--roast)}
 .row .dq > span:first-child{opacity:.72}
 .row.drip .pk .ix{background:rgba(33,29,26,.55);color:var(--butter);opacity:1;padding:5px 10px 4px;border-radius:30px;text-shadow:none}
 
-.lhero{position:relative;min-height:min(86svh,820px);color:var(--butter);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.lhero{position:relative;min-height:100svh;color:var(--butter);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
 .lhero .bg{position:absolute;inset:-8% 0}
 .lhero .bg img{width:100%;height:100%;object-fit:cover}
 .lhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,18,13,.7) 0%,rgba(24,18,13,.35) 40%,rgba(24,18,13,.85) 100%)}
@@ -415,9 +415,6 @@ body{background:var(--roast)}
 .lhero .in > div{grid-column:1/8}
 .lhero .in > p{grid-column:9/13;margin:0;font-size:16.5px;line-height:1.65;opacity:.9}
 .lhero .eyebrow{opacity:1}
-.lhero .jump{position:relative;z-index:2;display:flex;gap:clamp(18px,2.6vw,40px);flex-wrap:wrap;padding:20px var(--gut) 26px;border-top:1px solid rgba(241,225,179,.22);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
-.lhero .jump a{opacity:.8;transition:opacity .3s}
-.lhero .jump a:hover{opacity:1}
 .prep{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center}
 .prep .pv{grid-column:1/6;aspect-ratio:4/5;border-radius:3px}
 .prep .pt{grid-column:7/13}
@@ -428,8 +425,7 @@ body{background:var(--roast)}
 .prep .n3 span{font-size:15.5px;opacity:.82;max-width:20em}
 .t-roast .cmp tbody th{opacity:.6}
 @media (max-width:960px){.lhero .in > div,.lhero .in > p{grid-column:1/-1}.prep .pv,.prep .pt{grid-column:1/-1}.prep .pv{aspect-ratio:4/3}.prep .pt{margin-top:40px}}
-@media (max-width:600px){.lhero .jump{gap:22px;font-size:10px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);padding-right:48px}.prep .n3 div{grid-template-columns:1fr;gap:8px}}
-.gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
+@media (max-width:600px){.gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
 </style>
 </head>
 <body data-page="loja">
@@ -441,7 +437,6 @@ body{background:var(--roast)}
     <div><p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p><h1 class="display xxl" data-lines style="margin-top:24px"><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1></div>
     <p data-fade data-delay="2">Cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p>
   </div>
-  <nav class="jump" data-fade data-delay="3" aria-label="Nesta página"><a href="#c-natural">Natural</a><a href="#c-cereja">Cereja Descascado</a><a href="#drip">Drip Coffee</a><a href="#preparo">Como preparar</a><a href="#kits">Presentes</a></nav>
 </header>
 
 <section class="wrap t-espresso" style="padding-block:clamp(10px,2vw,30px) clamp(60px,7vw,110px)">
@@ -478,10 +473,10 @@ body{background:var(--roast)}
 </section>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=47"></script>
-<script defer src="js/catalogo.js?v=47"></script>
-<script defer src="js/pg-loja.js?v=47"></script>
-<script defer src="js/loja.js?v=47"></script>
-<script defer src="js/site.js?v=47"></script>
+<script defer src="js/logo.js?v=48"></script>
+<script defer src="js/catalogo.js?v=48"></script>
+<script defer src="js/pg-loja.js?v=48"></script>
+<script defer src="js/loja.js?v=48"></script>
+<script defer src="js/site.js?v=48"></script>
 </body>
 </html>
