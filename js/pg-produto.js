@@ -93,7 +93,7 @@ window.ORA_PAGE = () => {
       </section>
       <section class="sec wrap t-espresso">
         <div class="proc">
-          <div class="ph media" data-open><img ${oraImg(`assets/img/${c.id === 'natural' ? 'px-natural-seco' : 'px-pergaminho'}.webp`, '(max-width: 760px) 130vw, 65vw')} alt="${c.id === 'natural' ? 'Cerejas de café secas, com a casca' : 'Grãos de café secando sem a casca'}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="ph media" data-open><img ${oraImg(`assets/img/${c.id === 'natural' ? 'px-natural-seco' : 'px-cereja-maos'}.webp`, '(max-width: 760px) 130vw, 65vw')} alt="${c.id === 'natural' ? 'Cerejas de café secas, com a casca' : 'Cerejas de café maduras nas mãos, antes de perderem a casca'}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="tx">
             <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : 'Processo cereja descascado'}</p>
             <h2 class="display md" data-fade>${c.processo === 'Natural' ? 'Seca inteiro,<br><em class="it">com a fruta.</em>' : 'Seca sem<br><em class="it">a casca.</em>'}</h2>
