@@ -8,14 +8,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ORA · Café especial">
 <meta property="og:description" content="Cafés especiais de fazendas de Minas Gerais, colhidos maduros e torrados em pequenos lotes.">
-<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/video/2-hero-fazenda-poster.jpg">
+<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/originais/video__2-hero-fazenda-poster.jpg">
 
 <meta name="description" content="Cafés especiais de fazendas de Minas Gerais: Natural e Cereja Descascado, e kits para presentear.">
 <meta name="theme-color" content="#4A3025">
 <link rel="icon" href="assets/brand/monograma.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=40">
+<link rel="preload" href="assets/fonts/garamond.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/ora.css?v=41">
 <style>
 /* abertura */
 .hero{position:relative;height:100svh;min-height:640px;color:var(--butter);overflow:hidden;background:var(--roast)}
@@ -77,7 +76,7 @@
 /* origem */
 .orig{color:var(--butter)}
 .orig .band{position:relative;height:min(92svh,860px);min-height:560px;overflow:hidden}
-.orig .band video{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
+.orig .band video,.orig .band img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
 .orig .band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.35) 0%,rgba(33,29,26,.08) 30%,rgba(33,29,26,.7) 64%,var(--roast) 100%)}
 .orig .band .in{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(40px,5vw,80px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
 .orig .band h2{grid-column:1/8;text-shadow:0 2px 30px rgba(20,16,12,.45)}
@@ -140,7 +139,7 @@
 <body data-page="home">
 
 <section class="hero">
-  <div class="bg" data-par=".6"><video src="assets/video/1-hero-fazenda.mp4" poster="assets/video/2-hero-fazenda-poster.jpg" autoplay muted loop playsinline></video></div>
+  <div class="bg" data-par=".6"><video src="assets/video/1-hero-fazenda.mp4" poster="assets/video/2-hero-fazenda-poster.webp" autoplay muted loop playsinline></video></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p>
@@ -154,7 +153,7 @@
 </section>
 
 <section class="creds t-roast" aria-label="Diferenciais">
-  <a href="loja.html" data-fade><i>01</i><b>Café especial</b><span>De fazendas parceiras em Minas Gerais.</span></a>
+  <a href="loja.html" data-fade><i>01</i><b>Café especial</b><span>De fazendas de Minas Gerais.</span></a>
   <a href="historia.html" data-fade data-delay="1"><i>02</i><b>Moído para coado</b><span>Pronto para o coador de papel ou de pano.</span></a>
   <a href="presentes.html" data-fade data-delay="2"><i>03</i><b>Para presentear</b><span>Caixa ORA com um cartão escrito por você.</span></a>
 </section>
@@ -162,11 +161,11 @@
 <section class="cafes wrap t-espresso" id="cafes">
   <div class="hd">
     <div><p class="eyebrow ln-l" data-fade>Nossos cafés</p><h2 class="display xl" data-lines style="margin-top:22px"><span class="ln"><span>Cada café,</span></span><span class="ln"><span><em class="it">o seu processo.</em></span></span></h2></div>
-    <p data-fade>O Natural seca com a fruta inteira e fica mais doce e encorpado. O Cereja Descascado seca sem a casca e fica mais limpo, com uma acidez cítrica.</p>
+    <p data-fade>O natural passa por um processo de secagem com a fruta inteira, preservando a casca e a polpa, o que resulta em um café mais doce e encorpado. Já o cereja descascado é seco sem a casca, proporcionando uma bebida mais limpa, com acidez cítrica e maior delicadeza sensorial.</p>
   </div>
   <div class="pgrid">
     <article class="pc" data-fade>
-      <a class="pk" href="produto.html?p=cafe-natural" aria-label="Café Natural"><div class="pack deep"><img src="assets/img/pacote-natural.webp" alt="Pacote do Café Natural, 500 g"></div><span class="ix">01</span></a>
+      <a class="pk" href="produto.html?p=cafe-natural" aria-label="Café Natural"><div class="pack deep"><img decoding="async" loading="lazy" width="900" height="1522" src="assets/img/pacote-natural.webp" alt="Pacote do Café Natural, 500 g"></div><span class="ix">01</span></a>
       <div class="bd">
         <p class="eyebrow ln-l">Processo natural</p>
         <h3>Natural</h3>
@@ -176,7 +175,7 @@
       </div>
     </article>
     <article class="pc" data-fade data-delay="1">
-      <a class="pk" href="produto.html?p=cafe-cereja" aria-label="Café Cereja Descascado"><div class="pack mocha"><img src="assets/img/pacote-cereja.webp" alt="Pacote do Café Cereja Descascado, 500 g"></div><span class="ix">02</span></a>
+      <a class="pk" href="produto.html?p=cafe-cereja" aria-label="Café Cereja Descascado"><div class="pack mocha"><img decoding="async" loading="lazy" width="900" height="1522" src="assets/img/pacote-cereja.webp" alt="Pacote do Café Cereja Descascado, 500 g"></div><span class="ix">02</span></a>
       <div class="bd">
         <p class="eyebrow ln-l">Processo cereja descascado</p>
         <h3>Cereja Descascado</h3>
@@ -186,7 +185,7 @@
       </div>
     </article>
     <article class="pc" data-fade data-delay="2">
-      <a class="pk" href="loja.html#drip" aria-label="Drip Coffee"><img src="assets/img/drip.jpg" alt="Água quente caindo no saquinho de Drip Coffee, apoiado em um copo" style="object-position:50% 60%"><span class="ix">03</span></a>
+      <a class="pk" href="loja.html#drip" aria-label="Drip Coffee"><img decoding="async" loading="lazy" width="1600" height="2134" src="assets/img/drip.webp" srcset="assets/img/drip-800.webp 800w, assets/img/drip.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Água quente caindo no saquinho de Drip Coffee, apoiado em um copo" style="object-position:50% 60%"><span class="ix">03</span></a>
       <div class="bd">
         <p class="eyebrow ln-l">Para coar na xícara</p>
         <h3>Drip Coffee</h3>
@@ -200,11 +199,11 @@
 
 <section class="orig t-roast" id="origem">
   <div class="band">
-    <video src="assets/video/origem-cerejas.mp4" poster="assets/video/origem-cerejas.jpg" autoplay muted loop playsinline data-par=".4"></video>
+    <img decoding="async" width="1600" height="900" src="assets/img/xicara-vapor.webp" srcset="assets/img/xicara-vapor-800.webp 800w, assets/img/xicara-vapor.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Xícara de café com vapor, sob a luz da janela" loading="lazy" data-par=".4">
     <div class="in">
       <h2 class="display xl" data-lines><span class="ln"><span>Minas Gerais,</span></span><span class="ln"><span><em class="it">a 1.500 metros.</em></span></span></h2>
       <div class="r" data-fade>
-        <p>Os cafés da ORA vêm de fazendas parceiras nas montanhas de Minas. Na altitude, o fruto amadurece devagar e o café ganha doçura.</p>
+        <p>Os cafés da ORA vêm de fazendas nas montanhas de Minas Gerais. Na altitude, o fruto amadurece devagar e o café ganha doçura.</p>
         <a class="btn light" href="historia.html">Conheça nossa história <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
       </div>
     </div>
@@ -212,16 +211,16 @@
   <div class="steps4">
     <div class="lb" data-fade><p class="eyebrow ln-l">Do pé ao pacote</p><p>Da colheita à torra.</p></div>
     <div class="fgrid">
-      <article class="fcard" data-fade><img src="assets/img/px-colheita.jpg" alt="Mão colhendo cerejas de café maduras no pé" loading="lazy" style="object-position:60% 50%"><button class="fb" type="button" aria-expanded="false" aria-label="Colheita"></button>
+      <article class="fcard" data-fade><img decoding="async" width="1600" height="816" src="assets/img/px-cerejas.webp" srcset="assets/img/px-cerejas-800.webp 800w, assets/img/px-cerejas.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Cerejas de café maduras no ramo, de perto" loading="lazy" style="object-position:60% 50%"><button class="fb" type="button" aria-expanded="false" aria-label="Colheita"></button>
         <div class="fn"><span>01</span><i>+</i></div>
         <div><h3>Colheita</h3><p class="fs">No ponto certo de maturação.</p><div class="fx"><p><span>O fruto é colhido maduro, quando a casca fica vermelha ou amarela. É nesse ponto que o café tem mais doçura.</span></p></div></div></article>
-      <article class="fcard" data-fade data-delay="1"><img src="assets/img/px-selecao.jpg" alt="Mãos sobre uma bacia de cerejas de café vermelhas e amarelas" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Seleção"></button>
+      <article class="fcard" data-fade data-delay="1"><img decoding="async" width="1600" height="1066" src="assets/img/px-selecao.webp" srcset="assets/img/px-selecao-800.webp 800w, assets/img/px-selecao.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Mãos sobre uma bacia de cerejas de café vermelhas e amarelas" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Seleção"></button>
         <div class="fn"><span>02</span><i>+</i></div>
         <div><h3>Seleção</h3><p class="fs">Poucos lotes, provados um a um.</p><div class="fx"><p><span>Doçura, equilíbrio e um final que fica. É isso que se procura em cada lote antes de ele levar o nome ORA.</span></p></div></div></article>
-      <article class="fcard" data-fade data-delay="2"><img src="assets/img/px-secagem.jpg" alt="Cerejas de café secando em terreiro suspenso" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Processo"></button>
+      <article class="fcard" data-fade data-delay="2"><img decoding="async" width="1600" height="1066" src="assets/img/px-natural-seco.webp" srcset="assets/img/px-natural-seco-800.webp 800w, assets/img/px-natural-seco.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Cerejas de café secas, de perto" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Processo"></button>
         <div class="fn"><span>03</span><i>+</i></div>
         <div><h3>Processo</h3><p class="fs">Onde cada café ganha o seu jeito.</p><div class="fx"><p><span>O Natural seca com o fruto inteiro. O Cereja Descascado tem a casca retirada antes de secar.</span></p></div></div></article>
-      <article class="fcard" data-fade data-delay="3"><img src="assets/img/px-torra.jpg" alt="Grãos de café girando no torrador" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Torra"></button>
+      <article class="fcard" data-fade data-delay="3"><img decoding="async" width="1600" height="1067" src="assets/img/px-torra.webp" srcset="assets/img/px-torra-800.webp 800w, assets/img/px-torra.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="Grãos de café girando no torrador" loading="lazy"><button class="fb" type="button" aria-expanded="false" aria-label="Torra"></button>
         <div class="fn"><span>04</span><i>+</i></div>
         <div><h3>Torra</h3><p class="fs">Pensada para o coado.</p><div class="fx"><p><span>Cada café tem a sua curva de torra, ajustada para brilhar no coador de papel ou de pano.</span></p></div></div></article>
     </div>
@@ -236,11 +235,11 @@
       <div class="acts"><a class="btn solid" href="presentes.html">Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a><a class="btn" href="presentes.html#corporativo">Presentes corporativos <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
     </div>
   </div>
-  <figure class="gimg media" data-open><img src="assets/img/caixa-slogan.jpg" alt="Caixa ORA aberta, com a frase Todo momento tem sua ORA na tampa" loading="lazy"></figure>
+  <figure class="gimg media" data-open><img decoding="async" width="1280" height="960" src="assets/img/caixa-slogan.webp" srcset="assets/img/caixa-slogan-800.webp 800w, assets/img/caixa-slogan.webp 1280w" sizes="(max-width: 760px) 100vw, 60vw" alt="Caixa ORA aberta, com a frase Todo momento tem sua ORA na tampa" loading="lazy"></figure>
 </section>
 
 <section class="sec wrap t-roast prep" id="conceito">
-  <div class="pv media" data-open><img src="assets/img/px-xicara-coado.jpg" alt="Xícara de café coado sobre uma mesa de madeira, ao sol" loading="lazy" style="object-position:42% 50%"></div>
+  <div class="pv media" data-open><img decoding="async" width="1400" height="932" src="assets/img/px-xicara-coado.webp" srcset="assets/img/px-xicara-coado-800.webp 800w, assets/img/px-xicara-coado.webp 1400w" sizes="(max-width: 760px) 100vw, 60vw" alt="Xícara de café coado sobre uma mesa de madeira, ao sol" loading="lazy" style="object-position:42% 50%"></div>
   <div class="pt">
     <h2 class="display xl" data-lines><span class="ln"><span>A vida acontece</span></span><span class="ln"><span><em class="it">nos detalhes.</em></span></span></h2>
     <div class="n3">
@@ -253,9 +252,9 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=40"></script>
-<script src="js/catalogo.js?v=40"></script>
-<script src="js/loja.js?v=40"></script>
-<script src="js/site.js?v=40"></script>
+<script src="js/logo.js?v=41"></script>
+<script src="js/catalogo.js?v=41"></script>
+<script src="js/loja.js?v=41"></script>
+<script src="js/site.js?v=41"></script>
 </body>
 </html>

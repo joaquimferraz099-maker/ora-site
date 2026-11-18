@@ -1,0 +1,88 @@
+"""Otimiza as fotos do site: gera WebP (até 1600 px) e uma versão de 800 px para celular,
+e atualiza as referências nas páginas (srcset, largura e altura, carregamento sob demanda).
+
+Uso, de dentro de ~/ORA-site, com Python que tenha Pillow:
+    python3 ferramentas/imagens.py
+
+Para trocar uma foto (por exemplo, a foto real da embalagem): salve a foto nova em
+assets/originais/ com o MESMO nome da antiga (ex.: pacote-natural.png) e rode o comando.
+Os originais em alta ficam em assets/originais/ e não são carregados pelo site.
+"""
+import glob, os, re, shutil
+from PIL import Image
+
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(RAIZ)
+ORIG = 'assets/originais'
+os.makedirs(ORIG, exist_ok=True)
+MAX, MEIO, Q = 1600, 800, 74
+
+# 1. move os originais (jpg/png) para assets/originais
+for pasta in ('assets/img', 'assets/video'):
+    for f in glob.glob(f'{pasta}/*.jpg') + glob.glob(f'{pasta}/*.jpeg') + glob.glob(f'{pasta}/*.png'):
+        destino = os.path.join(ORIG, os.path.relpath(f, 'assets').replace('/', '__'))
+        shutil.move(f, destino)
+
+# 2. gera os WebP a partir dos originais (e re-encoda WebP grandes já existentes)
+dims = {}
+def gera(src, base):
+    im = Image.open(src)
+    im = im.convert('RGBA') if im.mode in ('RGBA', 'LA', 'P') else im.convert('RGB')
+    w, h = im.size
+    for alvo, nome in ((MAX, f'{base}.webp'), (MEIO, f'{base}-800.webp')):
+        if nome.endswith('-800.webp') and w <= MEIO * 1.15:
+            continue
+        k = min(1, alvo / w)
+        im.resize((round(w * k), round(h * k)), Image.LANCZOS).save(nome, 'WEBP', quality=Q, method=6)
+    k = min(1, MAX / w)
+    dims[os.path.basename(base)] = (round(w * k), round(h * k))
+
+for f in sorted(glob.glob(f'{ORIG}/*')):
+    pasta, nome = os.path.basename(f).split('__', 1)
+    gera(f, os.path.join('assets', pasta, os.path.splitext(nome)[0]))
+for f in glob.glob('assets/img/*.webp'):
+    base = f[:-5]
+    if base.endswith('-800') or os.path.basename(base) in dims:
+        continue
+    w, h = Image.open(f).size
+    dims[os.path.basename(base)] = (w, h)
+    if w > MEIO * 1.15 and not os.path.exists(base + '-800.webp'):
+        gera(f, base + '.tmp')
+        os.replace(base + '.tmp.webp', f)
+        if os.path.exists(base + '.tmp-800.webp'):
+            os.replace(base + '.tmp-800.webp', base + '-800.webp')
+
+# 3. atualiza as referências
+SIZES = '(max-width: 760px) 100vw, 60vw'
+def img_tag(m):
+    tag = m.group(0)
+    src = re.search(r'src="(assets/img/([^"]+?)\.webp)"', tag)
+    if not src:
+        return tag
+    base = src.group(2)
+    if 'srcset=' not in tag and os.path.exists(f'assets/img/{base}-800.webp'):
+        w = dims.get(base, (MAX, 0))[0]
+        tag = tag.replace(src.group(0), f'{src.group(0)} srcset="assets/img/{base}-800.webp 800w, assets/img/{base}.webp {w}w" sizes="{SIZES}"')
+    if 'width=' not in tag and base in dims:
+        w, h = dims[base]
+        tag = tag.replace('<img ', f'<img width="{w}" height="{h}" ', 1)
+    if 'loading=' not in tag and 'fetchpriority' not in tag:
+        tag = tag.replace('<img ', '<img loading="lazy" ', 1)
+    if 'decoding=' not in tag:
+        tag = tag.replace('<img ', '<img decoding="async" ', 1)
+    return tag
+
+for f in glob.glob('*.html') + glob.glob('js/*.js'):
+    s = open(f).read()
+    s2 = re.sub(r'(assets/(?:img|video)/[\w-]+)\.(?:jpg|jpeg|png)(?=["\')\s?])', r'\1.webp', s)
+    def og(m):  # redes sociais leem melhor JPG: aponta para o original
+        pasta, nome = m.group(2), m.group(3)
+        achados = glob.glob(f'{ORIG}/{pasta}__{nome}.*')
+        return m.group(1) + (f'assets/originais/{os.path.basename(achados[0])}"' if achados else f'assets/{pasta}/{nome}.webp"')
+    s2 = re.sub(r'(<meta property="og:image" content="[^"]*?)assets/(img|video)/([\w-]+)\.webp"', og, s2)
+    if f.endswith('.html'):
+        s2 = re.sub(r'<img\b[^>]*>', img_tag, s2)
+    if s2 != s:
+        open(f, 'w').write(s2)
+        print('atualizado', f)
+print(len(dims), 'imagens')

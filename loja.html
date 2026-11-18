@@ -13,9 +13,8 @@
 <meta name="description" content="Os cafés da ORA: Natural (500 g) e Cereja Descascado (250 g ou 500 g), de fazendas de Minas Gerais, e o Drip Coffee.">
 <meta name="theme-color" content="#F1E1B3">
 <link rel="icon" href="assets/brand/monograma.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=40">
+<link rel="preload" href="assets/fonts/garamond.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/ora.css?v=41">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -108,7 +107,7 @@
 <body data-page="loja">
 
 <header class="lhero t-roast">
-  <div class="bg" data-par=".5"><img src="assets/img/px-graos-torrados.jpg" alt="" style="object-position:50% 60%"></div>
+  <div class="bg" data-par=".5"><img decoding="async" width="1600" height="1066" fetchpriority="high" src="assets/img/px-graos-torrados.webp" srcset="assets/img/px-graos-torrados-800.webp 800w, assets/img/px-graos-torrados.webp 1600w" sizes="(max-width: 760px) 100vw, 60vw" alt="" style="object-position:50% 60%"></div>
   <div class="in">
     <div><p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p><h1 class="display xxl" data-lines style="margin-top:24px"><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1></div>
     <p data-fade data-delay="2">Cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p>
@@ -132,7 +131,7 @@
 </section>
 
 <section class="sec wrap t-espresso prep" id="preparo">
-  <div class="pv media" data-open><video src="assets/video/coado.mp4" poster="assets/video/coado.jpg" autoplay muted loop playsinline></video></div>
+  <div class="pv media" data-open><video src="assets/video/coado.mp4" poster="assets/video/coado.webp" autoplay muted loop playsinline></video></div>
   <div class="pt">
     <p class="eyebrow ln-l" data-fade>Como preparar</p>
     <h2 class="display lg" data-lines style="margin-top:22px"><span class="ln"><span>Três números</span></span><span class="ln"><span><em class="it">bastam.</em></span></span></h2>
@@ -150,8 +149,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=40"></script>
-<script src="js/catalogo.js?v=40"></script>
+<script src="js/logo.js?v=41"></script>
+<script src="js/catalogo.js?v=41"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -211,7 +210,7 @@
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
 })();
 </script>
-<script src="js/loja.js?v=40"></script>
-<script src="js/site.js?v=40"></script>
+<script src="js/loja.js?v=41"></script>
+<script src="js/site.js?v=41"></script>
 </body>
 </html>

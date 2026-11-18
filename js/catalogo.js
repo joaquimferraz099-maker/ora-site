@@ -8,7 +8,7 @@ window.ORA_CATALOGO = {
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
       frase: 'Chocolate e caramelo, doce, com acidez equilibrada, corpo aveludado e final persistente.',
       sobre: 'O fruto seca inteiro, com a casca e a polpa. O grão só é separado da fruta depois de seco.',
-      img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.jpg', cor: 'espresso'
+      img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.webp', cor: 'espresso'
     },
     {
       id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Variedades Catucaí, Mundo Novo e Catuaí', lede: 'Limpo e vivo, com acidez cítrica delicada e um final longo.', copo: 'Sem a casca, o grão seca mais limpo: a acidez cítrica aparece delicada, e o caramelo vem logo atrás.',
@@ -16,7 +16,7 @@ window.ORA_CATALOGO = {
       notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
       frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',
       sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem.',
-      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha', img250: 'assets/img/pacote250-cereja.webp'
+      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.webp', cor: 'mocha', img250: 'assets/img/pacote250-cereja.webp'
     }
   ],
   produtos: [
@@ -25,18 +25,18 @@ window.ORA_CATALOGO = {
     { handle: 'cafe-cereja', tipoLoja: 'cafe', cafe: 'cereja', nome: 'Cereja Descascado', tipo: 'Café especial · 500 g', preco: 8900, p250: 5900,
       img: 'assets/img/pacote-cereja.webp', tile: 'lbl alt', thumb: 'assets/img/pacote-cereja.webp' },
     { handle: 'drip-coffee', tipoLoja: 'drip', nome: 'Drip Coffee', tipo: 'Filtro individual · unidade', preco: 175,
-      img: 'assets/img/drip.jpg', tile: 'ph', thumb: 'assets/img/drip.jpg', max: 100,
+      img: 'assets/img/drip.webp', tile: 'ph', thumb: 'assets/img/drip.webp', max: 100,
       resumo: 'Para levar o café ORA aonde não há coador: na viagem, no escritório, no quarto de hotel. Um pacote de 250 g rende cerca de 25 xícaras.' },
     { handle: 'cafe-caneca', tipoLoja: 'kit', nome: 'Café e caneca', tipo: 'Kit presente', preco: 12900,
-      img: 'assets/img/p-kit-vertical.jpg', img2: 'assets/img/p-cafe-caneca.jpg', thumb: 'assets/img/p-kit-vertical.jpg',
+      img: 'assets/img/p-kit-vertical.webp', img2: 'assets/img/p-cafe-caneca.webp', thumb: 'assets/img/p-kit-vertical.webp',
       resumo: 'Para quem toma o café a caminho do dia: um pacote ORA e a caneca térmica que acompanha.',
       contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
     { handle: 'cafe-jarra', tipoLoja: 'kit', nome: 'Café e jarra', tipo: 'Kit presente', preco: 16900,
-      img: 'assets/img/caixa-slogan.jpg', img2: 'assets/img/p-caixa.jpg', thumb: 'assets/img/caixa-slogan.jpg',
+      img: 'assets/img/caixa-slogan.webp', img2: 'assets/img/p-caixa.webp', thumb: 'assets/img/caixa-slogan.webp',
       resumo: 'Para a mesa do café da manhã: um pacote ORA e a jarra térmica que mantém o coado quente.',
       contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
     { handle: 'kit-completo', tipoLoja: 'kit', nome: 'Kit completo', tipo: 'Kit presente', preco: 24900, destaque: 'Mais completo',
-      img: 'assets/img/p-kit-completo.jpg', img2: 'assets/img/kit-aberto.jpg', thumb: 'assets/img/p-kit-completo.jpg',
+      img: 'assets/img/p-kit-completo.webp', img2: 'assets/img/kit-aberto.webp', thumb: 'assets/img/p-kit-completo.webp',
       resumo: 'Para quem recebe em casa: café, caneca e jarra, tudo o que o ritual pede.',
       contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] }
   ]

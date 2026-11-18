@@ -48,13 +48,13 @@
   ann.innerHTML = `<span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span>`;
   B.prepend(ann);
   const annH = () => document.documentElement.style.setProperty('--ann', ann.offsetHeight + 'px');
-  annH(); addEventListener('resize', annH);
+  requestAnimationFrame(annH); addEventListener('resize', annH);
 
   const mm = document.createElement('div');
   mm.className = 'mmenu';
   mm.innerHTML = [['index.html', 'Início'], ['loja.html', 'Nossos cafés'], ['historia.html', 'Nossa origem'], ['presentes.html', 'Presentes']]
     .map(([h, t], i) => `<a class="big" href="${h}"${cur(h)}><span style="transition-delay:${.06 * i + .25}s">${t}</span></a>`).join('') +
-    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img src="assets/img/px-colheita.jpg" alt="" loading="lazy"></div>`;
+    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img src="assets/img/px-colheita.webp" alt="" loading="lazy"></div>`;
   B.append(mm);
   $('.burger').addEventListener('click', () => {
     const o = B.classList.toggle('menu-open');
@@ -70,9 +70,9 @@
       <div>
         <p class="display sm" style="max-width:15em">Café especial de Minas Gerais.</p>
       </div>
-      <div><h4>Loja</h4><ul><li><a href="produto.html?p=cafe-natural">Natural</a></li><li><a href="produto.html?p=cafe-cereja">Cereja Descascado</a></li><li><a href="loja.html#drip">Drip Coffee</a></li><li><a href="presentes.html">Presentes</a></li><li><a href="presentes.html#corporativo">Presentes corporativos</a></li></ul></div>
-      <div><h4>Atendimento</h4><ul><li><a href="politicas.html#entrega">Entrega e pagamento</a></li><li><a href="politicas.html#trocas">Trocas e devoluções</a></li><li><a href="politicas.html#assinatura">Assinatura e cupons</a></li><li><a href="politicas.html#privacidade">Privacidade</a></li></ul></div>
-      <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h2 class="fh">Loja</h2><ul><li><a href="produto.html?p=cafe-natural">Natural</a></li><li><a href="produto.html?p=cafe-cereja">Cereja Descascado</a></li><li><a href="loja.html#drip">Drip Coffee</a></li><li><a href="presentes.html">Presentes</a></li><li><a href="presentes.html#corporativo">Presentes corporativos</a></li></ul></div>
+      <div><h2 class="fh">Atendimento</h2><ul><li><a href="politicas.html#entrega">Entrega e pagamento</a></li><li><a href="politicas.html#trocas">Trocas e devoluções</a></li><li><a href="politicas.html#assinatura">Assinatura e cupons</a></li><li><a href="politicas.html#privacidade">Privacidade</a></li></ul></div>
+      <div><h2 class="fh">Contato</h2><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="giant">${oraLogo()}</div>
     <div class="base"><span>© 2026 ORA Café Especial</span>${(() => { const E = window.ORA_LOJA && ORA_LOJA.empresa; return E && E.cnpj ? `<span>${[E.razaoSocial, 'CNPJ ' + E.cnpj, E.endereco].filter(Boolean).join(' · ')}</span>` : ''; })()}</div>`;
@@ -191,7 +191,10 @@
 
   /* cabeçalho: sólido depois do topo, some ao descer e volta ao subir */
   let lastY = 0;
-  const solidAt = () => (B.dataset.hdr === 'light' ? 10 : Math.min(innerHeight * .75, Math.max(80, (document.querySelector('.hero .in,.hhero .in,.ghero .in') || { getBoundingClientRect: () => ({ top: innerHeight }) }).getBoundingClientRect().top + scrollY - 110)));
+  let solidY = 10;
+  const medeSolid = () => { solidY = B.dataset.hdr === 'light' ? 10 : Math.min(innerHeight * .75, Math.max(80, (document.querySelector('.hero .in,.hhero .in,.ghero .in') || { getBoundingClientRect: () => ({ top: innerHeight }) }).getBoundingClientRect().top + scrollY - 110)); };
+  const solidAt = () => solidY;
+  medeSolid(); addEventListener('load', medeSolid); addEventListener('resize', medeSolid);
   const onScroll = () => {
     const y = scrollY;
     hdr.classList.toggle('is-solid', y > solidAt());
@@ -216,17 +219,22 @@
   /* paralaxe leve */
   const par = $$('[data-par]');
   if (par.length && !reduce) {
+    /* lê todas as posições primeiro e só depois escreve; roda só quando a página se move */
+    let pend = false;
     const tick = () => {
-      const h = innerHeight;
-      par.forEach(el => {
-        const r = el.parentElement.getBoundingClientRect();
+      pend = false;
+      const h = innerHeight, rs = par.map(el => el.parentElement.getBoundingClientRect());
+      par.forEach((el, i) => {
+        const r = rs[i];
         if (r.bottom < -200 || r.top > h + 200) return;
         const k = ((r.top + r.height / 2) - h / 2) / h;
         el.style.transform = `translate3d(0,${(-k * parseFloat(el.dataset.par) * 100).toFixed(2)}px,0)` + (el.dataset.scale ? ` scale(${el.dataset.scale})` : '');
       });
-      requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    const req = () => { if (!pend) { pend = true; requestAnimationFrame(tick); } };
+    addEventListener('scroll', req, { passive: true }); addEventListener('resize', req);
+    if (lenis) lenis.on('scroll', req);
+    req();
   }
 
   window.ORA_PAGE && window.ORA_PAGE();
