@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=30">
+<link rel="stylesheet" href="css/ora.css?v=31">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -150,8 +150,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=30"></script>
-<script src="js/catalogo.js?v=30"></script>
+<script src="js/logo.js?v=31"></script>
+<script src="js/catalogo.js?v=31"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -214,6 +214,6 @@
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=30"></script>
+<script src="js/site.js?v=31"></script>
 </body>
 </html>

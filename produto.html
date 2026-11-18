@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=30">
+<link rel="stylesheet" href="css/ora.css?v=31">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -327,8 +327,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=30"></script>
-<script src="js/catalogo.js?v=30"></script>
+<script src="js/logo.js?v=31"></script>
+<script src="js/catalogo.js?v=31"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
@@ -404,7 +404,7 @@ window.ORA_PAGE = () => {
     /* abaixo da dobra */
     const other = C.cafes.find(x => x.id !== c.id), op = C.produtos.find(x => x.cafe === other.id);
     const kits = C.produtos.filter(x => x.tipoLoja === 'kit' && x.handle !== p.handle);
-    const specRows = [['Origem', 'Fazendas de Minas Gerais'], ['Processo', c.processo], ['Variedade', c.variedade],
+    const specRows = [['Origem', 'Fazendas de Minas Gerais'], ['Altitude', 'Acima de 1.500 m'], ['Processo', c.processo], ['Variedade', c.variedade],
       ...(isCafe ? [] : [['Notas', c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase()]]), ...(isCafe ? [] : [['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final]]), ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coador de papel ou de pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
     $('[data-below]').innerHTML = `
       ${isCafe ? `<section class="cup t-espresso"><p class="eyebrow" data-fade>Na xícara</p>
@@ -476,6 +476,6 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=30"></script>
+<script src="js/site.js?v=31"></script>
 </body>
 </html>
