@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Café · ORA</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="ORA · Café especial">
+<meta property="og:description" content="Café especial ORA, de fazendas de Minas Gerais.">
+<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/img/kit-aberto.jpg">
+
 <meta name="description" content="Cafés especiais e kits para presentear da ORA: processo, notas, preparo e preço.">
 <meta name="theme-color" content="#F1E1B3">
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=15">
+<link rel="stylesheet" href="css/ora.css?v=30">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -18,7 +23,7 @@
 .gal .media{aspect-ratio:4/5}
 .gal .media.w{grid-column:1/-1;aspect-ratio:1/1}
 .gal .media.w.wide{aspect-ratio:3/2}
-.gal .pack img{width:34%}
+.gal .pack img{width:50%;max-width:400px}
 .gal .media.lblc{background:var(--cream);display:grid;place-items:center}
 .gal .media.lblc img{width:58%;height:auto;object-fit:contain;box-shadow:0 30px 50px -30px rgba(33,29,26,.45);border-radius:4%}
 .gal .media.lblc .cap{color:var(--roast)}
@@ -64,17 +69,17 @@
 .trust{list-style:none;margin:26px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .trust li{font-size:12.5px;line-height:1.45;opacity:.7}
 .trust b{display:block;font-family:var(--serif);font-weight:400;font-size:18px;opacity:1;margin-bottom:2px}
-.cup{padding:clamp(90px,11vw,170px) var(--gut);text-align:center;overflow:hidden}
+.cup{padding:clamp(60px,7vw,110px) var(--gut);text-align:center;overflow:hidden}
 .cup .eyebrow{justify-content:center}
-.cup .w{font-family:var(--serif);font-style:italic;font-size:clamp(56px,9vw,160px);line-height:.98;letter-spacing:-.03em;margin:30px 0 0}
+.cup .w{font-family:var(--serif);font-style:italic;font-size:clamp(48px,6.6vw,116px);line-height:.98;letter-spacing:-.03em;margin:30px 0 0}
 .cup .w span{display:block}
 .cup .w span:nth-child(2){opacity:.75}
-.cup .w span:nth-child(3){opacity:.5}
-.cup .row{display:flex;justify-content:center;gap:clamp(24px,5vw,90px);flex-wrap:wrap;margin-top:clamp(50px,6vw,90px);padding-top:30px;border-top:1px solid var(--line)}
+.cup .w span:nth-child(3){opacity:.62}
+.cup .row{display:flex;justify-content:center;gap:clamp(24px,5vw,90px);flex-wrap:wrap;margin-top:clamp(36px,4vw,60px);padding-top:26px;border-top:1px solid var(--line)}
 .cup .row div{text-align:left}
 .cup .row small{display:block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.6;margin-bottom:6px}
 .cup .row b{font-family:var(--serif);font-weight:400;font-size:24px}
-.gmsg{margin-top:22px}
+.gmsg{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
 .gmsg summary,.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700}
 .gmsg summary::-webkit-details-marker,.acc summary::-webkit-details-marker{display:none}
 .gmsg summary::after,.acc summary::after{content:"+";font-size:18px;font-weight:400;letter-spacing:0}
@@ -105,15 +110,17 @@
 
 /* o que vem no kit */
 .inbox{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
-.inbox .l{grid-column:1/5}
-.inbox ol{grid-column:6/13;list-style:none;margin:0;padding:0;counter-reset:i}
+.inbox .ibx2{grid-column:1/6;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:clamp(10px,1vw,16px);min-height:100%}
+.inbox .r{grid-column:7/13;align-self:center}.inbox .r ol{margin-top:clamp(24px,2.4vw,36px)}
+.inbox .ibx{border-radius:3px;position:relative;min-height:220px;overflow:hidden}.inbox .ibx img{position:absolute;inset:0}.inbox .ibx img{width:100%;height:100%;object-fit:cover}.inbox .ibx .cap{position:absolute;left:14px;bottom:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;background:rgba(28,20,14,.6);color:var(--butter);padding:5px 10px 4px;border-radius:30px}
+.inbox ol{list-style:none;margin:0;padding:0;counter-reset:i}
 .inbox li{counter-increment:i;display:grid;grid-template-columns:3em 1fr;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:clamp(22px,1.8vw,28px);line-height:1.2}
 .inbox li::before{content:counter(i,decimal-leading-zero);font-family:var(--sans);font-size:11px;letter-spacing:.2em;font-weight:700;opacity:.5;padding-top:8px}
 
 /* também */
 .more .hd{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)}
-.other{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);margin-bottom:clamp(70px,8vw,120px);align-items:center}
-.other .pk{grid-column:1/6;aspect-ratio:4/3}
+.other{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);margin-bottom:0;align-items:center}
+.other .pk{grid-column:1/7;aspect-ratio:5/4}
 .other .pk.pack img{width:34%}
 .other .tx{grid-column:7/12}
 .other h3{margin:16px 0 8px}
@@ -141,15 +148,15 @@
   .gal .media,.gal .media.w,.gal .media.w.wide{flex:0 0 88%;aspect-ratio:4/5;scroll-snap-align:center}
   .gal-n{display:block;margin-top:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55}
   .info{position:static;padding-top:24px}
-  .spec .l,.spec dl,.proc .ph,.proc .tx,.inbox .l,.inbox ol,.other .pk,.other .tx{grid-column:1/-1}
+  .spec .l,.spec dl,.proc .ph,.proc .tx,.inbox .ibx2,.inbox .r,.other .pk,.other .tx{grid-column:1/-1}
   .spec dl{margin-top:34px}
   .proc .tx,.other .tx{margin-top:34px}
-  .inbox ol{margin-top:30px}
+  .inbox .r{order:-1;margin-bottom:30px}.inbox .ibx2{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-rows:auto}.inbox .ibx{aspect-ratio:4/5;min-height:0}.inbox .ibx:only-child{grid-column:1/-1;aspect-ratio:4/3}
 }
 @media (max-width:640px){
   .spec dl{grid-template-columns:1fr}
   .spec dl div{grid-template-columns:8.5em 1fr}
-  .sbar .n span,.sbar .num{display:none}
+  .sbar .n span{display:none}.sbar .num{font-size:17px}
 }
 .gal .media.kraft{background:radial-gradient(120% 90% at 50% 30%,#cbb9a3 0%,var(--mocha) 55%,#a69079 100%);display:grid;place-items:center}
 .gal .media.kraft img{width:auto;height:84%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(40,25,15,.3))}
@@ -229,8 +236,6 @@ body[data-page=loja] .ct .pk .pack img{width:34%}
 .cmp td{padding-block:23px;font-size:22px}
 .kgrid{width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr))!important}
 .kgrid>*{min-width:0}
-.kc-b{display:block}
-.kc-b .num{display:block;margin-top:15px;font-size:26px}
 .kc-img{aspect-ratio:1.05}
 .box4{grid-template-columns:1fr 1fr;gap:38px}
 .box4 .media{aspect-ratio:1.35}
@@ -301,9 +306,10 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 @media (max-width:420px){[data-buyrow]{flex-wrap:wrap}[data-buyrow] .btn{flex:1 1 auto;min-width:0;padding-inline:18px;gap:10px}}
 .crumbs a,.crumbs span{opacity:.75}
 .opt .lb span,.meta .lot,.pr span,.gal-n,.spec dt,.sw small,.plans small,.ship,.cup .row small{opacity:.78!important}
-.sbar .n b{white-space:normal;font-size:17px;line-height:1.15}
+.sbar .n b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:17px;line-height:1.15}
+@media (max-width:380px){.sbar .th{display:none}}
 .opt .lb span:only-child{opacity:1!important;letter-spacing:.22em;text-transform:uppercase;font-weight:700;font-size:11px}
-@media (max-width:420px){.trust{grid-template-columns:1fr;gap:14px}.trust li{display:flex;gap:12px;align-items:baseline}.trust b{font-size:17px;min-width:6.5em;margin:0}}
+@media (max-width:420px){.trust{grid-template-columns:1fr;gap:14px}.trust b{font-size:17px;margin:0 0 2px}}
 </style>
 </head>
 <body data-page="produto" data-hdr="light">
@@ -321,14 +327,15 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=15"></script>
-<script src="js/catalogo.js?v=15"></script>
+<script src="js/logo.js?v=30"></script>
+<script src="js/catalogo.js?v=30"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
   const C = ORA_CATALOGO, q = new URLSearchParams(location.search);
   const ARR = ORA_ARR;
   const TRUCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>';
+  if (q.get('p') && !oraProd(q.get('p'))) { location.replace('loja.html'); return; }
   let p = oraProd(q.get('p')) || oraProd('cafe-natural');
   if (p.tipoLoja === 'drip') { location.replace('loja.html#drip'); return; }
   let st = { qty: 1, sub: false, t: '500', v: oraCafe(q.get('c')) ? q.get('c') : 'natural' };
@@ -338,7 +345,7 @@ window.ORA_PAGE = () => {
     const el = isV ? `<video src="${src}" poster="${src.replace('.mp4', '.jpg')}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${cap || p.nome}">`;
     return `<div class="media ${cls}">${el}${cap ? `<span class="cap">${cap}</span>` : ''}</div>`;
   };
-  const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.id === 'natural' ? 'Mais doce' : 'Mais cítrico'}</small></span></button>`;
+  const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.id === 'natural' ? 'Acidez equilibrada' : 'Acidez cítrica'}</small></span></button>`;
 
   function render() {
     const isCafe = p.tipoLoja === 'cafe';
@@ -347,8 +354,8 @@ window.ORA_PAGE = () => {
 
     /* galeria */
     const g = isCafe
-      ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : '')), media('assets/video/po.mp4', '', 'Moído para coado'), media(c.rotulo, 'lblc', 'O rótulo'), ...(c.img250 ? [media(c.img250, 'w kraft', 'Embalagem kraft · 250 g')] : []), media('assets/img/cartao-frente.jpg', 'w wide', 'Cartão ORA')]
-      : [media(p.img, 'w'), media(p.img2), media('assets/img/sacola.jpg'), media('assets/img/caixa-slogan.jpg', 'w wide', 'Caixa ORA')];
+      ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : '')), media('assets/video/po.mp4', '', 'Moído para coado'), ...(c.img250 && st.t !== '250' ? [media(c.img250, 'kraft', 'Kraft · 250 g')] : [media('assets/img/px-coado.jpg', '', 'Para coado')]), media('assets/img/px-colheita-cesto.jpg', 'w wide', 'Colhidos maduros')]
+      : [media(p.img, 'w wide'), `<div class="media" style="background:${c.id === 'cereja' ? 'radial-gradient(120% 90% at 50% 30%,#d6c5ae 0%,#bfa98f 55%,#a48e75 100%)' : 'radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)'}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}, 500 g" style="object-fit:contain;padding:10% 0 8%"><span class="cap" style="color:var(--butter)">Café ORA 500 g</span></div>`, media('assets/img/cartao-frente.jpg', '', 'Cartão ORA')];
     $('[data-gal]').innerHTML = g.join('');
     if (isCafe) $('[data-gal] .pack').innerHTML = `<img src="${st.t === '250' && c.img250 ? c.img250 : c.img}" alt="Pacote do ${c.nomeCompleto}, ${st.t} g">`;
     $('[data-galn]').textContent = `${g.length} imagens · deslize`;
@@ -361,7 +368,7 @@ window.ORA_PAGE = () => {
       <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Nossos cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
       <h1 class="display lg">${isCafe ? p.nome.replace(' Descascado', ' <em class="it">Descascado</em>') : p.nome}</h1>
       <span class="sub">${isCafe ? c.sub : p.tipo}</span>
-      <div class="pr"><b class="num">${brl(precoBase())}</b><span>${isCafe ? st.t + ' g' + (st.sub ? ' · assinatura, ' + brl(Math.round(precoBase() * .85)) + ' por mês' : '') : 'na caixa ORA'}</span></div>
+      <div class="pr"><b class="num">${isCafe && st.sub ? brl(Math.round(precoBase() * .85)) + '<small style="font-size:.5em;opacity:.7">/mês</small>' : brl(precoBase())}</b><span>${isCafe ? st.t + ' g' + (st.sub ? ' · assinatura; avulso ' + brl(precoBase()) : '') : ''}</span></div>
       <p class="lede">${isCafe ? c.frase : p.resumo}</p>
       ${isCafe ? `<div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>` : ''}
       <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Dois cafés, dois processos' : (c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase())}</span></div>
@@ -387,7 +394,7 @@ window.ORA_PAGE = () => {
       </div>
       <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP na finalização da compra.</p>
       ${isCafe ? `<ul class="trust"><li><b>Minas Gerais</b>Grãos de fazendas selecionadas</li><li><b>Torra</b>Em pequenos lotes</li><li><b>Moído para coado</b>Para coador de papel ou de pano</li></ul>` : ''}
-      ${isCafe ? '' : `<details class="gmsg"${st.msg ? ' open' : ''}><summary>Incluir cartão com mensagem</summary><textarea rows="3" maxlength="140" placeholder="Escreva sua mensagem" data-msg>${(st.msg || '').replace(/</g, '&lt;')}</textarea></details>`}
+      ${isCafe ? '' : `<details class="gmsg" open><summary>Mensagem do cartão (incluso)</summary><textarea rows="3" maxlength="140" placeholder="Escreva sua mensagem" data-msg>${(st.msg || '').replace(/</g, '&lt;')}</textarea><small data-kcnt style="display:block;text-align:right;font-size:12px;opacity:.6;margin-top:6px">${(st.msg || '').length}/140</small></details>`}
       <div class="acc">
         <details><summary>Como preparar</summary><div class="a">10 g de café para cada 150 ml de água a 92 °C, em coador de papel ou de pano. Molhe o pó, espere 30 segundos e complete devagar.</div></details>
         <details><summary>Conservação</summary><div class="a">Depois de aberto, feche bem o pacote e guarde longe da luz e do calor. O sabor fica melhor nas primeiras semanas.</div></details>
@@ -398,52 +405,54 @@ window.ORA_PAGE = () => {
     const other = C.cafes.find(x => x.id !== c.id), op = C.produtos.find(x => x.cafe === other.id);
     const kits = C.produtos.filter(x => x.tipoLoja === 'kit' && x.handle !== p.handle);
     const specRows = [['Origem', 'Fazendas de Minas Gerais'], ['Processo', c.processo], ['Variedade', c.variedade],
-      ['Notas', c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase()], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coador de papel ou de pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
+      ...(isCafe ? [] : [['Notas', c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase()]]), ...(isCafe ? [] : [['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final]]), ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coador de papel ou de pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
     $('[data-below]').innerHTML = `
       ${isCafe ? `<section class="cup t-espresso"><p class="eyebrow" data-fade>Na xícara</p>
         <p class="w" data-lines>${c.notas.map(n => `<span class="ln"><span>${n}</span></span>`).join('')}</p>
         <div class="row" data-fade><div><small>Acidez</small><b>${c.acidez}</b></div><div><small>Corpo</small><b>${c.corpo}</b></div><div><small>Final</small><b>${c.final}</b></div></div></section>` : ''}
-      ${isCafe ? '' : `<section class="sec wrap t-cream"><div class="inbox"><div class="l"><p class="eyebrow ln-l" data-fade>O kit</p><h2 class="display md" data-fade style="margin-top:20px">O que vem<br>na caixa</h2></div>
-        <ol data-fade>${p.contem.map(x => `<li>${x}</li>`).join('')}</ol></div></section>`}
-      <section class="sec wrap ${isCafe ? 't-cream' : 't-butter'}">
+      ${isCafe ? '' : `<section class="sec wrap t-espresso"><div class="inbox"><div class="ibx2">${p.handle === 'cafe-jarra' ? '' : `<div class="media ibx"><img src="assets/img/p-caixa.jpg" alt="Caixa ORA aberta, com papel de seda" loading="lazy"><span class="cap">Caixa ORA</span></div>`}<div class="media ibx"><img src="assets/img/sacola.jpg" alt="Sacola kraft ORA" loading="lazy" style="object-position:50% 40%"><span class="cap">Sacola kraft</span></div></div>
+        <div class="r"><p class="eyebrow ln-l" data-fade>O kit</p><h2 class="display md" data-fade style="margin-top:20px">O que vem na caixa</h2><ol data-fade>${p.contem.map(x => `<li>${x}</li>`).join('')}</ol></div></div></section>`}
+      <section class="sec wrap t-butter">
         <div class="spec">
           <div class="l"><p class="eyebrow ln-l" data-fade>${isCafe ? 'Ficha técnica' : 'Café ' + c.nome}</p><h2 class="display md" data-fade style="margin-top:20px">${isCafe ? 'Tudo sobre<br>este café' : 'O café que<br>vai no kit'}</h2>
             </div>
           <dl data-fade>${specRows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         </div>
       </section>
-      <section class="sec wrap t-butter">
+      <section class="sec wrap t-roast">
         <div class="proc">
-          <div class="ph media" data-open><video src="assets/video/graos.mp4" poster="assets/video/graos.jpg" autoplay muted loop playsinline></video></div>
+          <div class="ph media" data-open><img src="assets/img/${c.id === 'natural' ? 'px-natural-seco' : 'px-pergaminho'}.jpg" alt="${c.id === 'natural' ? 'Cerejas de café secas, com a casca' : 'Grãos de café secando sem a casca'}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="tx">
             <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : 'Processo cereja descascado'}</p>
-            <h2 class="display md" data-fade>${c.processo === 'Natural' ? 'Seca inteiro,<br><em class="it">com a fruta.</em>' : 'Sem a casca,<br><em class="it">mais limpo.</em>'}</h2>
+            <h2 class="display md" data-fade>${c.processo === 'Natural' ? 'Seca inteiro,<br><em class="it">com a fruta.</em>' : 'Seca sem<br><em class="it">a casca.</em>'}</h2>
             <p class="lede" data-fade>${c.sobre}</p>
             <a class="link" href="historia.html" data-fade>Nossa história ${ARR}</a>
           </div>
         </div>
       </section>
-      <section class="sec wrap t-butter more" style="padding-top:0">
-        ${isCafe ? `<div class="other">
+      ${isCafe ? `<section class="sec wrap t-butter more">
+        <div class="other">
           <a class="pk media pack ${other.cor === 'mocha' ? 'mocha' : ''}" href="produto.html?p=${op.handle}" data-open><img src="${other.img}" alt="Café ${other.nome}"></a>
           <div class="tx"><p class="eyebrow ln-l" data-fade>O outro café da ORA</p><h3 class="display md" data-fade>${other.nome}</h3><span class="sub" data-fade style="font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7">${other.sub}</span>
             <p class="lede" data-fade>${other.frase}</p>
             <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
-        </div>` : ''}
+        </div>
+      </section>` : ''}
+      <section class="sec wrap ${isCafe ? 't-roast' : 't-butter'} more">
         <div class="hd"><h2 class="display md" data-fade>${isCafe ? 'Para presentear' : 'Outros presentes'}</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
         <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
       </section>`;
 
     /* barra fixa */
     $('[data-sbar]').innerHTML = `<div class="th ${isCafe ? (c.cor === 'mocha' ? 'mocha' : '') : 'ph'}"><img src="${isCafe ? c.img : p.thumb}" alt=""></div>
-      <div class="n"><b>${isCafe ? 'Café ' + p.nome : p.nome}</b><span>${isCafe ? 'Moído · ' + st.t + ' g' + (st.sub ? ' · assinatura' : '') : 'Café ' + c.nome}</span></div>
-      <span class="num" data-total>${total()}</span><button class="btn solid" data-buy>Adicionar</button>`;
+      <div class="n"><b>${p.nome}${isCafe && p.p250 ? ' · ' + st.t + ' g' : ''}</b><span>${isCafe ? 'Moído para coado' + (st.sub ? ' · assinatura' : '') : 'Café ' + c.nome}</span></div>
+      <span class="num" data-total>${total()}${st.sub ? '<small style="font-size:.55em;opacity:.7">/mês</small>' : ''}</span><button class="btn solid" data-buy>Adicionar</button>`;
     ORA.reveals && ORA.reveals();
     document.querySelectorAll('[data-below] video,[data-gal] video').forEach(v => { v.muted = true; v.play().catch(() => {}); });
   }
 
   const base = () => (st.t === '250' && p.p250) ? p.p250 : p.preco;
-  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl((st.sub ? Math.round(base() * .85) : base()) * st.qty));
+  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.innerHTML = brl((st.sub ? Math.round(base() * .85) : base()) * st.qty) + (st.sub && e.closest('.sbar') ? '<small style="font-size:.55em;opacity:.7">/mês</small>' : ''));
   document.addEventListener('click', e => {
     const s = e.target.closest('[data-sw]');
     if (s) {
@@ -457,7 +466,7 @@ window.ORA_PAGE = () => {
     if (d) { st.qty = Math.max(1, Math.min(20, st.qty + +d.dataset.qd)); document.querySelector('[data-qty]').textContent = st.qty; upd(); }
     if (e.target.closest('[data-buy]')) { const m = document.querySelector('[data-msg]'); ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, t: st.t, msg: m ? m.value.trim() : '' }); }
   });
-  document.addEventListener('input', e => { if (e.target.matches('[data-msg]')) st.msg = e.target.value; });
+  document.addEventListener('input', e => { if (e.target.matches('[data-msg]')) { st.msg = e.target.value; const k = document.querySelector('[data-kcnt]'); if (k) k.textContent = st.msg.length + '/140'; } });
   document.addEventListener('change', e => { if (e.target.name === 'plan') { st.sub = e.target.value === '1'; render(); } });
 
   render();
@@ -467,6 +476,6 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=15"></script>
+<script src="js/site.js?v=30"></script>
 </body>
 </html>

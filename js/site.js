@@ -54,7 +54,7 @@
   mm.className = 'mmenu';
   mm.innerHTML = [['index.html', 'Início'], ['loja.html', 'Nossos cafés'], ['historia.html', 'Nossa origem'], ['presentes.html', 'Presentes']]
     .map(([h, t], i) => `<a class="big" href="${h}"${cur(h)}><span style="transition-delay:${.06 * i + .25}s">${t}</span></a>`).join('') +
-    `<div class="meta">Café especial · Minas Gerais</div>`;
+    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img src="assets/img/px-colheita.jpg" alt="" loading="lazy"></div>`;
   B.append(mm);
   $('.burger').addEventListener('click', () => {
     const o = B.classList.toggle('menu-open');
@@ -68,19 +68,15 @@
   ftr.innerHTML = `
     <div class="cols">
       <div>
-        <p class="display sm" style="max-width:15em">Todo momento tem sua ORA.</p>
-        <p class="ftag">Cafés especiais, selecionados com cuidado e inspirados pela essência de sua origem.</p>
-        <form class="news" onsubmit="event.preventDefault();ORA.toast('Pronto. Você vai receber as novidades da ORA.');this.reset()">
-          <label for="nw" style="position:absolute;left:-9999px">Seu e-mail</label>
-          <input id="nw" type="email" required placeholder="Seu e-mail, para novas safras" autocomplete="email"><button>Cadastrar</button>
-        </form>
+        <p class="display sm" style="max-width:15em">Café especial de Minas Gerais.</p>
+        <p class="ftag">Natural e Cereja Descascado, de fazendas de Minas Gerais, colhidos maduros e torrados em pequenos lotes.</p>
       </div>
       <div><h4>Loja</h4><ul><li><a href="produto.html?p=cafe-natural">Natural</a></li><li><a href="produto.html?p=cafe-cereja">Cereja Descascado</a></li><li><a href="loja.html#drip">Drip Coffee</a></li><li><a href="presentes.html">Presentes</a></li><li><a href="presentes.html#corporativo">Presentes corporativos</a></li></ul></div>
-      <div><h4>Atendimento</h4><ul><li><a href="politicas.html#entrega">Entrega e pagamento</a></li><li><a href="politicas.html#trocas">Trocas e devoluções</a></li><li><a href="politicas.html#privacidade">Privacidade</a></li></ul></div>
-      <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram @oracafeespecial</a></li></ul></div>
+      <div><h4>Atendimento</h4><ul><li><a href="politicas.html#entrega">Entrega e pagamento</a></li><li><a href="politicas.html#trocas">Trocas e devoluções</a></li><li><a href="politicas.html#assinatura">Assinatura e cupons</a></li><li><a href="politicas.html#privacidade">Privacidade</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="giant">${oraLogo()}</div>
-    <div class="base"><span>© 2026 ORA Café Especial</span><span>Café especial · Minas Gerais</span><span>Todo momento tem sua ORA.</span></div>`;
+    <div class="base"><span>© 2026 ORA Café Especial</span><span>Minas Gerais</span></div>`;
   B.append(ftr);
 
   /* sacola */
@@ -102,7 +98,7 @@
     const p = oraProd(i.h);
     if (p.tipoLoja === 'cafe') return 'Moído · ' + (i.t || '500') + ' g' + (i.sub ? ' · assinatura mensal (-15%)' : '');
     if (p.tipoLoja === 'drip') return 'Saquinho vazio · ' + brl(p.preco) + ' a unidade';
-    return 'Café ' + oraCafe(i.v).nome + (i.msg && i.msg.trim() ? ' · cartão: “' + i.msg.trim().replace(/</g, '&lt;').slice(0, 70) + (i.msg.trim().length > 70 ? '…' : '') + '”' : '');
+    return 'Café ' + oraCafe(i.v).nome + ' · 500 g';
   };
   const precoItem = i => { const p = oraProd(i.h); let v = (i.t === '250' && p.p250) ? p.p250 : p.preco; if (i.sub) v = Math.round(v * .85); return v; };
   function renderBag() {
@@ -119,15 +115,15 @@
         <div><h5>${p.tipoLoja === 'cafe' ? 'Café ' + p.nome : p.nome}</h5><p>${linha(i)}</p>
           <div class="qty"><button aria-label="Diminuir" data-q="${k}" data-d="-1">−</button><span>${i.qty}</span><button aria-label="Aumentar" data-q="${k}" data-d="1">+</button></div>
           <button class="rm" data-rm="${k}">Remover</button></div>
-        <div class="pr num">${brl(precoItem(i) * i.qty)}</div></div>`;
+        <div class="pr num">${brl(precoItem(i) * i.qty)}${i.sub ? '<small style="font-size:.6em;opacity:.7">/mês</small>' : ''}</div>${i.msg && i.msg.trim() ? `<p class="cmsg"><b>Cartão:</b> “${i.msg.trim().replace(/</g, '&lt;')}”</p>` : ''}</div>`;
     }).join('');
     const tot = bag.reduce((a, i) => a + precoItem(i) * i.qty, 0);
     pf.innerHTML = `<div class="tot"><span class="eyebrow">Subtotal</span><b class="num">${brl(tot)}</b></div>
-      <p class="note">Frete calculado pelo CEP na finalização da compra. Cupom na finalização da compra, um por pedido: BEMVINDO (5% na primeira compra) ou ORAPORSCHE (10%).</p>
+      ${bag.some(i => i.sub) ? `<p class="note" style="margin-bottom:6px">Inclui a 1ª mensalidade da assinatura; as próximas, todo mês.</p>` : ''}<p class="note">Frete e cupom na finalização da compra. <span class="nl-x">Um cupom por pedido: BEMVINDO (5% na primeira compra) ou ORAPORSCHE (10%).</span></p>
       <button class="btn solid" style="width:100%;justify-content:center" data-checkout>Finalizar compra ${ARR}</button>`;
   }
   const save = () => { store.set('ora-bag3', bag); renderBag(); };
-  const openBag = () => { bagEl.classList.add('open'); lenis && lenis.stop(); };
+  const openBag = () => { toast.classList.remove('show'); bagEl.classList.add('open'); lenis && lenis.stop(); };
   const closeBag = () => { bagEl.classList.remove('open'); lenis && lenis.start(); };
   bagEl.addEventListener('click', e => {
     const q = e.target.closest('[data-q]'), r = e.target.closest('[data-rm]');
@@ -148,7 +144,7 @@
       const ex = bag.find(i => i.h === h && i.v === v && i.msg === msg && !!i.sub === sub && (i.t || '500') === (t || '500'));
       ex ? ex.qty = Math.min(p.max || 20, ex.qty + qty) : bag.push({ h, v, qty, msg, sub, t });
       save();
-      const nome = p.tipoLoja === 'cafe' ? 'Café ' + p.nome : p.tipoLoja === 'drip' ? (qty > 1 ? qty + ' × ' : '') + p.nome : p.nome + ' · ' + oraCafe(v).nome;
+      const nome = p.tipoLoja === 'cafe' ? 'Café ' + p.nome + (t ? ' · ' + t + ' g' : '') + (sub ? ' · assinatura mensal' : '') : p.tipoLoja === 'drip' ? (qty > 1 ? qty + ' × ' : '') + p.nome : p.nome + ' · ' + oraCafe(v).nome;
       showToast(`<span>${nome} na sacola.</span><a href="#sacola" data-bag-open>Ver sacola</a>`);
     },
     open: openBag, toast: showToast
@@ -211,3 +207,12 @@
   window.ORA_PAGE && window.ORA_PAGE();
   runReveals();
 })();
+
+/* cards de foto: com mouse abre no hover (CSS); no toque, tocar abre e fecha */
+document.addEventListener('click', e => {
+  const b = e.target.closest('.fcard .fb'); if (!b) return;
+  const touch = window.matchMedia('(hover: none)').matches;
+  if (!touch && e.detail !== 0) return;
+  const c = b.closest('.fcard'), on = c.dataset.aberto !== 'true';
+  c.dataset.aberto = on; b.setAttribute('aria-expanded', on);
+});

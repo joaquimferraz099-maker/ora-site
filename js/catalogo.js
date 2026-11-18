@@ -7,7 +7,7 @@ window.ORA_CATALOGO = {
       processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00',
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
       frase: 'Chocolate e caramelo, doce, com acidez equilibrada, corpo aveludado e final persistente.',
-      sobre: 'O fruto seca inteiro, com a casca e a polpa. O açúcar da fruta acompanha o grão durante a secagem, e é daí que vem a doçura deste café.',
+      sobre: 'O fruto seca inteiro, com a casca e a polpa. O grão só é separado da fruta depois de seco.',
       img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.jpg', cor: 'espresso'
     },
     {
@@ -15,7 +15,7 @@ window.ORA_CATALOGO = {
       processo: 'Cereja Descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00',
       notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
       frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',
-      sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem. Sem a fruta inteira, o sabor fica mais limpo e a acidez aparece com mais clareza na xícara.',
+      sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem.',
       img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha', img250: 'assets/img/pacote250-cereja.webp'
     }
   ],
@@ -28,7 +28,7 @@ window.ORA_CATALOGO = {
       img: 'assets/img/drip.jpg', tile: 'ph', thumb: 'assets/img/drip.jpg', max: 100,
       resumo: 'O saquinho de filtro vazio, com abas que se apoiam na borda da xícara. Você coloca o seu café ORA moído e coa uma xícara por vez.' },
     { handle: 'cafe-caneca', tipoLoja: 'kit', nome: 'Café e caneca', tipo: 'Kit presente', preco: 12900,
-      img: 'assets/img/p-pacote.jpg', img2: 'assets/img/p-cafe-caneca.jpg', thumb: 'assets/img/p-pacote.jpg',
+      img: 'assets/img/p-kit-vertical.jpg', img2: 'assets/img/p-cafe-caneca.jpg', thumb: 'assets/img/p-kit-vertical.jpg',
       resumo: 'Um pacote de café e a caneca térmica ORA, na caixa com sacola e cartão.',
       contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
     { handle: 'cafe-jarra', tipoLoja: 'kit', nome: 'Café e jarra', tipo: 'Kit presente', preco: 16900,

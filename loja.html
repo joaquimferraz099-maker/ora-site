@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Nossos cafés · ORA</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="ORA · Café especial">
+<meta property="og:description" content="Natural e Cereja Descascado, moídos para coado, e o Drip Coffee.">
+<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/img/pacote-natural.webp">
+
 <meta name="description" content="Os cafés da ORA: Natural (500 g) e Cereja Descascado (250 g ou 500 g), de fazendas de Minas Gerais, e o Drip Coffee.">
 <meta name="theme-color" content="#F1E1B3">
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=15">
+<link rel="stylesheet" href="css/ora.css?v=30">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -19,15 +24,16 @@
 .lhead .r .eyebrow{margin-bottom:16px}
 
 /* um café por linha, painel do pacote + texto (desenho dos cafés da v3.1) */
-.rows{border-top:1px solid var(--line)}
+.rows{border-top:0}
 .row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center;padding-block:clamp(40px,5vw,80px);border-bottom:1px solid var(--line)}
 .row .pk{grid-column:1/7;display:block;aspect-ratio:5/4;position:relative}
 .row .pk .pack{position:absolute;inset:0}
 .row .pk .pack img{width:30%;transition:transform 1.4s var(--ease-out),opacity .5s}
 .row .pk .pack img.k{width:27%}
 .row .pk:hover .pack img{transform:translateY(-10px) rotate(-1.5deg)}
-.row .pk .ix{position:absolute;left:22px;top:22px;z-index:2;color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.85}
+.row .pk .ix{position:absolute;left:22px;top:22px;z-index:2;color:var(--butter)!important;font-family:var(--serif);font-size:14px;letter-spacing:.1em;opacity:1!important;background:rgba(28,20,14,.55);padding:5px 11px;border-radius:30px}
 .row .pk .pack.mocha ~ .ix{color:var(--roast);opacity:.7}
+.row.drip{margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);padding-block:clamp(60px,7vw,110px);border-bottom:0;margin-bottom:calc(-1*clamp(60px,7vw,110px))}
 .row.drip .pk .ix{text-shadow:0 1px 8px rgba(20,16,12,.6)}
 .row .tx{grid-column:8/13}
 .row.rev .pk{grid-column:7/13;order:2}
@@ -73,23 +79,50 @@
 .cmp td:first-child{opacity:.75}
 .row .dq > span:first-child{opacity:.72}
 .row.drip .pk .ix{background:rgba(33,29,26,.55);color:var(--butter);opacity:1;padding:5px 10px 4px;border-radius:30px;text-shadow:none}
+
+.lhero{position:relative;min-height:min(86svh,820px);color:var(--butter);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+.lhero .bg{position:absolute;inset:-8% 0}
+.lhero .bg img{width:100%;height:100%;object-fit:cover}
+.lhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,18,13,.7) 0%,rgba(24,18,13,.35) 40%,rgba(24,18,13,.85) 100%)}
+.lhero .in{position:relative;z-index:2;padding:calc(var(--hdr) + 80px) var(--gut) clamp(34px,4vw,56px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.lhero .in > div{grid-column:1/8}
+.lhero .in > p{grid-column:9/13;margin:0;font-size:16.5px;line-height:1.65;opacity:.9}
+.lhero .eyebrow{opacity:1}
+.lhero .jump{position:relative;z-index:2;display:flex;gap:clamp(18px,2.6vw,40px);flex-wrap:wrap;padding:20px var(--gut) 26px;border-top:1px solid rgba(241,225,179,.22);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.lhero .jump a{opacity:.8;transition:opacity .3s}
+.lhero .jump a:hover{opacity:1}
+.prep{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center}
+.prep .pv{grid-column:1/6;aspect-ratio:4/5;border-radius:3px}
+.prep .pt{grid-column:7/13}
+.prep .in{margin:24px 0 0;opacity:.82;font-size:16.5px;max-width:28em}
+.prep .n3{margin-top:clamp(34px,4vw,56px);border-top:1px solid var(--line)}
+.prep .n3 div{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(20px,2.2vw,30px) 0;border-bottom:1px solid var(--line)}
+.prep .n3 b{font-family:var(--serif);font-weight:400;font-size:clamp(46px,4.6vw,80px);line-height:.9;letter-spacing:-.03em}
+.prep .n3 span{font-size:15.5px;opacity:.82;max-width:20em}
+.t-roast .cmp td:first-child,.t-roast .cmp th:first-child{opacity:.6}
+@media (max-width:960px){.lhero .in > div,.lhero .in > p{grid-column:1/-1}.prep .pv,.prep .pt{grid-column:1/-1}.prep .pv{aspect-ratio:4/3}.prep .pt{margin-top:40px}}
+@media (max-width:600px){.lhero .jump{gap:22px;font-size:10px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);padding-right:48px}.prep .n3 div{grid-template-columns:1fr;gap:8px}}
 </style>
 </head>
-<body data-page="loja" data-hdr="light">
+<body data-page="loja">
 
-<header class="lhead">
-  <h1 class="display xl" data-lines><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1>
-  <div class="r" data-fade><p class="eyebrow ln-l">Café especial · Minas Gerais</p><p>Dois cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p></div>
+<header class="lhero t-roast">
+  <div class="bg" data-par=".5"><img src="assets/img/px-graos-torrados.jpg" alt="" style="object-position:50% 60%"></div>
+  <div class="in">
+    <div><p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p><h1 class="display xxl" data-lines style="margin-top:24px"><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1></div>
+    <p data-fade data-delay="2">Dois cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p>
+  </div>
+  <nav class="jump" data-fade data-delay="3" aria-label="Nesta página"><a href="#c-natural">Natural</a><a href="#c-cereja">Cereja Descascado</a><a href="#drip">Drip Coffee</a><a href="#preparo">Como preparar</a><a href="#kits">Presentes</a></nav>
 </header>
 
-<section class="wrap" style="padding-bottom:clamp(50px,6vw,90px)">
+<section class="wrap t-butter" style="padding-block:clamp(10px,2vw,30px) clamp(60px,7vw,110px)">
   <div class="rows" data-cafes></div>
 </section>
 
-<section class="sec wrap t-cream">
+<section class="sec wrap t-roast">
   <div class="cmp">
-    <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display md" data-fade style="margin-top:20px">Qual escolher?</h2>
-      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm caramelo. O Natural é mais doce, com chocolate; o Cereja Descascado tem acidez cítrica delicada.</p></div>
+    <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display lg" data-fade style="margin-top:20px">Qual <em class="it">escolher?</em></h2>
+      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm caramelo. O Natural tem acidez equilibrada e final persistente; o Cereja Descascado, acidez cítrica delicada e final longo.</p></div>
     <table data-fade>
       <thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
       <tbody data-cmp></tbody>
@@ -97,32 +130,46 @@
   </div>
 </section>
 
-<section class="sec wrap t-butter">
-  <div class="ghd"><h2 class="display md" data-fade>Para presentear</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
+<section class="sec wrap t-espresso prep" id="preparo">
+  <div class="pv media" data-open><video src="assets/video/coado.mp4" poster="assets/video/coado.jpg" autoplay muted loop playsinline></video></div>
+  <div class="pt">
+    <p class="eyebrow ln-l" data-fade>Como preparar</p>
+    <h2 class="display lg" data-lines style="margin-top:22px"><span class="ln"><span>Três números</span></span><span class="ln"><span><em class="it">bastam.</em></span></span></h2>
+    <p class="in" data-fade>No coador de papel ou de pano, com o café ORA moído para coado.</p>
+    <div class="n3">
+      <div data-fade><b class="num">10 g</b><span>de café, cerca de duas colheres de sopa rasas.</span></div>
+      <div data-fade data-delay="1"><b class="num">150 ml</b><span>de água para cada xícara.</span></div>
+      <div data-fade data-delay="2"><b class="num">92 °C</b><span>Desligue o fogo nas primeiras bolhas, espere meio minuto e despeje devagar.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap t-butter" id="kits">
+  <div class="ghd"><h2 class="display lg" data-fade>Para <em class="it">presentear</em></h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
   <div class="kgrid" data-kits></div>
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=15"></script>
-<script src="js/catalogo.js?v=15"></script>
+<script src="js/logo.js?v=30"></script>
+<script src="js/catalogo.js?v=30"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
   $('[data-cafes]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'cafe').map((p, i) => {
     const c = oraCafe(p.cafe);
-    return `<article class="row${i % 2 ? ' rev' : ''}" data-h="${p.handle}">
+    return `<article class="row${i % 2 ? ' rev' : ''}" id="c-${p.cafe}" data-h="${p.handle}">
       <a class="pk media" data-open href="produto.html?p=${p.handle}" aria-label="Café ${p.nome}">
         <div class="pack ${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}, 500 g"></div>
         <span class="ix">0${i + 1}</span>
       </a>
       <div class="tx">
-        <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : c.processo}</p>
+        <p class="eyebrow ln-l" data-fade>Processo ${c.processo.toLowerCase()}</p>
         <h2 data-fade><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
         <span class="sub" data-fade>${c.sub}</span>
         <p class="fr" data-fade>${c.frase}</p>
         <div class="chips" data-fade>${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>
-        <div data-fade><div class="tam">${p.p250 ? `<button type="button" data-t="250" aria-pressed="false">250 g</button><button type="button" data-t="500" aria-pressed="true">500 g</button>` : `<button type="button" aria-pressed="true" disabled>500 g</button>`}</div>
-        <p class="claim">${p.p250 ? '500 g: o dobro do café por -25% no preço.' : 'Disponível em 500 g.'}</p></div>
+        <div data-fade><div class="tam">${p.p250 ? `<button type="button" data-t="250" aria-pressed="false">250 g</button><button type="button" data-t="500" aria-pressed="true">500 g</button>` : `<span class="tam-tx">500 g · moído para coado</span>`}</div>
+        <p class="claim">${p.p250 ? '500 g: o dobro do café por -25% no preço.' : ''}</p></div>
         <div class="buy" data-fade><span class="num" data-pr>${brl(p.preco)}</span><button class="btn solid" data-add>Adicionar</button><a class="link" href="produto.html?p=${p.handle}">Conheça este café</a></div>
       </div>
     </article>`;
@@ -141,7 +188,7 @@
     r.querySelector('[data-add]').addEventListener('click', () => ORA.add(p.handle, { t }));
   });
   const d = oraProd('drip-coffee');
-  $('[data-cafes]').insertAdjacentHTML('beforeend', `<article class="row drip" id="drip">
+  $('[data-cafes]').insertAdjacentHTML('beforeend', `<article class="row drip t-espresso" id="drip">
       <div class="pk media" data-open><img class="ph" src="${d.img}" alt="Água quente caindo no saquinho de Drip Coffee, apoiado em um copo"><span class="ix">03</span></div>
       <div class="tx">
         <p class="eyebrow ln-l" data-fade>Para coar na xícara</p>
@@ -150,7 +197,7 @@
         <p class="fr" data-fade>${d.resumo}</p>
         <ol class="how" data-fade><li>Coloque 10 g de café moído no saquinho.</li><li>Abra as abas e apoie na borda da xícara.</li><li>Despeje 150 ml de água quente, aos poucos.</li></ol>
         <div class="dq" data-fade><span>Quantidade</span><div class="qty"><button type="button" aria-label="Diminuir" data-dq="-1">−</button><span data-dn>10</span><button type="button" aria-label="Aumentar" data-dq="1">+</button></div><span class="un">${brl(d.preco)} a unidade</span></div>
-        <div class="buy" data-fade><span class="num" data-dt>${brl(d.preco * 10)}</span><button class="btn solid" data-dadd>Adicionar</button></div>
+        <div class="buy" data-fade><span class="num" data-dt>${brl(d.preco * 10)}</span><button class="btn light" data-dadd>Adicionar</button></div>
       </div>
     </article>`);
   {
@@ -162,11 +209,11 @@
     });
   }
   const [n, c] = C.cafes;
-  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => (x.notas.join(', ').charAt(0) + x.notas.join(', ').slice(1).toLowerCase())], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
+  $('[data-cmp]').innerHTML = [['Variedade', 'variedade'], ['Notas', x => (x.notas.join(', ').charAt(0) + x.notas.join(', ').slice(1).toLowerCase())], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=15"></script>
+<script src="js/site.js?v=30"></script>
 </body>
 </html>

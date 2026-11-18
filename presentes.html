@@ -6,18 +6,24 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="noindex, nofollow" name="robots"/>
 <title>Presentes · ORA</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="ORA · Café especial">
+<meta property="og:description" content="Kits com café especial, caneca e jarra térmicas ORA, na caixa com sacola kraft e cartão.">
+<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/img/kit-aberto.jpg">
+
 <meta content="Kits ORA para presentear: café especial, caneca e jarra térmicas, na caixa ORA com cartão de mensagem." name="description"/>
 <meta content="#4A3025" name="theme-color"/>
 <link href="assets/brand/monograma.svg" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/ora.css?v=15" rel="stylesheet"/>
+<link href="css/ora.css?v=30" rel="stylesheet"/>
 <style>
 .ghero{position:relative;height:74svh;min-height:520px;overflow:hidden;background:var(--espresso);color:var(--butter)}
 .ghero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ghero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(33,29,26,.65),rgba(33,29,26,.1) 60%)}
+@media (min-width:761px){.ghero::before{content:"";position:absolute;z-index:1;left:0;top:0;bottom:0;width:46%;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)}}
+.ghero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,20,14,.985) 0%,rgba(28,20,14,.98) 47%,rgba(28,20,14,.6) 55%,rgba(28,20,14,.04) 66%),linear-gradient(0deg,rgba(28,20,14,.5),rgba(28,20,14,0) 45%)}
 .ghero .in{position:absolute;z-index:2;left:var(--gut);bottom:clamp(36px,5vw,70px);max-width:600px}
-.ghero p{margin:18px 0 0;font-size:17px;max-width:26em}
+.ghero p:not(.eyebrow){margin:18px 0 0;font-size:17px;max-width:26em}
 .box4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px)}
 .box4 figure{margin:0}
 .box4 .media{aspect-ratio:4/5}
@@ -32,6 +38,7 @@
 .fld input,.fld textarea,.fld select{width:100%;background:none;border:0;border-bottom:1px solid var(--line);color:inherit;font-family:var(--serif);font-size:20px;padding:10px 0;outline:none;resize:none;border-radius:0}
 .fld :is(input,textarea,select):focus{border-bottom-color:currentColor}
 .fld select option{color:var(--roast)}
+.fld select{-webkit-appearance:none;appearance:none;padding-left:0;text-indent:0;background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 fill=%27none%27 stroke=%27%23F1E1B3%27/%3E%3C/svg%3E") no-repeat right 4px center}
 .two2{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
 .card-pv{aspect-ratio:1.48;background:var(--butter);color:var(--espresso);padding:clamp(24px,3vw,46px);display:grid;grid-template-rows:auto 1fr auto;box-shadow:0 40px 80px -40px rgba(0,0,0,.6);position:relative}
 .card-pv::before{content:"";position:absolute;inset:12px;border:1px solid rgba(74,48,37,.45);pointer-events:none}
@@ -41,7 +48,7 @@
 .card-pv .sig small{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;opacity:.55}
 
 
-@media (max-width:1100px){.box4{grid-template-columns:1fr 1fr}}
+
 @media (max-width:860px){
   .two2{grid-template-columns:1fr}
   .msg .l,.msg .r{grid-column:1/-1}
@@ -118,12 +125,10 @@ body[data-page=loja] .ct .pk .pack img{width:34%}
 .cmp td{padding-block:23px;font-size:22px}
 .kgrid{width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr))!important}
 .kgrid>*{min-width:0}
-.kc-b{display:block}
-.kc-b .num{display:block;margin-top:15px;font-size:26px}
 .kc-img{aspect-ratio:1.05}
-.box4{grid-template-columns:1fr 1fr;gap:38px}
-.box4 .media{aspect-ratio:1.35}
-.box4 figcaption{display:flex;justify-content:space-between;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px}
+.box4{grid-template-columns:repeat(4,1fr);gap:clamp(18px,2vw,30px)}
+.box4 .media{aspect-ratio:4/5}
+.box4 figcaption{display:block;border-bottom:1px solid var(--line);padding-bottom:18px}
 .box4 b{font-size:28px}
 @media(max-width:960px){
 .founder-section,.origin-section{grid-template-columns:1fr 1fr}
@@ -180,6 +185,7 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 .kc-b{display:flex;gap:15px}
 .kc-b .num{font-size:23px;margin:0;flex-shrink:0}
 .box4{grid-template-columns:1fr;gap:30px}
+.msg{display:flex;flex-direction:column;gap:0;align-items:stretch}.msg .l{display:contents}.msg .l>*{order:0}.msg .l>.two2,.msg .l>div:last-child{order:2}.msg .r{order:1;margin:30px 0 6px!important}.msg .l>p.body{margin-bottom:12px}
 .box4 .media{aspect-ratio:1.22}
 .box4 figcaption{display:block}
 .box4 b{font-size:26px}
@@ -187,8 +193,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 
 </style>
 <style>
-.corp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:start;padding-block:clamp(80px,9vw,130px);scroll-margin-top:60px}
-.corp .cl{grid-column:1/6}.corp .cr{grid-column:7/13}
+.corp{display:grid;align-items:end!important;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:start;padding-block:clamp(80px,9vw,130px);scroll-margin-top:60px}
+.corp .cl{grid-column:1/6}.corp .cimg{aspect-ratio:4/3;margin-top:clamp(30px,3vw,46px);border-radius:3px}.corp .cimg img{width:100%;height:100%;object-fit:cover;object-position:55% 60%}.corp .cr{grid-column:7/13}
 .corp .body{margin:0 0 30px;font-size:19px;line-height:1.6;opacity:.88;max-width:26em}
 .corp ul{list-style:none;padding:0;margin:0 0 38px;border-top:1px solid var(--line)}
 .corp li{display:grid;grid-template-columns:9em 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
@@ -196,15 +202,15 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 .corp li span{font-size:16px;opacity:.92}
 @media (max-width:900px){.corp .cl,.corp .cr{grid-column:1/-1}.corp .cr{margin-top:30px}.corp li{grid-template-columns:1fr;gap:4px}}
 .card-pv .sig small{opacity:.75}
-@media (max-width:760px){.ghero::after{background:linear-gradient(180deg,rgba(33,29,26,.25),rgba(33,29,26,.15) 35%,rgba(33,29,26,.8))}.ghero img{object-position:30% 50%}}
+@media (max-width:760px){.ghero{height:auto;min-height:0;padding-top:0}.ghero img{position:relative;height:62svh;min-height:380px;object-position:62% 50%}.ghero::after{inset:0 0 auto 0;height:62svh;min-height:380px;background:linear-gradient(180deg,rgba(28,20,14,.45),rgba(28,20,14,0) 22%,rgba(28,20,14,0) 70%,var(--espresso))}.ghero .in{position:relative;left:auto;bottom:auto;padding:6px var(--gut) 52px}}
 </style>
 </head>
 <body data-page="presentes">
 <section class="ghero">
-<img alt="Caixa ORA aberta, com o slogan na tampa interna" src="assets/img/caixa-slogan.jpg"/>
+<img alt="Sacola kraft e caixa ORA com café e caneca" src="assets/img/kit-aberto.jpg" style="object-position:70% 55%"/>
 <div class="in">
 <p class="eyebrow ln-l" data-fade="" style="margin-bottom:24px">Para presentear</p>
-<h1 class="display xl" data-lines=""><span class="ln"><span>Presentes</span></span></h1>
+<h1 class="display xxl" data-lines=""><span class="ln"><span>Presentes</span></span></h1>
 <p data-delay="1" data-fade="">Café especial e peças para o dia a dia, na caixa ORA, com sacola kraft e um cartão para a sua mensagem.</p>
 </div>
 </section>
@@ -212,36 +218,28 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)"><h2 class="display lg" data-lines=""><span class="ln"><span>Escolha o kit</span></span></h2><p data-fade="" style="margin:0;opacity:.72;max-width:24em">Todos levam um pacote de 500 g, Natural ou Cereja Descascado, à sua escolha.</p></div>
 <div class="kgrid" data-grid=""></div>
 </section>
-<section class="sec wrap t-cream gift-contents">
+<section class="sec wrap t-roast gift-contents">
 <h2 class="display md" data-fade="" style="margin-bottom:clamp(30px,3vw,48px)">O que vem na caixa</h2>
 <div class="box4">
-<figure data-fade=""><div class="media"><img alt="Sacola kraft ORA" src="assets/img/sacola.jpg"/></div><figcaption><b>Sacola kraft</b><span>Para entregar em mãos.</span></figcaption></figure>
-<figure data-delay="1" data-fade=""><div class="media"><img alt="Caixa ORA" src="assets/img/p-caixa.jpg"/></div><figcaption><b>Caixa ORA</b><span>Com o slogan na tampa interna.</span></figcaption></figure>
-<figure data-delay="2" data-fade=""><div class="media"><img alt="Café e caneca dentro da caixa" src="assets/img/p-cafe-caneca.jpg"/></div><figcaption><b>Café e peças</b><span>Conforme o kit escolhido.</span></figcaption></figure>
-<figure data-delay="3" data-fade=""><div class="media"><img alt="Cartão ORA" src="assets/img/cartao-frente.jpg"/></div><figcaption><b>Cartão</b><span>Para a sua mensagem.</span></figcaption></figure>
+<figure data-fade=""><div class="media"><img alt="Sacola kraft ORA" src="assets/img/sacola.jpg"/></div><figcaption><b>Sacola kraft</b><span>Com a caixa ORA dentro, para entregar em mãos.</span></figcaption></figure>
+<figure data-delay="1" data-fade=""><div class="media" style="background:radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)"><img alt="Pacote de café ORA de 500 g" src="assets/img/pacote-natural.webp" style="object-fit:contain;padding:12% 0 10%"/></div><figcaption><b>Café 500 g</b><span>Natural ou Cereja Descascado, à sua escolha.</span></figcaption></figure>
+<figure data-delay="2" data-fade=""><div class="media"><img alt="Caixa ORA aberta, com papel de seda" src="assets/img/p-caixa.jpg"/></div><figcaption><b>Caixa ORA</b><span>Com papel de seda e a frase da marca na tampa.</span></figcaption></figure>
+<figure data-delay="3" data-fade=""><div class="media"><img alt="Cartão ORA" src="assets/img/cartao-frente.jpg"/></div><figcaption><b>Cartão</b><span>ORA na frente; no verso, a sua mensagem.</span></figcaption></figure>
 </div>
 </section>
-<section class="sec wrap t-espresso corp" id="corporativo">
-<div class="cl"><p class="eyebrow ln-l" data-fade="">Para empresas</p><h2 class="display lg" data-lines="" style="margin-top:22px"><span class="ln"><span>Presentes</span></span><span class="ln"><span><em class="it">corporativos.</em></span></span></h2></div>
-<div class="cr">
-<p class="body" data-fade="">Kits ORA para clientes, equipes e datas da empresa. Cada caixa vai com um cartão com a mensagem da empresa.</p>
-<ul data-fade=""><li><b>Quantidade</b><span>Pedidos de vários kits de uma vez.</span></li><li><b>Mensagem</b><span>Um cartão por kit, com o texto da empresa.</span></li><li><b>Entrega</b><span>Em um endereço ou em vários.</span></li></ul>
-<a class="btn light" data-fade="" href="https://www.instagram.com/oracafeespecial" rel="noopener" target="_blank">Falar com a ORA <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
-</div>
-</section>
-<section class="sec wrap t-roast" id="cartao" style="padding-block:clamp(80px,9vw,130px)">
+<section class="sec wrap t-roast" id="cartao" style="padding-block:clamp(36px,4vw,60px) clamp(80px,9vw,130px)">
 <div class="msg">
 <div class="l fld">
 <h2 class="display md" data-fade="">Cartão de mensagem</h2>
 <p class="body" data-fade="" style="opacity:.8;margin-top:14px">Escreva aqui e veja como fica. O texto vai junto com o kit.</p>
 <label for="mTo">Para</label><input id="mTo" maxlength="40" placeholder="Nome de quem recebe"/>
-<label for="mTx">Mensagem</label><textarea id="mTx" maxlength="140" rows="3" placeholder="Escreva a sua mensagem"></textarea>
+<label for="mTx">Mensagem</label><textarea id="mTx" maxlength="140" rows="3" placeholder="Escreva a sua mensagem"></textarea><small data-cnt style="display:block;text-align:right;font-size:12px;opacity:.6;margin-top:6px">0/140</small>
 <label for="mFr">De</label><input id="mFr" maxlength="40" placeholder="Seu nome"/>
 <div class="two2"><div><label for="mKit">Kit</label><select id="mKit"></select></div><div><label for="mCf">Café</label><select id="mCf"><option value="natural">Natural</option><option value="cereja">Cereja Descascado</option></select></div></div>
 <div style="margin-top:30px"><button class="btn light" data-msg-add="">Adicionar com este cartão</button></div>
 </div>
 <div class="r" data-fade="">
-<div aria-live="polite" class="card-pv">
+<p style="margin:0 0 12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.65">Verso do cartão</p><div aria-live="polite" class="card-pv" data-pv="">
 <div class="top" data-pv-logo=""></div>
 <p class="txt" data-pv-tx=""></p>
 <div class="sig"><span data-pv-fr=""></span><small>todo momento tem sua ORA</small></div>
@@ -249,9 +247,16 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 </div>
 </div>
 </section>
+<section class="sec wrap t-butter corp" id="corporativo">
+<div class="cl"><p class="eyebrow ln-l" data-fade="">Para empresas</p><h2 class="display lg" data-lines="" style="margin-top:22px"><span class="ln"><span>Presentes</span></span><span class="ln"><span><em class="it">corporativos.</em></span></span></h2><p class="body" data-fade="" style="margin-top:30px">Kits ORA para clientes, equipes e datas da empresa. Cada caixa vai com um cartão com a mensagem da empresa.</p></div>
+<div class="cr">
+<ul data-fade=""><li><b>Quantidade</b><span>Pedidos de vários kits de uma vez.</span></li><li><b>Mensagem</b><span>Um cartão por kit, com o texto da empresa.</span></li><li><b>Entrega</b><span>Combinada com a ORA, pedido a pedido.</span></li></ul>
+<a class="btn solid" data-fade="" href="https://www.instagram.com/oracafeespecial" rel="noopener" target="_blank">Falar com a ORA <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+</div>
+</section>
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=15"></script>
-<script src="js/catalogo.js?v=15"></script>
+<script src="js/logo.js?v=30"></script>
+<script src="js/catalogo.js?v=30"></script>
 <script>
 (() => {
   const $ = s => document.querySelector(s), K = ORA_CATALOGO.produtos.filter(p => p.tipoLoja === 'kit');
@@ -260,15 +265,16 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
   $('[data-pv-logo]').innerHTML = oraLogo();
   const upd = () => {
     const to = $('#mTo').value.trim(), tx = $('#mTx').value;
-    const vazio = !to && !tx.trim() && !$('#mFr').value.trim();
+    const vazio = !to && !tx.trim() && !$('#mFr').value.trim(), semTx = !tx.trim();
     $('[data-pv-tx]').textContent = vazio ? 'Helena,\nPara as suas pausas de domingo. Com carinho.' : (to ? to + ',\n' : '') + (tx || 'Sua mensagem aparece aqui.');
     $('[data-pv-fr]').textContent = vazio ? 'Marina' : $('#mFr').value.trim();
-    $('[data-pv]')?.classList.toggle('ex', vazio);
+    $('[data-pv]')?.classList.toggle('ex', vazio); $('[data-msg-add]').firstChild.textContent = semTx ? 'Adicionar sem mensagem ' : 'Adicionar com este cartão ';
   };
   ['#mTo', '#mTx', '#mFr'].forEach(s => $(s).addEventListener('input', upd)); upd();
   $('[data-msg-add]').addEventListener('click', () => ORA.add($('#mKit').value, { v: $('#mCf').value, msg: $('#mTx').value.trim() ? ($('#mTo').value.trim() ? $('#mTo').value.trim() + ', ' : '') + $('#mTx').value.trim() + ($('#mFr').value.trim() ? ' · ' + $('#mFr').value.trim() : '') : '' }));
+  const cnt = $('[data-cnt]'); $('#mTx').addEventListener('input', () => { cnt.textContent = $('#mTx').value.length + '/140'; });
 })();
 </script>
-<script src="js/site.js?v=15"></script>
+<script src="js/site.js?v=30"></script>
 </body>
 </html>
