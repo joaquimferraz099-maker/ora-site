@@ -352,15 +352,8 @@ body[data-page=produto]:has(.sbar.on) .ftr{padding-bottom:110px}
 
 @media (max-width:380px){.card-pv .sig{flex-direction:column;align-items:flex-start;gap:6px}}
 
-/* acabamento: textura, cursor, transição, faixa corrida */
-.cur{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid rgba(241,225,179,.9);border-radius:50%;mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,opacity .3s;opacity:0;display:grid;place-items:center}
-.cur span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#111;opacity:0;transition:opacity .25s}
-.cur.on{opacity:1}
-.cur.link{width:58px;height:58px;margin:-29px 0 0 -29px;background:rgba(241,225,179,.95)}
-.cur.ver{width:84px;height:84px;margin:-42px 0 0 -42px;background:rgba(241,225,179,.95);mix-blend-mode:normal}.cur.ver span{opacity:1}
-@media (pointer:coarse),(prefers-reduced-motion:reduce){.cur{display:none}}
-@media (pointer:fine){html.has-cur :is(.fcard,.kc,.cafe .pk),html.has-cur :is(.fcard,.kc,.cafe .pk) *{cursor:none}}
-.mq{overflow:hidden;padding:clamp(22px,2.6vw,38px) 0;border-block:1px solid rgba(241,225,179,.14);white-space:nowrap}
+/* acabamento */
+@media (pointer:coarse),(prefers-reduced-motion:reduce){.mq{overflow:hidden;padding:clamp(22px,2.6vw,38px) 0;border-block:1px solid rgba(241,225,179,.14);white-space:nowrap}
 .mq-t{display:inline-flex;gap:clamp(28px,3vw,52px);animation:mq 42s linear infinite;padding-left:clamp(28px,3vw,52px)}
 .mq-t span{font-family:var(--serif);font-size:clamp(30px,3.6vw,58px);line-height:1;letter-spacing:-.01em}
 .mq-t span:nth-child(even){font-style:italic;opacity:.55}
@@ -371,4 +364,3 @@ body[data-page=produto]:has(.sbar.on) .ftr{padding-bottom:110px}
 .t-roast ::selection,.t-espresso ::selection{background:var(--butter);color:var(--roast)}
 a.link{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .5s var(--ease)}
 a.link:hover{background-size:100% 1px}
-.btn{will-change:transform}

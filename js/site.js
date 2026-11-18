@@ -215,28 +215,3 @@ document.addEventListener('click', e => {
   const c = b.closest('.fcard'), on = c.dataset.aberto !== 'true';
   c.dataset.aberto = on; b.setAttribute('aria-expanded', on);
 });
-
-/* acabamento: cursor */
-(() => {
-  if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  document.documentElement.classList.add('has-cur'); const c = document.createElement('div'); c.className = 'cur'; c.innerHTML = '<span>Ver</span>'; document.body.appendChild(c);
-  let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
-  addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; c.classList.add('on'); }, { passive: true });
-  document.addEventListener('mouseleave', () => c.classList.remove('on'));
-  document.addEventListener('mouseover', e => {
-    const t = e.target;
-    c.classList.toggle('ver', !!t.closest('.fcard,.kc,.cafe .pk'));
-    c.classList.toggle('link', !c.classList.contains('ver') && !!t.closest('a,button,select,input,textarea,label,summary'));
-  });
-  const loop = () => { cx += (x - cx) * .2; cy += (y - cy) * .2; c.style.transform = `translate3d(${cx}px,${cy}px,0)`; requestAnimationFrame(loop); }; loop();
-})();
-/* botões com leve atração ao cursor */
-(() => {
-  if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-  document.addEventListener('mousemove', e => {
-    const b = e.target.closest('.btn'); document.querySelectorAll('.btn[data-mag]').forEach(x => { if (x !== b) { x.style.transform = ''; x.removeAttribute('data-mag'); } });
-    if (!b || b.closest('.sbar,.bag')) return;
-    const r = b.getBoundingClientRect(), dx = (e.clientX - r.left - r.width / 2) / r.width, dy = (e.clientY - r.top - r.height / 2) / r.height;
-    b.setAttribute('data-mag', ''); b.style.transform = `translate(${dx * 8}px,${dy * 6}px)`;
-  }, { passive: true });
-})();

@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=37">
+<link rel="stylesheet" href="css/ora.css?v=38">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -165,6 +165,7 @@
 .cup .row b:last-child{opacity:1}
 @media (max-width:700px){.cup .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}.cup .row b{font-size:19px}}
 .kgrid.k2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
 </style>
 <style>
 
@@ -310,6 +311,7 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 @media (max-width:380px){.sbar .th{display:none}}
 .opt .lb span:only-child{opacity:1!important;letter-spacing:.22em;text-transform:uppercase;font-weight:700;font-size:11px}
 @media (max-width:420px){.trust{grid-template-columns:1fr;gap:14px}.trust b{font-size:17px;margin:0 0 2px}}
+.gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
 </style>
 </head>
 <body data-page="produto" data-hdr="light">
@@ -327,8 +329,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=37"></script>
-<script src="js/catalogo.js?v=37"></script>
+<script src="js/logo.js?v=38"></script>
+<script src="js/catalogo.js?v=38"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
@@ -345,7 +347,7 @@ window.ORA_PAGE = () => {
     const el = isV ? `<video src="${src}" poster="${src.replace('.mp4', '.jpg')}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${cap || p.nome}">`;
     return `<div class="media ${cls}">${el}${cap ? `<span class="cap">${cap}</span>` : ''}</div>`;
   };
-  const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.processo}</small></span></button>`;
+  const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.id === 'natural' ? 'Mais doce e encorpado' : 'Mais limpo e cítrico'}</small></span></button>`;
 
   function render() {
     const isCafe = p.tipoLoja === 'cafe';
@@ -376,7 +378,7 @@ window.ORA_PAGE = () => {
       <div class="opt"><div class="lb"><span>Tamanho</span><span>Moído para coado</span></div>
         <div class="sw">
           <button type="button" data-tam="250" aria-pressed="${st.t === '250'}"><span><b>250 g · ${brl(p.p250)}</b><small>Embalagem kraft, para conhecer</small></span></button>
-          <button type="button" data-tam="500" aria-pressed="${st.t === '500'}"><span><b>500 g · ${brl(p.preco)}</b><small>O dobro do café por -25% no preço</small></span></button>
+          <button type="button" data-tam="500" aria-pressed="${st.t === '500'}"><span><b>500 g · ${brl(p.preco)}</b><small>O grama sai 25% mais barato</small></span></button>
         </div></div>` : ''}
       ${isCafe && !p.p250 ? `
       <div class="opt"><div class="lb"><span>Formato</span></div><div class="sw"><span class="fix"><span><b>Moído para coado · ${st.t} g</b><small>Para coador de papel ou de pano</small></span></span></div></div>
@@ -450,10 +452,10 @@ window.ORA_PAGE = () => {
             <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
         </div>
       </section>` : ''}
-      <section class="sec wrap ${isCafe ? 't-roast' : 't-butter'} more">
-        <div class="hd"><h2 class="display md" data-fade>${isCafe ? 'Para presentear' : 'Outros presentes'}</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
+      ${isCafe ? `<section class="sec wrap t-roast more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com um cartão escrito por você. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-butter more">
+        <div class="hd"><h2 class="display md" data-fade>Outros presentes</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
         <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
-      </section>`;
+      </section>`}`;
 
     /* barra fixa */
     $('[data-sbar]').innerHTML = `<div class="th ${isCafe ? (c.cor === 'mocha' ? 'mocha' : '') : 'ph'}"><img src="${isCafe ? c.img : p.thumb}" alt=""></div>
@@ -488,6 +490,6 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=37"></script>
+<script src="js/site.js?v=38"></script>
 </body>
 </html>

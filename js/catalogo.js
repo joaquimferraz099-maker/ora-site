@@ -3,7 +3,7 @@
 window.ORA_CATALOGO = {
   cafes: [
     {
-      id: 'natural', nome: 'Natural', nomeCompleto: 'Café Natural', sub: 'Variedade Bourbon', lede: 'Um café de presença, para quem gosta de sentir o corpo de cada xícara.', copo: 'Secar dentro da fruta dá ao grão mais corpo e deixa no fim do gole o doce de chocolate e caramelo.',
+      id: 'natural', nome: 'Natural', nomeCompleto: 'Café Natural', sub: 'Variedade Bourbon', lede: 'Doce e encorpado, com um final que permanece.', copo: 'Secar dentro da fruta dá ao grão mais corpo e deixa no fim do gole o doce de chocolate e caramelo.',
       processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00',
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
       frase: 'Chocolate e caramelo, doce, com acidez equilibrada, corpo aveludado e final persistente.',
@@ -11,7 +11,7 @@ window.ORA_CATALOGO = {
       img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.jpg', cor: 'espresso'
     },
     {
-      id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Variedades Catucaí, Mundo Novo e Catuaí', lede: 'Um café de camadas, que revela algo novo a cada gole.', copo: 'Sem a casca, o grão seca mais limpo: a acidez cítrica aparece delicada, e o caramelo vem logo atrás.',
+      id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Variedades Catucaí, Mundo Novo e Catuaí', lede: 'Limpo e vivo, com acidez cítrica delicada e um final longo.', copo: 'Sem a casca, o grão seca mais limpo: a acidez cítrica aparece delicada, e o caramelo vem logo atrás.',
       processo: 'Cereja Descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00',
       notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
       frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',

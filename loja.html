@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=37">
+<link rel="stylesheet" href="css/ora.css?v=38">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -102,6 +102,7 @@
 .t-roast .cmp td:first-child,.t-roast .cmp th:first-child{opacity:.6}
 @media (max-width:960px){.lhero .in > div,.lhero .in > p{grid-column:1/-1}.prep .pv,.prep .pt{grid-column:1/-1}.prep .pv{aspect-ratio:4/3}.prep .pt{margin-top:40px}}
 @media (max-width:600px){.lhero .jump{gap:22px;font-size:10px;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent);padding-right:48px}.prep .n3 div{grid-template-columns:1fr;gap:8px}}
+.gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
 </style>
 </head>
 <body data-page="loja">
@@ -145,13 +146,12 @@
 </section>
 
 <section class="sec wrap t-butter" id="kits">
-  <div class="ghd"><h2 class="display lg" data-fade>Para <em class="it">presentear</em></h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
-  <div class="kgrid" data-kits></div>
+  <div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com um cartão escrito por você. A partir de R$ 129,00.</p></div><a class="btn solid" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=37"></script>
-<script src="js/catalogo.js?v=37"></script>
+<script src="js/logo.js?v=38"></script>
+<script src="js/catalogo.js?v=38"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -167,7 +167,7 @@
         <h2 data-fade><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
         <span class="sub" data-fade>${c.sub}</span>
         <div data-fade><div class="tam">${p.p250 ? `<button type="button" data-t="250" aria-pressed="false">250 g</button><button type="button" data-t="500" aria-pressed="true">500 g</button>` : `<span class="tam-tx">500 g · moído para coado</span>`}</div>
-        <p class="claim">${p.p250 ? '500 g: o dobro do café por -25% no preço.' : ''}</p></div>
+        <p class="claim">${p.p250 ? 'No pacote de 500 g, o grama sai 25% mais barato.' : ''}</p></div>
         <div class="buy" data-fade><span class="num" data-pr>${brl(p.preco)}</span><button class="btn solid" data-add>Adicionar</button><a class="link" href="produto.html?p=${p.handle}">Conheça este café</a></div>
       </div>
     </article>`;
@@ -209,9 +209,8 @@
   const [n, c] = C.cafes;
   $('[data-cmp]').innerHTML = [['Variedade', 'variedade'], ['Notas', x => (x.notas.join(', ').charAt(0) + x.notas.join(', ').slice(1).toLowerCase())], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
-  $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=37"></script>
+<script src="js/site.js?v=38"></script>
 </body>
 </html>

@@ -15,11 +15,11 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=37">
+<link rel="stylesheet" href="css/ora.css?v=38">
 <style>
 .hhero{position:relative;height:100svh;min-height:620px;color:var(--butter);overflow:hidden;background:var(--roast)}
 .hhero .bg{position:absolute;inset:-8% 0}
-@media (min-width:761px){.hhero .bg{right:-52%;top:-14%}.hhero video{object-position:50% 50%}}
+@media (min-width:761px){.hhero .bg{right:0;top:-6%}.hhero video{object-position:50% 50%}}
 .hhero video{width:100%;height:100%;object-fit:cover;object-position:70% 50%}
 .hhero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,22,18,.78) 0%,rgba(28,22,18,.5) 40%,rgba(28,22,18,0) 62%),linear-gradient(180deg,rgba(33,29,26,.45),rgba(33,29,26,.12) 38%,rgba(33,29,26,.86))}
 @media (max-width:760px){.hhero::after{background:linear-gradient(180deg,rgba(33,29,26,.4),rgba(33,29,26,.1) 30%,rgba(33,29,26,.75) 58%,rgba(33,29,26,.95))}}
@@ -94,64 +94,25 @@
   .etapas .fcard{aspect-ratio:3/4}
   .minas .t{padding:56px var(--gut)}
 }
-/* iii. a vida de um lote — rolagem horizontal presa */
-.lote{position:relative;height:calc(100svh * 3.3)}
-.lote-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;padding:calc(var(--hdr) + clamp(18px,2.4vw,40px)) 0 clamp(26px,3vw,44px)}
-.lote-hd{display:flex;justify-content:space-between;align-items:end;gap:30px;padding:0 var(--gut);margin-bottom:clamp(22px,2.6vw,40px)}
-.lote-hd h2{margin:0}
-.lote-c{margin:0;font-family:var(--serif);font-size:clamp(22px,2vw,30px);white-space:nowrap}.lote-c b{font-weight:400}.lote-c span{opacity:.45}
-.lote-vp{flex:1;min-height:0;position:relative}
-.lote-tr{display:flex;height:100%;gap:clamp(20px,3vw,56px);padding:0 var(--gut);will-change:transform}
-.lp{flex:none;width:min(84vw,1180px);height:100%;display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,3.4vw,64px);align-items:stretch}
-.lp-m{position:relative;overflow:hidden;border-radius:3px;background:#171310;clip-path:inset(0 0 0 0)}
-.lp-m img,.lp-m video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.6s var(--ease)}
-.lp.on .lp-m img,.lp.on .lp-m video{transform:scale(1)}
-.lp-dup img:first-child{clip-path:polygon(0 0,62% 0,38% 100%,0 100%)}
-.lp-dup img:nth-child(2){clip-path:polygon(62% 0,100% 0,100% 100%,38% 100%)}
-.lp-dup::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 49.6%,rgba(241,225,179,.85) 49.8%,rgba(241,225,179,.85) 50.1%,transparent 50.3%);pointer-events:none}
-.lp-pk{background:radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)}.lp .lp-pk img{object-fit:contain;padding:9% 0 7%}
 .alt{margin:0 0 26px!important;opacity:1!important;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}.alt b{font-family:var(--serif);font-weight:400;font-size:clamp(84px,9vw,150px);line-height:.9;letter-spacing:-.03em;font-variant-numeric:lining-nums}.alt b::after{content:" m";font-size:.38em;letter-spacing:0}.alt span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;opacity:.65}
-@media (max-width:760px){.lp{align-content:start}}
-.lp-tag{position:absolute;bottom:16px;z-index:2;font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;background:rgba(28,20,14,.62);color:var(--butter);padding:6px 11px 5px;border-radius:30px}
-.lp-tag.a{left:16px}.lp-tag.b{right:16px}
-.lp-t{display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(4px,1vw,14px)}
-.lp-n{font-family:var(--serif);font-size:clamp(80px,9vw,150px);line-height:.8;opacity:.16;margin-bottom:auto}
-.lp h3{margin:0 0 clamp(18px,1.8vw,28px);font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,60px);line-height:1.02;letter-spacing:-.015em}
-.lp h3 em{font-style:italic}
-.lp-t p{margin:0;max-width:30em;font-size:16.5px;line-height:1.7;opacity:.84}
-.lp-t .btn{align-self:flex-start;margin-top:30px}
-.lp .lp-t > *{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.lp.on .lp-t > *{opacity:1;transform:none}
-.lp.on .lp-t > :nth-child(2){transition-delay:.08s}.lp.on .lp-t > :nth-child(3){transition-delay:.16s}.lp.on .lp-t > :nth-child(4){transition-delay:.24s}
-.lp .lp-t > .lp-n{opacity:0}.lp.on .lp-t > .lp-n{opacity:.16}
-.lote-bar{margin:clamp(20px,2vw,30px) var(--gut) 0;height:1px;background:rgba(241,225,179,.18);position:relative}
-.lote-bar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--butter);transform-origin:0 50%;transform:scaleX(.25)}
-@media (max-width:760px){
-  .lote{height:auto}
-  .lote-pin{position:relative;height:auto;padding:clamp(70px,16vw,96px) 0 50px}
-  .lote-hd{align-items:flex-start;flex-direction:column;gap:16px}
-  .lote-vp{flex:none}
-  .lote-tr{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;transform:none!important;gap:14px;padding-bottom:4px}
-  .lote-tr::-webkit-scrollbar{display:none}
-  .lp{width:84vw;height:auto;grid-template-columns:1fr;gap:22px;scroll-snap-align:start;scroll-margin-left:var(--gut)}
-  .lp-m{aspect-ratio:4/4.4}
-  .lp-n{font-size:64px;margin:0 0 14px}
-  .lp h3{font-size:34px}
-  .lp-t p{font-size:15.5px}
-}
-@media (prefers-reduced-motion:reduce){.lp .lp-t > *{opacity:1;transform:none}.lp-m img,.lp-m video{transform:none}}
+.esc-in{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
+.esc-in .chap{grid-column:1/-1}
+.esc-in h2{grid-column:1/8;margin:0}
+.esc-tx{grid-column:8/13}
+.esc-tx .lede{margin:0 0 20px}.esc-tx .body{margin:0;opacity:.8}
+@media (max-width:900px){.esc-in h2,.esc-tx{grid-column:1/-1}.esc-tx{margin-top:34px}}
 </style>
 </head>
 <body data-page="historia">
 
 <section class="hhero">
-  <div class="bg" data-par=".6"><video src="assets/video/mesa.mp4" poster="assets/video/mesa.jpg" autoplay muted loop playsinline></video></div>
+  <div class="bg" data-par=".6"><img src="assets/img/px-serra-sol.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 60%"></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Nossa origem</p>
       <h1 class="display xxl" data-lines><span class="ln"><span>Uma história</span></span><span class="ln"><span>sem <em class="it">pressa.</em></span></span></h1>
     </div>
-    <p data-fade data-delay="2">Sobre o tempo que um bom café pede e sobre quem decidiu esperar por ele.</p>
+    <p data-fade data-delay="2">Quem está por trás da ORA, de onde vêm os grãos e por que são só dois cafés.</p>
   </div>
 </section>
 
@@ -164,8 +125,7 @@
       <p class="lede" data-fade>Sou Cecília Rabelo, fundadora da ORA Café.</p>
       <p class="body" data-fade>Minha trajetória no automobilismo me ensinou que grandes experiências são construídas nos detalhes. A dedicação, a escolha e o cuidado em cada etapa fazem toda a diferença no resultado final.</p>
       <p class="body" data-fade>Foi com esse olhar que nasceu a ORA: de uma vontade antiga de criar algo próprio e de compartilhar uma paixão por bons momentos.</p>
-      <p class="body" data-fade>A ORA nasceu com o propósito de aproximar as pessoas de cafés especiais, cuidadosamente selecionados em fazendas de Minas Gerais e escolhidos a partir de uma curadoria que valoriza a origem, a qualidade e a experiência em cada xícara.</p>
-      <p class="body" data-fade>Mais do que oferecer café, queremos valorizar pequenos momentos do dia, transformando uma pausa simples em algo especial.</p>
+      <p class="body" data-fade>Os cafés da ORA vêm de fazendas de Minas Gerais e são escolhidos um a um, pela origem e pelo que entregam na xícara.</p>
       <p class="sig" data-fade><em class="it">Porque todo momento tem sua ORA.</em></p>
     </div>
   </div>
@@ -175,39 +135,20 @@
   <div class="m"><img src="assets/img/px-serra.jpg" alt="Cafezal em encosta de serra ao entardecer" data-par=".3" loading="lazy"></div>
   <div class="t">
     <span class="chap" data-fade>ii.</span>
-    <h2 class="display lg" data-lines><span class="ln"><span>Minas, acima</span></span><span class="ln"><span>das <em class="it">nuvens.</em></span></span></h2>
-    <p class="alt" data-fade><b data-count="1500">1.500</b><span>metros acima do mar</span></p>
-    <p data-fade>É lá em cima que estão as fazendas parceiras da ORA, escolhidas uma a uma, onde o café é cuidado por famílias que conhecem cada pé pelo nome do talhão.</p>
+    <h2 class="display lg" data-lines><span class="ln"><span>Café de</span></span><span class="ln"><span><em class="it">altitude.</em></span></span></h2>
+    <p class="alt" data-fade><b>1.500</b><span>metros acima do mar</span></p>
+    <p data-fade>É nessa altura que ficam as fazendas parceiras da ORA, em Minas Gerais. Com o clima mais frio, o fruto amadurece devagar, e o café ganha doçura e uma acidez mais definida.</p>
   </div>
 </section>
 
-<section class="lote t-roast" data-lote>
-  <div class="lote-pin">
-    <header class="lote-hd">
-      <div><span class="chap">iii.</span><h2 class="display lg" data-lines><span class="ln"><span>Como nasceu</span></span><span class="ln"><span>a <em class="it">ORA.</em></span></span></h2></div>
-      <p class="lote-c"><b data-lote-n>01</b> <span>/ 04</span></p>
-    </header>
-    <div class="lote-vp">
-      <div class="lote-tr" data-lote-tr>
-        <article class="lp">
-          <div class="lp-m"><img src="assets/img/px-pista.jpg" alt="Carro de corrida antigo, verde, nos boxes" loading="lazy" style="object-position:55% 50%"></div>
-          <div class="lp-t"><h3>Uma pausa<br><em>entre corridas.</em></h3><p>Nos boxes, entre um treino e outro, era sempre o café que marcava a pausa. Foi ali, longe da pressa da pista, que a ideia de uma marca própria começou a tomar forma.</p></div>
-        </article>
-        <article class="lp">
-          <div class="lp-m"><img src="assets/img/px-serra-sol.jpg" alt="Cafezal nas montanhas, ao entardecer" loading="lazy"></div>
-          <div class="lp-t"><h3>Fazenda<br><em>por fazenda.</em></h3><p>A busca levou a ORA às montanhas de Minas Gerais. Foram visitas, conversas com produtores e muitas xícaras provadas na varanda das fazendas, até encontrar quem cuidasse do café como ela queria cuidar.</p></div>
-        </article>
-        <article class="lp">
-          <div class="lp-m"><img src="assets/img/px-colheres.jpg" alt="Três colheres com grãos de café torrados sobre um tecido claro" loading="lazy"></div>
-          <div class="lp-t"><h3>Dois cafés.<br><em>Nenhum a mais.</em></h3><p>De dezenas de amostras, ficaram duas. Poderiam ser dez, mas a ORA preferiu ter poucos cafés e conhecer cada um de perto.</p></div>
-        </article>
-        <article class="lp">
-          <div class="lp-m lp-pk"><img src="assets/img/pacote-natural.webp" alt="Pacote preto de café ORA, com rótulo creme" loading="lazy"></div>
-          <div class="lp-t"><h3>E a ORA<br><em>ganhou forma.</em></h3><p>O pacote preto, o rótulo creme, o grão desenhado como um O. Cada detalhe foi pensado como na pista: nada sobra, nada falta. Então o primeiro lote chegou às mãos de quem divide com a ORA o gosto pelas pausas.</p></div>
-        </article>
-      </div>
+<section class="sec wrap t-roast esc">
+  <div class="esc-in">
+    <span class="chap" data-fade>iii.</span>
+    <h2 class="display xl" data-lines><span class="ln"><span>Dois cafés.</span></span><span class="ln"><span><em class="it">Nenhum a mais.</em></span></span></h2>
+    <div class="esc-tx">
+      <p class="lede" data-fade>A busca foi feita fazenda por fazenda, nas montanhas de Minas, com muitas xícaras provadas antes de qualquer escolha.</p>
+      <p class="body" data-fade>Ficaram dois: um Bourbon que seca com a fruta inteira e um café descascado logo depois da colheita. Poucos cafés, para conhecer cada um de perto.</p>
     </div>
-    <div class="lote-bar"><i data-lote-bar></i></div>
   </div>
 </section>
 
@@ -220,48 +161,16 @@
   </div>
   <div class="p">
     <div class="media" data-open><img src="assets/img/px-maos-graos.jpg" alt="Mãos segurando cerejas de café secas" loading="lazy"></div>
-    <div class="media" data-open><img src="assets/img/px-xicara-coado.jpg" alt="Xícara de café coado sobre uma mesa de madeira, ao sol" loading="lazy" style="object-position:42% 50%"></div>
+    <div class="media" data-open><img src="assets/img/cartao-frente.jpg" alt="Cartão ORA com a frase Todo momento tem sua ORA" loading="lazy"></div>
   </div>
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=37"></script>
-<script src="js/catalogo.js?v=37"></script>
+<script src="js/logo.js?v=38"></script>
+<script src="js/catalogo.js?v=38"></script>
 
-<script src="js/site.js?v=37"></script>
-<script>
-(() => {
-  const sec = document.querySelector('[data-lote]'); if (!sec) return;
-  const tr = sec.querySelector('[data-lote-tr]'), ps = [...tr.children], bar = sec.querySelector('[data-lote-bar]'), num = sec.querySelector('[data-lote-n]');
-  const mq = matchMedia('(max-width:760px)');
-  let cur = -1;
-  const ativa = i => { if (i === cur) return; cur = i; num.textContent = String(i + 1).padStart(2, '0'); ps.forEach((p, k) => { p.classList.toggle('on', k === i); const v = p.querySelector('video'); if (v) k === i ? v.play().catch(() => {}) : v.pause(); }); num.textContent = String(i + 1).padStart(2, '0'); bar.style.transform = `scaleX(${(i + 1) / ps.length})`; };
-  const tick = () => {
-    if (mq.matches) { const i = Math.round(tr.scrollLeft / (ps[0].offsetWidth + 14)); ativa(Math.max(0, Math.min(ps.length - 1, i))); return; }
-    const r = sec.getBoundingClientRect(), total = sec.offsetHeight - innerHeight, prog = Math.min(1, Math.max(0, -r.top / total));
-    const g = parseFloat(getComputedStyle(tr).paddingLeft), last = ps[ps.length - 1];
-    const max = Math.max(0, last.offsetLeft + last.offsetWidth - (tr.parentElement.offsetWidth - g));
-    const stops = ps.map(p => Math.min(max, p.offsetLeft - g)), n = ps.length - 1;
-    const u = prog * n, i = Math.min(n - 1, Math.floor(u)), f = u - i;
-    const e = f < .3 ? 0 : f > .7 ? 1 : (t => t * t * (3 - 2 * t))((f - .3) / .4);
-    tr.style.transform = `translate3d(${-(stops[i] + (stops[i + 1] - stops[i]) * e)}px,0,0)`;
-    bar.style.transform = `scaleX(${(i + e + 1) / ps.length})`;
-    const k = e === 0 ? i : e === 1 ? i + 1 : -1;
-    if (k >= 0 && k !== cur) { const bt = bar.style.transform; ativa(k); bar.style.transform = bt; }
-    else if (k < 0 && cur >= 0) { ps.forEach(p => p.classList.remove('on')); cur = -2; }
-    if (r.top > innerHeight || r.bottom < 0) ps.forEach(p => { const v = p.querySelector('video'); v && v.pause(); }), cur = -1;
-  };
-  addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); tr.addEventListener('scroll', tick, { passive: true });
-  if (window.__lenis) window.__lenis.on('scroll', tick);
-  tick(); if (cur < 0) ativa(0);
-})();
-(() => {
-  const el = document.querySelector('[data-count]'); if (!el) return; const to = +el.dataset.count; el.textContent = '0';
-  const io = new IntersectionObserver(es => { if (!es[0].isIntersecting) return; io.disconnect(); const t0 = performance.now();
-    const f = t => { const k = Math.min(1, (t - t0) / 1800), v = Math.round(to * (1 - Math.pow(1 - k, 3))); el.textContent = v.toLocaleString('pt-BR'); if (k < 1) requestAnimationFrame(f); }; requestAnimationFrame(f); }, { threshold: .6 });
-  io.observe(el);
-})();
-</script>
+<script src="js/site.js?v=38"></script>
+
 
 </body>
 </html>
