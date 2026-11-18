@@ -241,6 +241,26 @@
   }
 
   window.ORA_PAGE && window.ORA_PAGE();
+  /* emendas: a cor de uma seção se dissolve na seguinte, em vez de um corte seco */
+  const seams = () => {
+    const blocos = $$('body > header:not(.hdr), body > section, body > main > section, body > main > header, body > main > div > section, .ftr').filter(el => el.offsetHeight > 0);
+    blocos.sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+    const cor = el => { const c = getComputedStyle(el).backgroundColor; return c && c !== 'rgba(0, 0, 0, 0)' && c !== 'transparent' ? c : null; };
+    /* foto ou vídeo largo encostado na borda de cima (lado 't') ou de baixo (lado 'b') da seção */
+    /* devolve o bloco de foto/vídeo largo encostado na borda; fundo absoluto (abertura) conta como a própria seção */
+    const fotoNaBorda = (el, lado) => { const r = el.getBoundingClientRect(); const c = [...el.children].find(c => { if (c.matches('.seam-b, .seam-t') || !c.matches('img, video, picture, .bg') && !c.querySelector('img, video')) return false; const q = c.getBoundingClientRect(); return q.width > r.width * 0.45 && q.height > 120 && (lado === 't' ? q.top - r.top < 6 : r.bottom - q.bottom < 6); }); if (!c) return null; return getComputedStyle(c).position === 'absolute' || c.matches('img, picture, video') ? el : c; };
+    const emenda = (onde, cls, fundo) => { if (onde.querySelector(':scope > .' + cls)) return; if (getComputedStyle(onde).position === 'static') onde.style.position = 'relative'; const d = document.createElement('div'); d.className = cls; d.setAttribute('aria-hidden', 'true'); d.style.background = fundo; onde.appendChild(d); };
+    for (let i = 1; i < blocos.length; i++) {
+      const a = blocos[i - 1], b = blocos[i], ca = cor(a), cb = cor(b);
+      if (b.dataset.seam || Math.abs(a.getBoundingClientRect().bottom - b.getBoundingClientRect().top) > 2) continue;
+      b.dataset.seam = '1';
+      const fa = fotoNaBorda(a, 'b'), fb = fotoNaBorda(b, 't');
+      if (fa && cb) emenda(fa, 'seam-b', 'linear-gradient(180deg, transparent, ' + cb + ')');
+      if (fb && ca) emenda(fb, 'seam-t', 'linear-gradient(180deg, ' + ca + ', transparent)');
+      if (!fa && !fb && ca && cb && ca !== cb) b.style.backgroundImage = 'linear-gradient(180deg, ' + ca + ' 0, ' + cb + ' clamp(120px, 16vw, 240px))';
+    }
+  };
+  seams(); addEventListener('load', seams);
   runReveals();
 })();
 

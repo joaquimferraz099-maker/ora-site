@@ -390,3 +390,16 @@ body{background:var(--roast)}
 .t-roast .btn.solid::before,.t-espresso .btn.solid::before,.sbar .btn.solid::before{background:var(--cream)}
 .t-roast .btn.solid:hover,.t-espresso .btn.solid:hover,.sbar .btn.solid:hover{color:var(--roast)}
 .ftr{border-top:1px solid rgba(241,225,179,.1)}
+
+/* v5: passagens suaves */
+.seam-b{position:absolute;left:0;right:0;bottom:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
+@view-transition{navigation:auto}
+.hdr{view-transition-name:ora-hdr}
+.ann{view-transition-name:ora-ann}
+::view-transition-old(root){animation:oraSai .35s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:oraEntra .7s cubic-bezier(.16,1,.3,1) both}
+@keyframes oraSai{to{opacity:0}}
+@keyframes oraEntra{from{opacity:0;transform:translateY(14px)}}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+:is(section,header):has(> .seam-b,> .seam-t){position:relative}
+.seam-t{position:absolute;left:0;right:0;top:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
