@@ -16,7 +16,7 @@
 <link href="assets/brand/monograma.svg" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/ora.css?v=31" rel="stylesheet"/>
+<link href="css/ora.css?v=37" rel="stylesheet"/>
 <style>
 .ghero{position:relative;height:74svh;min-height:520px;overflow:hidden;background:var(--espresso);color:var(--butter)}
 .ghero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -54,6 +54,8 @@
   .msg .l,.msg .r{grid-column:1/-1}
   .msg .r{margin-top:20px}
 }
+.box3{grid-template-columns:repeat(3,1fr)!important}.box4 .bn{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;font-weight:700;opacity:.5;margin-bottom:10px}
+@media (max-width:760px){.box3{grid-template-columns:1fr!important}}
 </style>
 <style>
 
@@ -211,20 +213,19 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="in">
 <p class="eyebrow ln-l" data-fade="" style="margin-bottom:24px">Para presentear</p>
 <h1 class="display xxl" data-lines=""><span class="ln"><span>Presentes</span></span></h1>
-<p data-delay="1" data-fade="">Café especial e peças para o dia a dia, na caixa ORA, com sacola kraft e um cartão para a sua mensagem.</p>
+<p data-delay="1" data-fade="">Para um aniversário, um agradecimento ou um bom-dia diferente: um presente para abrir com calma e dividir em boa companhia.</p>
 </div>
 </section>
 <section class="sec wrap t-butter" style="padding-block:clamp(70px,8vw,120px)">
-<div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)"><h2 class="display lg" data-lines=""><span class="ln"><span>Escolha o kit</span></span></h2><p data-fade="" style="margin:0;opacity:.72;max-width:24em">Todos levam um pacote de 500 g, Natural ou Cereja Descascado, à sua escolha.</p></div>
+<div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,4vw,60px)"><h2 class="display lg" data-lines=""><span class="ln"><span>Escolha o kit</span></span></h2></div>
 <div class="kgrid" data-grid=""></div>
 </section>
 <section class="sec wrap t-roast gift-contents">
-<h2 class="display md" data-fade="" style="margin-bottom:clamp(30px,3vw,48px)">O que vem na caixa</h2>
-<div class="box4">
-<figure data-fade=""><div class="media"><img alt="Sacola kraft ORA" src="assets/img/sacola.jpg"/></div><figcaption><b>Sacola kraft</b><span>Com a caixa ORA dentro, para entregar em mãos.</span></figcaption></figure>
-<figure data-delay="1" data-fade=""><div class="media" style="background:radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)"><img alt="Pacote de café ORA de 500 g" src="assets/img/pacote-natural.webp" style="object-fit:contain;padding:12% 0 10%"/></div><figcaption><b>Café 500 g</b><span>Natural ou Cereja Descascado, à sua escolha.</span></figcaption></figure>
-<figure data-delay="2" data-fade=""><div class="media"><img alt="Caixa ORA aberta, com papel de seda" src="assets/img/p-caixa.jpg"/></div><figcaption><b>Caixa ORA</b><span>Com papel de seda e a frase da marca na tampa.</span></figcaption></figure>
-<figure data-delay="3" data-fade=""><div class="media"><img alt="Cartão ORA" src="assets/img/cartao-frente.jpg"/></div><figcaption><b>Cartão</b><span>ORA na frente; no verso, a sua mensagem.</span></figcaption></figure>
+<h2 class="display md" data-fade="" style="margin-bottom:clamp(30px,3vw,48px)">Do pedido à entrega</h2>
+<div class="box4 box3">
+<figure data-fade=""><div class="media"><img alt="Caixa ORA aberta, com papel de seda" src="assets/img/p-caixa.jpg"/></div><figcaption><b><span class="bn">01</span>Montada à mão</b><span>A caixa é forrada com papel de seda e recebe o café moído na semana do envio.</span></figcaption></figure>
+<figure data-delay="1" data-fade=""><div class="media"><img alt="Cartão ORA" src="assets/img/cartao-frente.jpg"/></div><figcaption><b><span class="bn">02</span>Com as suas palavras</b><span>A mensagem que você escreve vai impressa no verso do cartão, sem preço à vista.</span></figcaption></figure>
+<figure data-delay="2" data-fade=""><div class="media"><img alt="Sacola kraft ORA" src="assets/img/sacola.jpg"/></div><figcaption><b><span class="bn">03</span>Pronta para entregar</b><span>Fechada e dentro da sacola kraft, chega pronta para passar direto às mãos de quem recebe.</span></figcaption></figure>
 </div>
 </section>
 <section class="sec wrap t-roast" id="cartao" style="padding-block:clamp(36px,4vw,60px) clamp(80px,9vw,130px)">
@@ -248,15 +249,15 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 </div>
 </section>
 <section class="sec wrap t-butter corp" id="corporativo">
-<div class="cl"><p class="eyebrow ln-l" data-fade="">Para empresas</p><h2 class="display lg" data-lines="" style="margin-top:22px"><span class="ln"><span>Presentes</span></span><span class="ln"><span><em class="it">corporativos.</em></span></span></h2><p class="body" data-fade="" style="margin-top:30px">Kits ORA para clientes, equipes e datas da empresa. Cada caixa vai com um cartão com a mensagem da empresa.</p></div>
+<div class="cl"><p class="eyebrow ln-l" data-fade="">Para empresas</p><h2 class="display lg" data-lines="" style="margin-top:22px"><span class="ln"><span>Presentes</span></span><span class="ln"><span><em class="it">corporativos.</em></span></span></h2><p class="body" data-fade="" style="margin-top:30px">Kits ORA para clientes, equipes e datas da empresa. </p></div>
 <div class="cr">
 <ul data-fade=""><li><b>Quantidade</b><span>Pedidos de vários kits de uma vez.</span></li><li><b>Mensagem</b><span>Um cartão por kit, com o texto da empresa.</span></li><li><b>Entrega</b><span>Combinada com a ORA, pedido a pedido.</span></li></ul>
 <a class="btn solid" data-fade="" href="https://www.instagram.com/oracafeespecial" rel="noopener" target="_blank">Falar com a ORA <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
 </div>
 </section>
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=31"></script>
-<script src="js/catalogo.js?v=31"></script>
+<script src="js/logo.js?v=37"></script>
+<script src="js/catalogo.js?v=37"></script>
 <script>
 (() => {
   const $ = s => document.querySelector(s), K = ORA_CATALOGO.produtos.filter(p => p.tipoLoja === 'kit');
@@ -275,6 +276,6 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
   const cnt = $('[data-cnt]'); $('#mTx').addEventListener('input', () => { cnt.textContent = $('#mTx').value.length + '/140'; });
 })();
 </script>
-<script src="js/site.js?v=31"></script>
+<script src="js/site.js?v=37"></script>
 </body>
 </html>

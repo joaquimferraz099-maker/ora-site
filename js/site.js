@@ -69,14 +69,13 @@
     <div class="cols">
       <div>
         <p class="display sm" style="max-width:15em">Café especial de Minas Gerais.</p>
-        <p class="ftag">Natural e Cereja Descascado, de fazendas de Minas Gerais, colhidos maduros e torrados em pequenos lotes.</p>
       </div>
       <div><h4>Loja</h4><ul><li><a href="produto.html?p=cafe-natural">Natural</a></li><li><a href="produto.html?p=cafe-cereja">Cereja Descascado</a></li><li><a href="loja.html#drip">Drip Coffee</a></li><li><a href="presentes.html">Presentes</a></li><li><a href="presentes.html#corporativo">Presentes corporativos</a></li></ul></div>
       <div><h4>Atendimento</h4><ul><li><a href="politicas.html#entrega">Entrega e pagamento</a></li><li><a href="politicas.html#trocas">Trocas e devoluções</a></li><li><a href="politicas.html#assinatura">Assinatura e cupons</a></li><li><a href="politicas.html#privacidade">Privacidade</a></li></ul></div>
       <div><h4>Contato</h4><ul><li><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="giant">${oraLogo()}</div>
-    <div class="base"><span>© 2026 ORA Café Especial</span><span>Minas Gerais</span></div>`;
+    <div class="base"><span>© 2026 ORA Café Especial</span></div>`;
   B.append(ftr);
 
   /* sacola */
@@ -216,3 +215,28 @@ document.addEventListener('click', e => {
   const c = b.closest('.fcard'), on = c.dataset.aberto !== 'true';
   c.dataset.aberto = on; b.setAttribute('aria-expanded', on);
 });
+
+/* acabamento: cursor */
+(() => {
+  if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  document.documentElement.classList.add('has-cur'); const c = document.createElement('div'); c.className = 'cur'; c.innerHTML = '<span>Ver</span>'; document.body.appendChild(c);
+  let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y;
+  addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; c.classList.add('on'); }, { passive: true });
+  document.addEventListener('mouseleave', () => c.classList.remove('on'));
+  document.addEventListener('mouseover', e => {
+    const t = e.target;
+    c.classList.toggle('ver', !!t.closest('.fcard,.kc,.cafe .pk'));
+    c.classList.toggle('link', !c.classList.contains('ver') && !!t.closest('a,button,select,input,textarea,label,summary'));
+  });
+  const loop = () => { cx += (x - cx) * .2; cy += (y - cy) * .2; c.style.transform = `translate3d(${cx}px,${cy}px,0)`; requestAnimationFrame(loop); }; loop();
+})();
+/* botões com leve atração ao cursor */
+(() => {
+  if (!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  document.addEventListener('mousemove', e => {
+    const b = e.target.closest('.btn'); document.querySelectorAll('.btn[data-mag]').forEach(x => { if (x !== b) { x.style.transform = ''; x.removeAttribute('data-mag'); } });
+    if (!b || b.closest('.sbar,.bag')) return;
+    const r = b.getBoundingClientRect(), dx = (e.clientX - r.left - r.width / 2) / r.width, dy = (e.clientY - r.top - r.height / 2) / r.height;
+    b.setAttribute('data-mag', ''); b.style.transform = `translate(${dx * 8}px,${dy * 6}px)`;
+  }, { passive: true });
+})();

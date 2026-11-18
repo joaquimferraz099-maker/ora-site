@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=31">
+<link rel="stylesheet" href="css/ora.css?v=37">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -122,7 +122,7 @@
 <section class="sec wrap t-roast">
   <div class="cmp">
     <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display lg" data-fade style="margin-top:20px">Qual <em class="it">escolher?</em></h2>
-      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm caramelo. O Natural tem acidez equilibrada e final persistente; o Cereja Descascado, acidez cítrica delicada e final longo.</p></div>
+      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">O Natural pede a primeira xícara do dia, puro ou com leite. O Cereja Descascado pede uma tarde de conversa, para ser notado gole a gole.</p></div>
     <table data-fade>
       <thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
       <tbody data-cmp></tbody>
@@ -150,8 +150,8 @@
 </section>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=31"></script>
-<script src="js/catalogo.js?v=31"></script>
+<script src="js/logo.js?v=37"></script>
+<script src="js/catalogo.js?v=37"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
@@ -166,8 +166,6 @@
         <p class="eyebrow ln-l" data-fade>Processo ${c.processo.toLowerCase()}</p>
         <h2 data-fade><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
         <span class="sub" data-fade>${c.sub}</span>
-        <p class="fr" data-fade>${c.frase}</p>
-        <div class="chips" data-fade>${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>
         <div data-fade><div class="tam">${p.p250 ? `<button type="button" data-t="250" aria-pressed="false">250 g</button><button type="button" data-t="500" aria-pressed="true">500 g</button>` : `<span class="tam-tx">500 g · moído para coado</span>`}</div>
         <p class="claim">${p.p250 ? '500 g: o dobro do café por -25% no preço.' : ''}</p></div>
         <div class="buy" data-fade><span class="num" data-pr>${brl(p.preco)}</span><button class="btn solid" data-add>Adicionar</button><a class="link" href="produto.html?p=${p.handle}">Conheça este café</a></div>
@@ -214,6 +212,6 @@
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=31"></script>
+<script src="js/site.js?v=37"></script>
 </body>
 </html>
