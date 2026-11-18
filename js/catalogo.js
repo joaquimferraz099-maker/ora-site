@@ -1,5 +1,16 @@
 /* ORA — catálogo. Mesmo formato de produto e variante da Shopify: na migração, só a origem dos dados muda.
    Preços em centavos. */
+/* imagens responsivas: ferramentas/imagens.py gera 400, 800 e até 1600 px e atualiza as medidas abaixo */
+/* @medidas */window.ORA_IMG = {"caixa-slogan":[1280,960],"cartao-frente":[1536,1024],"cel-cerejas-cesto":[1600,2400],"cel-graos-tigelas":[1600,2134],"cel-graos-torrados":[1600,2149],"drip":[1600,2134],"kit-aberto":[1536,1024],"p-cafe-caneca":[1024,1024],"p-caixa":[960,960],"p-kit-completo":[1024,1024],"p-kit-vertical":[820,1024],"pacote-cereja":[900,1522],"pacote-natural":[900,1522],"pacote250-cereja":[900,1522],"px-cerejas":[1600,816],"px-coado":[1600,1066],"px-coado-mesa":[1600,1068],"px-colheita":[1600,1066],"px-colheita-cesto":[1600,1066],"px-graos-torrados":[1600,1066],"px-maos-graos":[1600,1066],"px-natural-seco":[1600,1066],"px-pergaminho":[1600,1066],"px-selecao":[1600,1066],"px-torra":[1600,1067],"px-xicara-coado":[1400,932],"rotulo-cereja":[1001,1572],"rotulo-natural":[814,1280],"sacola":[1024,1280]};/* @fim */
+window.oraImg = (src, sizes) => {
+  sizes = sizes || '(max-width: 760px) 150vw, 55vw';
+  const m = /^assets\/img\/([\w-]+)\.webp$/.exec(src || '');
+  const d = m && window.ORA_IMG[m[1]];
+  if (!d) return `src="${src}"`;
+  const b = 'assets/img/' + m[1];
+  return `src="${src}" srcset="${b}-400.webp 400w, ${b}-800.webp 800w, ${d[0] > 1300 ? b + '-1200.webp 1200w, ' : ''}${src} ${d[0]}w" sizes="${sizes}" width="${d[0]}" height="${d[1]}" decoding="async"`;
+};
+
 window.ORA_CATALOGO = {
   cafes: [
     {
@@ -52,7 +63,7 @@ window.oraKitCard = p => `
   <article class="kc" data-fade>
     <a class="kc-img media" href="produto.html?p=${p.handle}" aria-label="${p.nome}">
       ${p.destaque ? `<span class="kc-tag">${p.destaque}</span>` : ''}
-      <img src="${p.img}" alt="${p.nome}" loading="lazy"><img class="b" src="${p.img2}" alt="" loading="lazy">
+      <img ${oraImg(p.img, '(max-width: 760px) 100vw, 45vw')} alt="${p.nome}" loading="lazy"><img class="b" ${oraImg(p.img2, '(max-width: 760px) 100vw, 45vw')} alt="" loading="lazy">
     </a>
     <div class="kc-b">
       <div><h3><a href="produto.html?p=${p.handle}">${p.nome}</a></h3><p>${p.resumo}</p></div>

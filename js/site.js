@@ -43,10 +43,13 @@
   B.prepend(hdr);
 
   /* barra de anúncio: 5% off na primeira compra com o cupom BEMVINDO */
-  const ann = document.createElement('div');
-  ann.className = 'ann';
-  ann.innerHTML = `<span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span>`;
-  B.prepend(ann);
+  let ann = $('.ann');
+  if (!ann) {
+    ann = document.createElement('div');
+    ann.className = 'ann';
+    ann.innerHTML = `<span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span>`;
+    B.prepend(ann);
+  }
   const annH = () => document.documentElement.style.setProperty('--ann', ann.offsetHeight + 'px');
   requestAnimationFrame(annH); addEventListener('resize', annH);
 
@@ -54,7 +57,7 @@
   mm.className = 'mmenu';
   mm.innerHTML = [['index.html', 'Início'], ['loja.html', 'Nossos cafés'], ['historia.html', 'Nossa origem'], ['presentes.html', 'Presentes']]
     .map(([h, t], i) => `<a class="big" href="${h}"${cur(h)}><span style="transition-delay:${.06 * i + .25}s">${t}</span></a>`).join('') +
-    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img src="assets/img/px-colheita.webp" alt="" loading="lazy"></div>`;
+    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img ${oraImg('assets/img/px-colheita.webp')} alt="" loading="lazy"></div>`;
   B.append(mm);
   $('.burger').addEventListener('click', () => {
     const o = B.classList.toggle('menu-open');
@@ -110,7 +113,7 @@
     }
     items.innerHTML = bag.map((i, k) => {
       const p = oraProd(i.h);
-      return `<div class="item"><div class="th ${p.tile || ''}"><img src="${i.t === '250' && p.cafe && oraCafe(p.cafe).img250 ? oraCafe(p.cafe).img250 : p.thumb}" alt=""></div>
+      return `<div class="item"><div class="th ${p.tile || ''}"><img ${oraImg(i.t === '250' && p.cafe && oraCafe(p.cafe).img250 ? oraCafe(p.cafe).img250 : p.thumb, '80px')} alt=""></div>
         <div><h5>${p.tipoLoja === 'cafe' ? 'Café ' + p.nome : p.nome}</h5><p>${linha(i)}</p>
           <div class="qty"><button aria-label="Diminuir" data-q="${k}" data-d="-1">−</button><span>${i.qty}</span><button aria-label="Aumentar" data-q="${k}" data-d="1">+</button></div>
           <button class="rm" data-rm="${k}">Remover</button></div>
