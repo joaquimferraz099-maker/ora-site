@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ORA · Café especial">
 <meta property="og:description" content="Cafés especiais de fazendas de Minas Gerais, colhidos maduros e torrados em pequenos lotes.">
-<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/originais/video__2-hero-fazenda-poster.jpg">
+<meta property="og:image" content="https://joaquimferraz099-maker.github.io/ora-site/assets/originais/video__hero-coado-poster.jpg">
 
 <meta name="description" content="Cafés especiais de fazendas de Minas Gerais: Natural e Cereja Descascado, e kits para presentear.">
 <meta name="theme-color" content="#4A3025">
@@ -89,9 +89,9 @@ a:hover > .arr,button:hover > .arr{transform:translateX(5px)}
 .link:hover::after{transform:scaleX(0);transform-origin:right}
 .hdr{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--hdr);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 padding-inline:var(--gut);color:var(--butter);transition:color .6s var(--ease-out),transform .8s var(--ease)}
-.hdr::before{content:"";position:absolute;inset:0;background:var(--butter);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease);z-index:-1}
+.hdr::before{content:"";position:absolute;inset:0;background:var(--roast);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease);z-index:-1}
 .hdr::after{content:"";position:absolute;left:var(--gut);right:var(--gut);bottom:0;height:1px;background:currentColor;opacity:0;transition:opacity .6s}
-.hdr.is-solid,.hdr.on-light{color:var(--roast)}
+.hdr.on-light{color:var(--roast)}
 .hdr.is-solid{top:0}
 .hdr.is-solid::before{transform:scaleY(1)}
 .hdr.is-solid::after{opacity:.12}
@@ -337,6 +337,11 @@ a.link:hover{background-size:100% 1px}
 @keyframes oraUp{from{transform:translateY(22px)}to{transform:none}}
 @keyframes oraLn{from{transform:translateY(105%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){:is(.hero,.hhero,.ghero,.lhero) [data-fade],:is(.hero,.hhero,.ghero,.lhero) .ln > span{animation:none}}
+body{background:var(--roast)}
+.t-roast .btn.solid,.t-espresso .btn.solid,.sbar .btn.solid{background:var(--butter);border-color:var(--butter);color:var(--roast)}
+.t-roast .btn.solid::before,.t-espresso .btn.solid::before,.sbar .btn.solid::before{background:var(--cream)}
+.t-roast .btn.solid:hover,.t-espresso .btn.solid:hover,.sbar .btn.solid:hover{color:var(--roast)}
+.ftr{border-top:1px solid rgba(241,225,179,.1)}
 </style>
 <style>
 /* abertura */
@@ -344,7 +349,7 @@ a.link:hover{background-size:100% 1px}
 .hero .bg{position:absolute;inset:-8% 0}
 .hero .bg img,.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .eyebrow{font-size:12px;text-shadow:0 0 4px rgba(15,12,9,.95),0 1px 18px rgba(15,12,9,.9)}
-@media (max-width:760px){.hero .bg img,.hero video{object-position:50% 78%}}
+@media (max-width:760px){.hero .bg img,.hero video{object-position:50% 50%}}
 .hero::before{content:"";position:absolute;inset:0 0 auto;height:min(34svh,260px);background:linear-gradient(180deg,rgba(20,16,12,.62),rgba(20,16,12,0));z-index:1;pointer-events:none}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.2) 0%,rgba(33,29,26,0) 30%,rgba(33,29,26,.12) 55%,rgba(33,29,26,.78) 100%)}
 .hero .in{position:absolute;z-index:2;inset:auto var(--gut) clamp(34px,5vw,64px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
@@ -399,7 +404,7 @@ a.link:hover{background-size:100% 1px}
 /* origem */
 .orig{color:var(--butter)}
 .orig .band{position:relative;height:min(92svh,860px);min-height:560px;overflow:hidden}
-.orig .band video,.orig .band img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}.orig .band img{object-position:50% 45%}
+.orig .band video,.orig .band img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
 .orig .band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.35) 0%,rgba(33,29,26,.08) 30%,rgba(33,29,26,.7) 64%,var(--roast) 100%)}
 .orig .band .in{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(40px,5vw,80px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
 .orig .band h2{grid-column:1/8;text-shadow:0 2px 30px rgba(20,16,12,.45)}
@@ -454,7 +459,7 @@ a.link:hover{background-size:100% 1px}
   [data-hkits]::-webkit-scrollbar{display:none}
   [data-hkits] .kc{flex:0 0 82%;scroll-snap-align:center}
 }
-.gimg{margin:clamp(40px,5vw,72px) 0 0;aspect-ratio:21/9;overflow:hidden}.gimg img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.gimg{margin:clamp(40px,5vw,72px) 0 0;aspect-ratio:16/9;overflow:hidden}.gimg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 @media (max-width:700px){.gimg{aspect-ratio:4/3}}
 .prep .pv img{width:100%;height:100%;object-fit:cover}
 </style>
@@ -463,7 +468,7 @@ a.link:hover{background-size:100% 1px}
 <div class="ann"><span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span></div>
 
 <section class="hero">
-  <div class="bg" data-par=".6"><picture><source media="(max-width: 760px)" srcset="assets/video/2-hero-fazenda-poster-cel.webp" width="506" height="900"><img src="assets/video/2-hero-fazenda-poster.webp" width="1600" height="900" fetchpriority="high" alt=""></picture><video autoplay muted loop playsinline><source src="assets/video/1-hero-fazenda-cel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="assets/video/1-hero-fazenda.mp4" type="video/mp4"></video></div>
+  <div class="bg" data-par=".6"><picture><source media="(max-width: 760px)" srcset="assets/video/hero-coado-poster-cel.webp" width="608" height="1080"><img src="assets/video/hero-coado-poster.webp" width="1600" height="900" fetchpriority="high" alt=""></picture><video autoplay muted loop playsinline><source src="assets/video/hero-coado-cel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="assets/video/hero-coado.mp4" type="video/mp4"></video></div>
   <div class="in">
     <div>
       <p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p>
@@ -523,7 +528,7 @@ a.link:hover{background-size:100% 1px}
 
 <section class="orig t-roast" id="origem">
   <div class="band">
-    <picture><source media="(max-width: 760px)" srcset="assets/img/cel/cel-cerejas-cesto-760.webp 760w, assets/img/cel/cel-cerejas-cesto-1290.webp 1290w" sizes="100vw"><source media="(orientation: portrait)" srcset="assets/img/cel-cerejas-cesto-800.webp 800w, assets/img/cel-cerejas-cesto.webp 1600w" sizes="100vw"><img decoding="async" width="1600" height="1066" src="assets/img/px-colheita-cesto.webp" srcset="assets/img/px-colheita-cesto-400.webp 400w, assets/img/px-colheita-cesto-800.webp 800w, assets/img/px-colheita-cesto-1200.webp 1200w, assets/img/px-colheita-cesto.webp 1600w" sizes="(max-width: 760px) 100vw, 120vw" alt="Mãos segurando um cesto de cerejas de café maduras" loading="lazy" data-par=".4"></picture>
+    <picture><source media="(max-width: 760px)" srcset="assets/video/2-hero-fazenda-poster-cel.webp" width="506" height="900"><img decoding="async" loading="lazy" width="1600" height="900" src="assets/video/2-hero-fazenda-poster.webp" srcset="assets/video/2-hero-fazenda-poster-800.webp 800w, assets/video/2-hero-fazenda-poster-1200.webp 1200w, assets/video/2-hero-fazenda-poster.webp 1600w" sizes="(max-width: 760px) 100vw, 120vw" alt="Cafezal nas montanhas de Minas Gerais" data-par=".4"></picture><video muted loop playsinline preload="none" aria-hidden="true" data-par=".4"><source src="assets/video/1-hero-fazenda-cel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="assets/video/1-hero-fazenda.mp4" type="video/mp4"></video>
     <div class="in">
       <h2 class="display xl" data-lines><span class="ln"><span>Minas Gerais,</span></span><span class="ln"><span><em class="it">a 1.500 metros.</em></span></span></h2>
       <div class="r" data-fade>
@@ -551,7 +556,7 @@ a.link:hover{background-size:100% 1px}
   </div>
 </section>
 
-<section class="sec wrap t-butter gifts" id="presentes">
+<section class="sec wrap t-espresso gifts" id="presentes">
   <div class="hd">
     <div><p class="eyebrow ln-l" data-fade>Presentes</p><h2 class="display lg" data-lines style="margin-top:22px"><span class="ln"><span>Um presente para</span></span><span class="ln"><span><em class="it">abrir com calma.</em></span></span></h2></div>
     <div class="r" data-fade>
@@ -559,7 +564,7 @@ a.link:hover{background-size:100% 1px}
       <div class="acts"><a class="btn solid" href="presentes.html">Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a><a class="btn" href="presentes.html#corporativo">Presentes corporativos <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
     </div>
   </div>
-  <figure class="gimg media" data-open><img decoding="async" width="1280" height="960" src="assets/img/caixa-slogan.webp" srcset="assets/img/caixa-slogan-400.webp 400w, assets/img/caixa-slogan-800.webp 800w, assets/img/caixa-slogan.webp 1280w" sizes="(max-width: 760px) 107vw, 107vw" alt="Caixa ORA aberta, com a frase Todo momento tem sua ORA na tampa" loading="lazy"></figure>
+  <figure class="gimg media" data-open><img decoding="async" loading="lazy" width="1536" height="1024" src="assets/img/kit-aberto.webp" srcset="assets/img/kit-aberto-400.webp 400w, assets/img/kit-aberto-800.webp 800w, assets/img/kit-aberto-1200.webp 1200w, assets/img/kit-aberto.webp 1536w" sizes="(max-width: 760px) 100vw, 92vw" alt="Sacola kraft e caixa ORA aberta, com café e caneca"></figure>
 </section>
 
 <section class="sec wrap t-roast prep" id="conceito">
@@ -576,9 +581,9 @@ a.link:hover{background-size:100% 1px}
 </section>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=43"></script>
-<script defer src="js/catalogo.js?v=43"></script>
-<script defer src="js/loja.js?v=43"></script>
-<script defer src="js/site.js?v=43"></script>
+<script defer src="js/logo.js?v=44"></script>
+<script defer src="js/catalogo.js?v=44"></script>
+<script defer src="js/loja.js?v=44"></script>
+<script defer src="js/site.js?v=44"></script>
 </body>
 </html>

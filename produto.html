@@ -90,9 +90,9 @@ a:hover > .arr,button:hover > .arr{transform:translateX(5px)}
 .link:hover::after{transform:scaleX(0);transform-origin:right}
 .hdr{position:fixed;inset:0 0 auto 0;z-index:60;height:var(--hdr);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 padding-inline:var(--gut);color:var(--butter);transition:color .6s var(--ease-out),transform .8s var(--ease)}
-.hdr::before{content:"";position:absolute;inset:0;background:var(--butter);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease);z-index:-1}
+.hdr::before{content:"";position:absolute;inset:0;background:var(--roast);transform:scaleY(0);transform-origin:top;transition:transform .8s var(--ease);z-index:-1}
 .hdr::after{content:"";position:absolute;left:var(--gut);right:var(--gut);bottom:0;height:1px;background:currentColor;opacity:0;transition:opacity .6s}
-.hdr.is-solid,.hdr.on-light{color:var(--roast)}
+.hdr.on-light{color:var(--roast)}
 .hdr.is-solid{top:0}
 .hdr.is-solid::before{transform:scaleY(1)}
 .hdr.is-solid::after{opacity:.12}
@@ -338,6 +338,11 @@ a.link:hover{background-size:100% 1px}
 @keyframes oraUp{from{transform:translateY(22px)}to{transform:none}}
 @keyframes oraLn{from{transform:translateY(105%)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){:is(.hero,.hhero,.ghero,.lhero) [data-fade],:is(.hero,.hhero,.ghero,.lhero) .ln > span{animation:none}}
+body{background:var(--roast)}
+.t-roast .btn.solid,.t-espresso .btn.solid,.sbar .btn.solid{background:var(--butter);border-color:var(--butter);color:var(--roast)}
+.t-roast .btn.solid::before,.t-espresso .btn.solid::before,.sbar .btn.solid::before{background:var(--cream)}
+.t-roast .btn.solid:hover,.t-espresso .btn.solid:hover,.sbar .btn.solid:hover{color:var(--roast)}
+.ftr{border-top:1px solid rgba(241,225,179,.1)}
 </style>
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
@@ -367,8 +372,8 @@ a.link:hover{background-size:100% 1px}
 .opt .lb span:last-child{opacity:.55;letter-spacing:.04em;text-transform:none;font-weight:400;font-size:13px}
 .sw{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .sw button,.sw .fix{border:1px solid var(--line);padding:14px 16px;text-align:left;display:flex;align-items:center;gap:12px;transition:border-color .4s,background .4s,color .4s;border-radius:2px}
-.sw button:hover{border-color:var(--roast)}
-.sw button[aria-pressed="true"],.sw .fix{border-color:var(--roast);box-shadow:inset 0 0 0 1px var(--roast)}
+.sw button:hover{border-color:currentColor}
+.sw button[aria-pressed="true"],.sw .fix{border-color:currentColor;box-shadow:inset 0 0 0 1px currentColor}
 .sw i{width:26px;height:34px;flex:none;border-radius:3px;background:var(--espresso);display:grid;place-items:center}
 .sw i.mocha{background:var(--mocha)}
 .sw i img{width:70%}
@@ -377,9 +382,9 @@ a.link:hover{background-size:100% 1px}
 .sw .fix{grid-column:1/-1;cursor:default}
 .plans{display:grid;gap:10px}
 .plans label{border:1px solid var(--line);padding:16px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;cursor:pointer;transition:border-color .4s,box-shadow .4s;border-radius:2px}
-.plans label:has(input:checked){border-color:var(--roast);box-shadow:inset 0 0 0 1px var(--roast)}
-.plans input{appearance:none;width:16px;height:16px;border:1px solid var(--roast);border-radius:50%;margin:4px 0 0;display:grid;place-items:center}
-.plans input:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--roast)}
+.plans label:has(input:checked){border-color:currentColor;box-shadow:inset 0 0 0 1px currentColor}
+.plans input{appearance:none;width:16px;height:16px;border:1px solid currentColor;border-radius:50%;margin:4px 0 0;display:grid;place-items:center}
+.plans input:checked::after{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .plans b{display:block;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.2}
 .plans small{display:block;font-size:13px;opacity:.62;margin-top:3px;line-height:1.45}
 .plans .p{font-family:var(--serif);font-size:18px;white-space:nowrap}
@@ -450,7 +455,7 @@ a.link:hover{background-size:100% 1px}
 .other .tx .lede{margin:18px 0 28px}
 
 /* barra fixa */
-.sbar{position:fixed;left:0;right:0;bottom:0;z-index:58;background:var(--butter);border-top:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:12px var(--gut);transform:translateY(105%);transition:transform .7s var(--ease)}
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:58;background:var(--roast);color:var(--butter);--ink:var(--butter);--line:rgba(241,225,179,.2);border-top:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:12px var(--gut);transform:translateY(105%);transition:transform .7s var(--ease)}
 .sbar.on{transform:none}
 .sbar .th{width:40px;height:50px;flex:none;display:grid;place-items:center;background:var(--espresso);overflow:hidden}
 .sbar .th.mocha{background:var(--mocha)}
@@ -638,10 +643,10 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 .gband{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}.gband h2{margin:0 0 14px}.gband p{margin:0;max-width:34em;opacity:.78}
 </style>
 </head>
-<body data-page="produto" data-hdr="light">
+<body data-page="produto">
 <div class="ann"><span><b>5% de desconto</b> na primeira compra<span class="ann-x"> · cupom</span><span class="ann-m">:</span> <b>BEMVINDO</b></span></div>
 
-<main class="pdp">
+<main class="pdp t-roast">
   <div class="gw">
     <div class="gal" data-gal></div>
     <p class="gal-n" data-galn></p>
@@ -654,10 +659,10 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true" inert></div>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=43"></script>
-<script defer src="js/catalogo.js?v=43"></script>
-<script defer src="js/pg-produto.js?v=43"></script>
-<script defer src="js/loja.js?v=43"></script>
-<script defer src="js/site.js?v=43"></script>
+<script defer src="js/logo.js?v=44"></script>
+<script defer src="js/catalogo.js?v=44"></script>
+<script defer src="js/pg-produto.js?v=44"></script>
+<script defer src="js/loja.js?v=44"></script>
+<script defer src="js/site.js?v=44"></script>
 </body>
 </html>

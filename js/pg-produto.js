@@ -84,14 +84,14 @@ window.ORA_PAGE = () => {
         <p class="w" data-lines>${c.notas.map(n => `<span class="ln"><span>${n}</span></span>`).join('')}</p>
         <div class="row" data-fade><div><small>Acidez</small><b>${c.acidez}</b></div><div><small>Corpo</small><b>${c.corpo}</b></div><div><small>Final</small><b>${c.final}</b></div></div></section>` : ''}
       ${isCafe ? '' : `<section class="sec wrap t-espresso"><div class="inbox"><div class="r"><p class="eyebrow ln-l" data-fade>O kit</p><h2 class="display md" data-fade style="margin-top:20px">O que vem na caixa</h2><ol data-fade>${p.contem.map(x => `<li>${x}</li>`).join('')}</ol></div></div></section>`}
-      ${isCafe ? `      <section class="sec wrap t-butter">
+      ${isCafe ? `      <section class="sec wrap t-roast">
         <div class="spec">
           <div class="l"><p class="eyebrow ln-l" data-fade>${isCafe ? 'Ficha técnica' : 'Café ' + c.nome}</p><h2 class="display md" data-fade style="margin-top:20px">${isCafe ? 'Tudo sobre<br>este café' : 'O café que<br>vai no kit'}</h2>
             </div>
           <dl data-fade>${specRows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
         </div>
       </section>
-      <section class="sec wrap t-roast">
+      <section class="sec wrap t-espresso">
         <div class="proc">
           <div class="ph media" data-open><img ${oraImg(`assets/img/${c.id === 'natural' ? 'px-natural-seco' : 'px-pergaminho'}.webp`, '(max-width: 760px) 130vw, 65vw')} alt="${c.id === 'natural' ? 'Cerejas de café secas, com a casca' : 'Grãos de café secando sem a casca'}" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="tx">
@@ -101,7 +101,7 @@ window.ORA_PAGE = () => {
             <a class="link" href="loja.html#c-${other.id}" data-fade>Comparar com o ${other.nome} ${ARR}</a>
           </div>
         </div>
-      </section>` : `<section class="sec wrap t-butter">
+      </section>` : `<section class="sec wrap t-roast">
         <div class="proc">
           <div class="ph media" data-open>${PECA[p.handle].m}</div>
           <div class="tx">
@@ -112,7 +112,7 @@ window.ORA_PAGE = () => {
           </div>
         </div>
       </section>`}
-      ${isCafe ? `<section class="sec wrap t-butter more">
+      ${isCafe ? `<section class="sec wrap t-roast more">
         <div class="other">
           <a class="pk media pack ${other.cor === 'mocha' ? 'mocha' : ''}" href="produto.html?p=${op.handle}" data-open><img ${oraImg(other.img, '(max-width: 760px) 40vw, 20vw')} alt="Café ${other.nome}"></a>
           <div class="tx"><p class="eyebrow ln-l" data-fade>O outro café da ORA</p><h3 class="display md" data-fade>${other.nome}</h3><span class="sub" data-fade style="font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7">${other.sub}</span>
@@ -120,7 +120,7 @@ window.ORA_PAGE = () => {
             <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
         </div>
       </section>` : ''}
-      ${isCafe ? `<section class="sec wrap t-roast more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com um cartão escrito por você. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-butter more">
+      ${isCafe ? `<section class="sec wrap t-espresso more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com um cartão escrito por você. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-espresso more">
         <div class="hd"><h2 class="display md" data-fade>Outros presentes</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
         <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
       </section>`}`;
