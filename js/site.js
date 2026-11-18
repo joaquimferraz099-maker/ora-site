@@ -57,7 +57,7 @@
   mm.className = 'mmenu';
   mm.innerHTML = [['index.html', 'Início'], ['loja.html', 'Nossos cafés'], ['historia.html', 'Nossa origem'], ['presentes.html', 'Presentes']]
     .map(([h, t], i) => `<a class="big" href="${h}"${cur(h)}><span style="transition-delay:${.06 * i + .25}s">${t}</span></a>`).join('') +
-    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img ${oraImg('assets/img/px-colheita.webp')} alt="" loading="lazy"></div>`;
+    `<div class="meta"><a href="loja.html#drip">Drip Coffee</a><a href="presentes.html#corporativo">Corporativo</a><a href="politicas.html">Políticas</a><a href="https://www.instagram.com/oracafeespecial" target="_blank" rel="noopener">Instagram</a></div><div class="mimg"><img ${oraImg('assets/img/px-selecao.webp')} alt="" loading="lazy"></div>`;
   B.append(mm);
   $('.burger').addEventListener('click', () => {
     const o = B.classList.toggle('menu-open');
