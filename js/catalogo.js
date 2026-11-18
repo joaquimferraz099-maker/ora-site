@@ -6,17 +6,17 @@ window.ORA_CATALOGO = {
       id: 'natural', nome: 'Natural', nomeCompleto: 'Café Natural', sub: 'Variedade Bourbon',
       processo: 'Natural', variedade: 'Bourbon', lote: 'V09706-00',
       notas: ['Chocolate', 'Caramelo', 'Doce'], acidez: 'Equilibrada', corpo: 'Aveludado', final: 'Persistente',
-      frase: 'Chocolate e caramelo em primeiro plano, corpo aveludado e doçura de fruta madura.',
-      sobre: 'O fruto seca inteiro, com a casca e a polpa, por vários dias ao sol. O açúcar da fruta acompanha o grão durante a secagem, e é daí que vem a doçura e o corpo mais presente deste café.',
+      frase: 'Chocolate e caramelo, doce, com acidez equilibrada, corpo aveludado e final persistente.',
+      sobre: 'O fruto seca inteiro, com a casca e a polpa. O açúcar da fruta acompanha o grão durante a secagem, e é daí que vem a doçura deste café.',
       img: 'assets/img/pacote-natural.webp', rotulo: 'assets/img/rotulo-natural.jpg', cor: 'espresso'
     },
     {
-      id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Catucaí, Mundo Novo e Catuaí',
-      processo: 'Cereja descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00',
+      id: 'cereja', nome: 'Cereja Descascado', nomeCompleto: 'Café Cereja Descascado', sub: 'Variedades Catucaí, Mundo Novo e Catuaí',
+      processo: 'Cereja Descascado', variedade: 'Catucaí, Mundo Novo e Catuaí', lote: 'V09638-00',
       notas: ['Avelã', 'Caramelo', 'Cítrico'], acidez: 'Cítrica delicada', corpo: 'Aveludado', final: 'Longo e marcante',
       frase: 'Doce e caramelizado, com notas de avelã e acidez cítrica.',
       sobre: 'A casca é retirada logo depois da colheita e o grão seca com parte da mucilagem. Sem a fruta inteira, o sabor fica mais limpo e a acidez aparece com mais clareza na xícara.',
-      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha', img250: 'assets/img/pacote-250.jpg'
+      img: 'assets/img/pacote-cereja.webp', rotulo: 'assets/img/rotulo-cereja.jpg', cor: 'mocha', img250: 'assets/img/pacote250-cereja.webp'
     }
   ],
   produtos: [
@@ -24,18 +24,21 @@ window.ORA_CATALOGO = {
       img: 'assets/img/pacote-natural.webp', tile: 'lbl', thumb: 'assets/img/pacote-natural.webp' },
     { handle: 'cafe-cereja', tipoLoja: 'cafe', cafe: 'cereja', nome: 'Cereja Descascado', tipo: 'Café especial · 500 g', preco: 8900, p250: 5900,
       img: 'assets/img/pacote-cereja.webp', tile: 'lbl alt', thumb: 'assets/img/pacote-cereja.webp' },
+    { handle: 'drip-coffee', tipoLoja: 'drip', nome: 'Drip Coffee', tipo: 'Filtro individual · unidade', preco: 175,
+      img: 'assets/img/drip.jpg', tile: 'ph', thumb: 'assets/img/drip.jpg', max: 100,
+      resumo: 'O saquinho de filtro vazio, com abas que se apoiam na borda da xícara. Você coloca o seu café ORA moído e coa uma xícara por vez.' },
     { handle: 'cafe-caneca', tipoLoja: 'kit', nome: 'Café e caneca', tipo: 'Kit presente', preco: 12900,
       img: 'assets/img/p-pacote.jpg', img2: 'assets/img/p-cafe-caneca.jpg', thumb: 'assets/img/p-pacote.jpg',
       resumo: 'Um pacote de café e a caneca térmica ORA, na caixa com sacola e cartão.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão de origem e cartão de mensagem'] },
+      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
     { handle: 'cafe-jarra', tipoLoja: 'kit', nome: 'Café e jarra', tipo: 'Kit presente', preco: 16900,
       img: 'assets/img/caixa-slogan.jpg', img2: 'assets/img/p-caixa.jpg', thumb: 'assets/img/caixa-slogan.jpg',
-      resumo: 'Um pacote de café e a jarra térmica ORA, para servir à mesa.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão de origem e cartão de mensagem'] },
+      resumo: 'Um pacote de café e a jarra térmica ORA, na caixa com sacola e cartão.',
+      contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
     { handle: 'kit-completo', tipoLoja: 'kit', nome: 'Kit completo', tipo: 'Kit presente', preco: 24900, destaque: 'Mais completo',
       img: 'assets/img/p-kit-completo.jpg', img2: 'assets/img/kit-aberto.jpg', thumb: 'assets/img/p-kit-completo.jpg',
-      resumo: 'Café, caneca e jarra térmicas. O ritual inteiro em uma caixa.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão de origem e cartão de mensagem'] }
+      resumo: 'Café, caneca e jarra térmicas ORA, na caixa com sacola e cartão.',
+      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] }
   ]
 };
 
@@ -53,6 +56,7 @@ window.oraKitCard = p => `
     </a>
     <div class="kc-b">
       <div><h3><a href="produto.html?p=${p.handle}">${p.nome}</a></h3><p>${p.resumo}</p></div>
-      <span class="num">${'R$ ' + p.preco/100}</span>
+      <span class="num">${brl(p.preco)}</span>
     </div>
+    <a class="link kc-l" href="produto.html?p=${p.handle}">Conheça este kit</a>
   </article>`;

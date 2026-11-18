@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex, nofollow" name="robots"/>
-<title>Cafés · ORA</title>
-<meta content="Os cafés da ORA: Natural e Cereja Descascado, da Fazenda Santa Cruz, Sul de Minas. 250 g e 500 g, moído para coado." name="description"/>
-<meta content="#F1E1B3" name="theme-color"/>
-<link href="assets/brand/monograma.svg" rel="icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/ora.css?v=8" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nossos cafés · ORA</title>
+<meta name="description" content="Os cafés da ORA: Natural (500 g) e Cereja Descascado (250 g ou 500 g), de fazendas de Minas Gerais, e o Drip Coffee.">
+<meta name="theme-color" content="#F1E1B3">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=15">
 <style>
 .lhead{padding:calc(var(--hdr) + clamp(50px,7vw,110px)) var(--gut) clamp(40px,5vw,70px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end}
 .lhead h1{grid-column:1/8}
@@ -19,21 +18,41 @@
 .lhead .r p{margin:0;opacity:.75}
 .lhead .r .eyebrow{margin-bottom:16px}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,30px)}
-.ct .pk{display:block;aspect-ratio:4/5;position:relative}
-.ct .pk .pack{position:absolute;inset:0;transition:transform 1.4s var(--ease-out)}
-.ct .pk .pack img{width:44%;transition:transform 1.4s var(--ease-out)}
-.ct .pk:hover .pack img{transform:translateY(-10px) rotate(-1.5deg)}
-.ct .pk video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease-out)}
-.ct .pk:hover video{opacity:1}
-.ct .pk .score{position:absolute;right:20px;top:20px;z-index:2;color:var(--butter)}
-.ct .pk .ix{position:absolute;left:22px;top:22px;z-index:2;color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.8}
-.ct .b{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding-top:24px;margin-top:20px;border-top:1px solid var(--line)}
-.ct h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3vw,50px);line-height:1;letter-spacing:-.02em}
-.ct .sub{font-family:var(--serif);font-style:italic;font-size:19px;opacity:.7;grid-column:1}
-.ct .pr{font-family:var(--serif);font-size:28px;grid-row:1;grid-column:2;text-align:right}
-.ct .fr{grid-column:1/-1;margin:14px 0 0;font-size:16px;opacity:.78;max-width:30em}
-.ct .act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+/* um café por linha, painel do pacote + texto (desenho dos cafés da v3.1) */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:center;padding-block:clamp(40px,5vw,80px);border-bottom:1px solid var(--line)}
+.row .pk{grid-column:1/7;display:block;aspect-ratio:5/4;position:relative}
+.row .pk .pack{position:absolute;inset:0}
+.row .pk .pack img{width:30%;transition:transform 1.4s var(--ease-out),opacity .5s}
+.row .pk .pack img.k{width:27%}
+.row .pk:hover .pack img{transform:translateY(-10px) rotate(-1.5deg)}
+.row .pk .ix{position:absolute;left:22px;top:22px;z-index:2;color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.85}
+.row .pk .pack.mocha ~ .ix{color:var(--roast);opacity:.7}
+.row.drip .pk .ix{text-shadow:0 1px 8px rgba(20,16,12,.6)}
+.row .tx{grid-column:8/13}
+.row.rev .pk{grid-column:7/13;order:2}
+.row.rev .tx{grid-column:1/6;order:1}
+.row h2{margin:18px 0 8px;font-family:var(--serif);font-weight:400;font-size:clamp(44px,4.4vw,72px);line-height:.98;letter-spacing:-.02em}
+.row .sub{font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7}
+.row .fr{margin:24px 0 20px;font-size:17px;line-height:1.6;opacity:.82;max-width:26em}
+.row .tam{display:flex;gap:10px;margin:28px 0 0;flex-wrap:wrap}
+.row .tam button{font:inherit;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:11px 18px;border:1px solid var(--line);border-radius:999px;background:none;color:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.row .tam .one{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:11px 0;opacity:.75}
+.row .tam button[disabled]{cursor:default}
+.row .tam button[aria-pressed=true]{background:var(--roast);color:var(--butter);border-color:var(--roast)}
+.row .claim{margin:12px 0 0;font-size:13px;opacity:.65;min-height:1.4em}
+.row .buy{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.row .buy .num{font-family:var(--serif);font-size:32px;margin-right:6px}
+.row.drip .pk .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.row .how{margin:4px 0 0;padding:0;list-style:none;counter-reset:h;border-top:1px solid var(--line)}
+.row .how li{counter-increment:h;display:grid;grid-template-columns:2.2em 1fr;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;opacity:.85}
+.row .how li::before{content:counter(h);font-family:var(--serif);font-size:20px;line-height:1;opacity:.5}
+.row .dq{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap}
+.row .dq > span:first-child{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55}
+.row .dq .un{font-size:13px;opacity:.65}
+.row .qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.row .qty button{width:40px;height:44px;border:0;background:none;font:inherit;font-size:18px;color:inherit;cursor:pointer}
+.row .qty span{min-width:2.2em;text-align:center;font-family:var(--serif);font-size:19px}
 
 .cmp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px)}
 .cmp .l{grid-column:1/5}
@@ -50,205 +69,104 @@
   .cmp .l,.cmp table{grid-column:1/-1}
   .cmp table{margin-top:30px}
 }
-@media (max-width:700px){.two{grid-template-columns:1fr;gap:64px}}
+@media (max-width:900px){.row .pk,.row.rev .pk,.row .tx,.row.rev .tx{grid-column:1/-1;order:0}.row .tx{margin-top:30px}.row .pk .pack img{width:36%}.row .pk .pack img.k{width:32%}}
+.cmp td:first-child{opacity:.75}
+.row .dq > span:first-child{opacity:.72}
+.row.drip .pk .ix{background:rgba(33,29,26,.55);color:var(--butter);opacity:1;padding:5px 10px 4px;border-radius:30px;text-shadow:none}
 </style>
-<style>
-
-/* Editorial rebuild: photographic chapters, tighter catalog, varied section rhythm. */
-.ftr .giant{max-width:540px;margin:60px auto 42px;padding:0!important}
-.hero::after{background:linear-gradient(180deg,rgba(20,26,18,.28),rgba(20,26,18,.04) 35%,rgba(20,26,18,.68) 100%)}
-.hero video{filter:brightness(1.04) saturate(.92)}
-.hero .bg{inset:0}
-.chd{padding-block:76px 46px;align-items:end}
-.chd .r>p{margin:0;max-width:28em}
-.coffee-pair{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-bottom:90px;background:var(--butter)}
-.coffee-pair .cafe,.coffee-pair .cafe.rev{display:flex;flex-direction:column;min-height:0;background:none}
-.coffee-pair .cafe .pk,.coffee-pair .cafe.rev .pk{width:100%;aspect-ratio:1.18;order:0;flex:none}
-.coffee-pair .cafe .pk .pack img{width:35%;max-height:80%;object-fit:contain}
-.coffee-pair .cafe .pk .ix{font-size:72px;opacity:.23}
-.coffee-pair .cafe .tx,.coffee-pair .cafe.rev .tx{order:1;padding:28px 0 0;display:block}
-.coffee-pair .cafe .tx h2{font-size:clamp(40px,4.2vw,72px);margin:12px 0}
-.coffee-pair .cafe .tx h2 .ln{display:inline}
-.coffee-pair .cafe .tx h2 .ln>span{display:inline}
-.coffee-pair .cafe .tx .lede{font-size:23px;margin:20px 0;max-width:25em;min-height:2.75em}
-.coffee-pair .cafe .sub{font-size:18px}
-.coffee-pair .cafe dl{display:none}
-.coffee-pair .cafe .buy{margin-top:25px;gap:18px}
-.coffee-pair .cafe .buy .num{font-size:29px;margin-right:auto}
-.coffee-pair .cafe .eyebrow{font-size:10px}
-.hist.story-banner{height:70svh;min-height:540px}
-.founder-section{display:grid;grid-template-columns:43% 57%;align-items:stretch}
-.founder-photo{margin:0;position:relative;min-height:760px}
-.founder-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.founder-photo figcaption{position:absolute;bottom:28px;left:32px;color:var(--cream);font-family:var(--serif);font-style:italic;font-size:24px;text-shadow:0 2px 15px #211d1a}
-.founder.founder-letter{max-width:none;padding:80px clamp(34px,5vw,82px);margin:0}
-.founder-letter h2{font-size:clamp(48px,5vw,80px);margin:14px 0 36px}
-.founder-letter .ftxt .lede{font-size:31px;line-height:1.25;max-width:15em}
-.founder-letter .ftxt p{font-size:16px;line-height:1.65}
-.founder-letter .ftxt p:last-child{font-size:26px;margin-top:30px;padding-top:25px;border-top:1px solid var(--line)}
-.origin-section{position:relative;display:grid;grid-template-columns:54% 46%;overflow:hidden}
-.origin-visual{min-height:760px;grid-column:1;grid-row:1}
-.origin-visual video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.farm.origin-copy{display:block;padding:85px clamp(32px,4vw,64px);grid-column:2;grid-row:1;align-self:center}
-.origin-copy .l,.origin-copy .r{display:block;grid-column:auto}
-.origin-copy .r .lede{font-size:32px;margin:32px 0 22px}
-.origin-copy .r .body{font-size:16px;line-height:1.7}
-.origin-copy .facts{grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
-.origin-copy .facts b{font-size:30px}
-.origin-copy .facts div{padding-top:0}
-.origin-copy .facts div:last-child{grid-column:1/-1}
-.origin-copy .facts{padding-top:24px}
-.steps{display:block}
-.steps>.l{position:static;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:0 50px;margin-bottom:56px}
-.steps>.l>.chap{grid-column:1/-1}
-.steps>.l>p{margin:0;max-width:30em}
-.steps ol{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:44px 28px;margin:0}
-.steps li{display:grid;grid-template-columns:34px 1fr;grid-column:span 2;gap:22px 10px;padding:0;border:0!important;align-content:start}
-.steps li:nth-child(4),.steps li:nth-child(5){grid-column:span 3}
-.steps .step-photo{grid-column:1/-1;aspect-ratio:1.3}
-.steps .step-photo img{width:100%;height:100%;object-fit:cover}
-.steps li:nth-child(4) .step-photo,.steps li:nth-child(5) .step-photo{aspect-ratio:1.8}
-.steps li h3{font-size:32px;line-height:1.08}
-.steps li p{font-size:15px;line-height:1.65}
-.steps li i{font-size:24px;padding-top:4px}
-.lhead.shop-hero{position:relative;min-height:620px;padding-top:240px;padding-bottom:64px;color:var(--cream);overflow:hidden;isolation:isolate;grid-template-columns:1fr 1fr;align-items:end;margin-bottom:65px;background:var(--espresso)}
-.shop-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:-2}
-.shop-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(33,29,26,.65),rgba(33,29,26,.1) 55%,rgba(33,29,26,.62))}
-.lhead.shop-hero h1{grid-column:1;font-size:clamp(90px,12vw,185px)}
-.lhead.shop-hero .r{grid-column:2;max-width:26em;justify-self:end;margin:0}
-.lhead.shop-hero .r p{opacity:1}
-body[data-page=loja] .ct .pk{aspect-ratio:1.15}
-body[data-page=loja] .ct .pk .pack img{width:34%}
-.cmp td{padding-block:23px;font-size:22px}
-.kgrid{width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr))!important}
-.kgrid>*{min-width:0}
-.kc-b{display:block}
-.kc-b .num{display:block;margin-top:15px;font-size:26px}
-.kc-img{aspect-ratio:1.05}
-.box4{grid-template-columns:1fr 1fr;gap:38px}
-.box4 .media{aspect-ratio:1.35}
-.box4 figcaption{display:flex;justify-content:space-between;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px}
-.box4 b{font-size:28px}
-@media(max-width:960px){
-.founder-section,.origin-section{grid-template-columns:1fr 1fr}
-.founder.founder-letter{padding:55px 30px}
-.founder-photo{min-height:650px}
-.origin-visual{min-height:650px}
-.farm.origin-copy{padding:55px 30px}
-.origin-copy .r .lede{font-size:27px}
-.coffee-pair .cafe .buy .num{width:100%;margin:0}
-.coffee-pair .cafe .tx h2{font-size:43px}
-.steps li{grid-column:span 3}
-.steps li:nth-child(4){grid-column:span 3}
-.steps li:nth-child(5){grid-column:span 6}
-.steps li:nth-child(5) .step-photo{aspect-ratio:2.2}
-}
-@media(max-width:700px){
-.ftr .giant{max-width:260px;margin-block:46px 32px}
-.chd{padding-block:54px 30px}
-.chd>.r{margin-top:20px}
-.coffee-pair{grid-template-columns:1fr;gap:50px;padding-bottom:60px}
-.coffee-pair .cafe .pk,.coffee-pair .cafe.rev .pk{aspect-ratio:1.1}
-.coffee-pair .cafe .tx h2{font-size:46px}
-.coffee-pair .cafe .tx .lede{min-height:0;font-size:23px}
-.coffee-pair .cafe .buy .num{width:auto;margin-right:auto}
-.coffee-pair .cafe .buy{gap:13px}
-.coffee-pair .cafe .buy .btn{padding-inline:19px}
-.coffee-pair .cafe .buy .link{font-size:12px}
-.hist.story-banner{height:78svh;min-height:570px}
-.founder-section,.origin-section{display:flex;flex-direction:column}
-.founder-photo{min-height:0;height:420px}
-.founder-photo img{object-position:50% 45%}
-.founder.founder-letter{padding:48px var(--gut) 58px}
-.founder-letter .ftxt .lede{font-size:29px}
-.origin-visual{min-height:0;height:360px}
-.farm.origin-copy{padding:48px var(--gut) 58px}
-.origin-copy .r{margin:0}
-.origin-copy .r .lede{font-size:29px}
-.steps>.l{display:block;margin-bottom:35px}
-.steps>.l>p{margin-top:24px}
-.steps ol{display:block}
-.steps li{margin-top:35px}
-.steps li .step-photo,.steps li:nth-child(4) .step-photo,.steps li:nth-child(5) .step-photo{aspect-ratio:1.5}
-.lhead.shop-hero{min-height:590px;display:flex;flex-direction:column;justify-content:end;align-items:start;padding-top:200px;padding-bottom:44px;margin-bottom:40px;gap:28px}
-.lhead.shop-hero h1{font-size:100px}
-.lhead.shop-hero .r{max-width:26em}
-.shop-hero::after{background:linear-gradient(180deg,rgba(33,29,26,.25),rgba(33,29,26,.76))}
-body[data-page=loja] .ct .pk{aspect-ratio:1.1}
-.cmp table{table-layout:fixed}
-.cmp td{font-size:17px;padding-block:18px;overflow-wrap:anywhere}
-.cmp td:first-child{width:26%;font-size:9px;letter-spacing:.1em}
-.cmp th{font-size:9px;letter-spacing:.08em}
-.kgrid{grid-template-columns:1fr!important;gap:44px}
-.kc-img{aspect-ratio:1.12}
-.kc-b{display:flex;gap:15px}
-.kc-b .num{font-size:23px;margin:0;flex-shrink:0}
-.box4{grid-template-columns:1fr;gap:30px}
-.box4 .media{aspect-ratio:1.22}
-.box4 figcaption{display:block}
-.box4 b{font-size:26px}
-}
-
-</style>
-<style>.lhead.shop-hero .r{padding:24px 28px;background:rgba(33,29,26,.90);border-left:1px solid rgba(241,225,179,.45);max-width:29em}.lhead.shop-hero .r p{font-size:16px;line-height:1.7}.lhead.shop-hero .r .eyebrow{font-size:10px}@media(max-width:700px){.lhead.shop-hero .r{padding:18px 22px}.lhead.shop-hero .r p{font-size:15px}}</style>
 </head>
-<body data-page="loja">
-<header class="lhead shop-hero"><img alt="Café ORA, embalagem e detalhes da marca" class="shop-hero-photo" src="assets/img/p-pacote.jpg"/>
-<h1 class="display xl" data-lines=""><span class="ln"><span>Cafés</span></span></h1>
-<div class="r" data-fade=""><p class="eyebrow ln-l">Safra 2026/27</p><p>Dois cafés especiais da Fazenda Santa Cruz, na região do Sul de Minas, a no mínimo 1.500 m de altitude. Mesma terra e mesma colheita, separados pelo processo.</p></div>
+<body data-page="loja" data-hdr="light">
+
+<header class="lhead">
+  <h1 class="display xl" data-lines><span class="ln"><span>Nossos</span></span><span class="ln"><span><em class="it">cafés.</em></span></span></h1>
+  <div class="r" data-fade><p class="eyebrow ln-l">Café especial · Minas Gerais</p><p>Dois cafés especiais de fazendas de Minas Gerais, cada um com o seu processo, moídos para coado. E o Drip Coffee, para coar na xícara.</p></div>
 </header>
-<section class="wrap" style="padding-bottom:clamp(90px,11vw,170px)">
-<div class="two" data-cafes=""></div>
+
+<section class="wrap" style="padding-bottom:clamp(50px,6vw,90px)">
+  <div class="rows" data-cafes></div>
 </section>
-<section class="sec wrap t-roast">
-<div class="cmp">
-<div class="l"><p class="eyebrow ln-l" data-fade="">Lado a lado</p><h2 class="display md" data-fade="" style="margin-top:20px">Qual escolher</h2>
-<p data-fade="" style="opacity:.72;margin-top:20px;max-width:22em">Os dois são doces, com caramelo. O Natural puxa para o chocolate; o Cereja Descascado, para a avelã e o cítrico.</p></div>
-<table data-fade="">
-<thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
-<tbody data-cmp=""></tbody>
-</table>
-</div>
+
+<section class="sec wrap t-cream">
+  <div class="cmp">
+    <div class="l"><p class="eyebrow ln-l" data-fade>Lado a lado</p><h2 class="display md" data-fade style="margin-top:20px">Qual escolher?</h2>
+      <p data-fade style="opacity:.72;margin-top:20px;max-width:22em">Os dois têm caramelo. O Natural é mais doce, com chocolate; o Cereja Descascado tem acidez cítrica delicada.</p></div>
+    <table data-fade>
+      <thead><tr><th></th><th>Natural</th><th>Cereja Descascado</th></tr></thead>
+      <tbody data-cmp></tbody>
+    </table>
+  </div>
 </section>
+
 <section class="sec wrap t-butter">
-<div class="ghd"><h2 class="display md" data-fade="">Para presentear</h2><a class="link" data-fade="" href="presentes.html">Ver presentes <svg class="arr" viewbox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"></path></svg></a></div>
-<div class="kgrid" data-kits=""></div>
+  <div class="ghd"><h2 class="display md" data-fade>Para presentear</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
+  <div class="kgrid" data-kits></div>
 </section>
+
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=8"></script>
-<script src="js/catalogo.js?v=9"></script>
+<script src="js/logo.js?v=15"></script>
+<script src="js/catalogo.js?v=15"></script>
 <script>
 (() => {
   const C = ORA_CATALOGO, $ = s => document.querySelector(s);
-  const vids = { natural: 'assets/video/xicara', cereja: 'assets/video/coado' };
   $('[data-cafes]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'cafe').map((p, i) => {
     const c = oraCafe(p.cafe);
-    return `<article class="ct" data-fade ${i ? 'data-delay="1"' : ''}>
-      <a class="pk media" href="produto.html?p=${p.handle}" aria-label="Café ${p.nome}">
-        <div class="pack ${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}"></div>
-        <video src="${vids[c.id]}.mp4" muted loop playsinline preload="none" data-hover></video>
+    return `<article class="row${i % 2 ? ' rev' : ''}" data-h="${p.handle}">
+      <a class="pk media" data-open href="produto.html?p=${p.handle}" aria-label="Café ${p.nome}">
+        <div class="pack ${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt="Pacote do ${c.nomeCompleto}, 500 g"></div>
         <span class="ix">0${i + 1}</span>
       </a>
-      <div class="b">
-        <h2><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
-        <span class="pr num">${p.p250 ? 'R$ ' + p.p250 / 100 + '–' + p.preco / 100 : 'R$ ' + p.preco / 100}</span>
-        <span class="sub">${c.sub}</span>
-        <p class="fr">${c.frase}</p>
-        <div class="act"><div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div><button class="btn solid" data-quick="${p.handle}">Adicionar</button></div>
+      <div class="tx">
+        <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : c.processo}</p>
+        <h2 data-fade><a href="produto.html?p=${p.handle}">${p.nome}</a></h2>
+        <span class="sub" data-fade>${c.sub}</span>
+        <p class="fr" data-fade>${c.frase}</p>
+        <div class="chips" data-fade>${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>
+        <div data-fade><div class="tam">${p.p250 ? `<button type="button" data-t="250" aria-pressed="false">250 g</button><button type="button" data-t="500" aria-pressed="true">500 g</button>` : `<button type="button" aria-pressed="true" disabled>500 g</button>`}</div>
+        <p class="claim">${p.p250 ? '500 g: o dobro do café por -25% no preço.' : 'Disponível em 500 g.'}</p></div>
+        <div class="buy" data-fade><span class="num" data-pr>${brl(p.preco)}</span><button class="btn solid" data-add>Adicionar</button><a class="link" href="produto.html?p=${p.handle}">Conheça este café</a></div>
       </div>
     </article>`;
   }).join('');
-  document.querySelectorAll('.ct .pk').forEach(a => {
-    const v = a.querySelector('video');
-    a.addEventListener('mouseenter', () => v.play().catch(() => {}));
-    a.addEventListener('mouseleave', () => v.pause());
+  document.querySelectorAll('.row').forEach(r => {
+    const p = oraProd(r.dataset.h), c = oraCafe(p.cafe), img = r.querySelector('.pack img');
+    let t = '500';
+    r.querySelectorAll('[data-t]').forEach(b => b.addEventListener('click', () => {
+      t = b.dataset.t;
+      r.querySelectorAll('[data-t]').forEach(x => x.setAttribute('aria-pressed', x === b));
+      r.querySelector('[data-pr]').textContent = brl(t === '250' ? p.p250 : p.preco);
+      img.src = t === '250' && c.img250 ? c.img250 : c.img;
+      img.classList.toggle('k', t === '250');
+      img.alt = 'Pacote do ' + c.nomeCompleto + ', ' + t + ' g';
+    }));
+    r.querySelector('[data-add]').addEventListener('click', () => ORA.add(p.handle, { t }));
   });
+  const d = oraProd('drip-coffee');
+  $('[data-cafes]').insertAdjacentHTML('beforeend', `<article class="row drip" id="drip">
+      <div class="pk media" data-open><img class="ph" src="${d.img}" alt="Água quente caindo no saquinho de Drip Coffee, apoiado em um copo"><span class="ix">03</span></div>
+      <div class="tx">
+        <p class="eyebrow ln-l" data-fade>Para coar na xícara</p>
+        <h2 data-fade>Drip Coffee</h2>
+        <span class="sub" data-fade>Saquinho de filtro, vendido vazio</span>
+        <p class="fr" data-fade>${d.resumo}</p>
+        <ol class="how" data-fade><li>Coloque 10 g de café moído no saquinho.</li><li>Abra as abas e apoie na borda da xícara.</li><li>Despeje 150 ml de água quente, aos poucos.</li></ol>
+        <div class="dq" data-fade><span>Quantidade</span><div class="qty"><button type="button" aria-label="Diminuir" data-dq="-1">−</button><span data-dn>10</span><button type="button" aria-label="Aumentar" data-dq="1">+</button></div><span class="un">${brl(d.preco)} a unidade</span></div>
+        <div class="buy" data-fade><span class="num" data-dt>${brl(d.preco * 10)}</span><button class="btn solid" data-dadd>Adicionar</button></div>
+      </div>
+    </article>`);
+  {
+    const r = $('#drip'); let q = 10;
+    r.addEventListener('click', e => {
+      const b = e.target.closest('[data-dq]');
+      if (b) { q = Math.max(1, Math.min(100, q + +b.dataset.dq)); r.querySelector('[data-dn]').textContent = q; r.querySelector('[data-dt]').textContent = brl(d.preco * q); }
+      if (e.target.closest('[data-dadd]')) ORA.add('drip-coffee', { qty: q });
+    });
+  }
   const [n, c] = C.cafes;
-  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => x.notas.join(', ')], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
+  $('[data-cmp]').innerHTML = [['Processo', 'processo'], ['Variedade', 'variedade'], ['Notas', x => (x.notas.join(', ').charAt(0) + x.notas.join(', ').slice(1).toLowerCase())], ['Acidez', 'acidez'], ['Corpo', 'corpo'], ['Final', 'final']]
     .map(([k, f]) => `<tr><td>${k}</td><td>${typeof f === 'function' ? f(n) : n[f]}</td><td>${typeof f === 'function' ? f(c) : c[f]}</td></tr>`).join('');
   $('[data-kits]').innerHTML = C.produtos.filter(p => p.tipoLoja === 'kit').map(oraKitCard).join('');
 })();
 </script>
-<script src="js/site.js?v=8"></script>
+<script src="js/site.js?v=15"></script>
 </body>
 </html>

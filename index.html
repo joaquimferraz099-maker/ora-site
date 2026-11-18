@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="noindex, nofollow" name="robots"/>
-<title>ORA · Café especial da Fazenda Santa Cruz</title>
-<meta content="Café especial da Fazenda Santa Cruz, no Sul de Minas. Natural e Cereja Descascado, 250 g e 500 g, e kits para presentear." name="description"/>
-<meta content="#4A3025" name="theme-color"/>
-<link href="assets/brand/monograma.svg" rel="icon"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/ora.css?v=8" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ORA · Café especial</title>
+<meta name="description" content="Cafés especiais de fazendas de Minas Gerais: Natural e Cereja Descascado, e kits para presentear.">
+<meta name="theme-color" content="#4A3025">
+<link rel="icon" href="assets/brand/monograma.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ora.css?v=15">
 <style>
 /* abertura */
 .hero{position:relative;height:100svh;min-height:640px;color:var(--butter);overflow:hidden;background:var(--roast)}
 .hero .bg{position:absolute;inset:-8% 0;}
 .hero video{width:100%;height:100%;object-fit:cover}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.66) 0%,rgba(33,29,26,.30) 30%,rgba(33,29,26,.38) 55%,rgba(33,29,26,.9) 100%)}
-.hero video{filter:brightness(.92) saturate(1.06)}
-.hero .eyebrow,.hero h1,.hero .side p{text-shadow:0 2px 30px rgba(20,16,12,.55)}
-.hero .btn{box-shadow:0 14px 44px rgba(20,16,12,.45)}
-.hero .in{position:absolute;z-index:2;inset:auto var(--gut) clamp(40px,5vw,68px);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end;gap:40px}
-.hero .meta{grid-column:1/-1;display:flex;justify-content:space-between;gap:24px;border-top:1px solid rgba(241,225,179,.3);padding-top:16px;margin-top:clamp(26px,3vw,44px);
-  font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--butter)}
-.hero .meta span{display:flex;align-items:center;gap:12px;opacity:.9}
-.hero .meta i{width:5px;height:5px;border-radius:50%;background:var(--sand);opacity:.9;font-style:normal}
-.hero .side p{margin:0 0 26px;font-size:16px;line-height:1.65;opacity:.92}
-.hero .eyebrow{margin-bottom:clamp(14px,1.8vw,26px)}
-.hero h1{font-size:clamp(54px,9.8vw,178px)}
-.hero .side{max-width:330px;padding-bottom:8px;justify-self:end}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.45) 0%,rgba(33,29,26,0) 28%,rgba(33,29,26,.05) 50%,rgba(33,29,26,.72) 100%)}
+.hero .in{position:absolute;z-index:2;inset:auto var(--gut) clamp(34px,5vw,64px);display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero .eyebrow{margin-bottom:clamp(20px,2.4vw,34px)}
+.hero .side{max-width:330px;padding-bottom:8px}
+.hero .side p{margin:0 0 26px;font-size:16px;line-height:1.65;opacity:.9}
 .cue{position:absolute;z-index:2;left:50%;bottom:24px;width:1px;height:46px;background:rgba(241,225,179,.25);overflow:hidden}
 .cue::after{content:"";position:absolute;inset:0;background:var(--butter);animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:translateY(-100%)}60%,100%{transform:translateY(100%)}}
@@ -43,28 +34,17 @@
 .creds span{font-size:13px;line-height:1.45;opacity:.75}
 
 /* cabeçalho dos cafés */
-.chd{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:end;padding-top:clamp(56px,7vw,110px);padding-bottom:clamp(44px,5vw,80px)}
-.chd > .l{grid-column:1/7}
-.chd > .r{grid-column:8/13}
-.chd .r > p{margin:0 0 26px;max-width:24em;font-size:16.5px;line-height:1.6;opacity:.75}
-.idx{border-top:1px solid var(--line)}
-.idx a{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:18px;padding:15px 2px;border-bottom:1px solid var(--line);transition:padding-left .5s var(--ease)}
-.idx a:hover{padding-left:14px}
-.idx a b{font-family:var(--serif);font-weight:400;font-size:13px;opacity:.5;letter-spacing:.06em}
-.idx a span{font-family:var(--serif);font-size:clamp(21px,1.7vw,27px);letter-spacing:-.01em;line-height:1.1}
-.idx a em{font-style:normal;font-size:12.5px;letter-spacing:.08em;opacity:.6;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.chd{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;padding-top:clamp(90px,11vw,170px);padding-bottom:clamp(50px,6vw,90px)}
+.chd > p{margin:0;max-width:24em;font-size:17px;opacity:.78}
 
 /* manifesto curto */
 
 /* os dois cafés */
 .cafe{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));min-height:min(100svh,940px)}
 .cafe .pk{grid-column:1/8;position:relative;overflow:hidden}
-.cafe .pk .pack{background:radial-gradient(130% 100% at 50% 34%,#6b4636 0%,var(--espresso) 52%,#332015 100%)}
-.cafe .pk .pack.mocha{background:radial-gradient(130% 100% at 50% 34%,#d8c5ae 0%,var(--mocha) 52%,#9d8670 100%)}
 .cafe .pk .pack{position:absolute;inset:0}
-.cafe .pk .pack img{width:41%;transition:transform 1.4s var(--ease-out)}
-.cafe .pk:hover .pack img{transform:translateY(-12px) rotate(-1.2deg)}
-.cafe .pk .ix{position:absolute;left:clamp(20px,2.6vw,40px);top:clamp(14px,2vw,30px);color:var(--butter);font-family:var(--serif);font-size:clamp(90px,9vw,150px);line-height:1;letter-spacing:-.03em;opacity:.14;z-index:2}
+.cafe .pk .pack img{width:33%}
+.cafe .pk .ix{position:absolute;left:clamp(20px,2.6vw,40px);top:clamp(20px,2.6vw,40px);color:var(--butter);font-family:var(--serif);font-size:15px;letter-spacing:.1em;opacity:.8;z-index:2}
 .cafe .pk .scr{position:absolute;right:clamp(20px,2.6vw,40px);bottom:clamp(20px,2.6vw,40px);z-index:2;color:var(--butter)}
 .cafe .tx{grid-column:8/13;padding:clamp(40px,5vw,90px) var(--gut) clamp(40px,5vw,90px) clamp(30px,4vw,70px);display:flex;flex-direction:column;justify-content:center}
 .cafe.rev .pk{grid-column:6/13;order:2}
@@ -82,7 +62,8 @@
 .hist{position:relative;height:min(115svh,1100px);min-height:640px;color:var(--butter);overflow:hidden}
 .hist .media{position:absolute;inset:0}
 .hist .media video{position:absolute;inset:-10% 0;height:120%}
-.hist::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.15),rgba(33,29,26,.7));pointer-events:none}
+.hist::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,26,.12) 30%,rgba(33,29,26,.82));pointer-events:none}
+.hist .r p{text-shadow:0 1px 14px rgba(20,16,12,.6)}
 .hist .in{position:absolute;z-index:2;left:var(--gut);right:var(--gut);bottom:clamp(44px,6vw,90px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
 .hist h2{grid-column:1/9}
 .hist .r{grid-column:9/13}
@@ -95,7 +76,7 @@
 .prep .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,70px)}
 .prep .top p{margin:0;opacity:.75;max-width:24em}
 .prep .n3{display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
-.prep .n3 div{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:clamp(28px,3vw,48px);align-items:baseline;padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line)}
+.prep .n3 div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(22px,2.4vw,34px) 0;border-bottom:1px solid var(--line)}
 .prep .n3 b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(54px,5.6vw,96px);line-height:.9;letter-spacing:-.03em}
 .prep .n3 span{display:block;font-size:16px;opacity:.8;max-width:18em}
 
@@ -109,16 +90,44 @@
 .gift .from b{font-family:var(--serif);font-weight:400;font-size:34px}
 .gift .from span{font-size:13px;opacity:.6;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 
+
+/* 17/11: menu legível sobre o vídeo; diferenciais; cafés sem compra na home; conceito; presentes com 2 botões */
+.hero::before{content:"";position:absolute;inset:0 0 auto;height:min(34svh,260px);background:linear-gradient(180deg,rgba(20,16,12,.62),rgba(20,16,12,0));z-index:1;pointer-events:none}
+.hero .side .acts{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.hero .side .link{color:var(--butter)}
+.hero .side{max-width:360px}
+.creds{grid-template-columns:repeat(3,1fr)}
+.creds div{flex-direction:column;align-items:flex-start;gap:10px}
+.creds b{font-size:clamp(28px,2.4vw,38px)}
+.creds span{font-size:14px;max-width:20em}
+.chd > p{max-width:27em}
+.cafe .lede{max-width:19em}
+.cafe .fmt{display:grid;grid-template-columns:auto 1fr;gap:10px 26px;margin:6px 0 0;padding:22px 0 0;border-top:1px solid var(--line)}
+.cafe .fmt dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.55;padding-top:5px}
+.cafe .fmt dd{margin:0;font-family:var(--serif);font-size:21px}
+.cafe .fmt dd small{font-family:var(--sans);font-size:13px;opacity:.6;margin-left:8px}
+.cafe .buy{margin-top:34px}
+.gift .acts{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.prep .n3 div{grid-template-columns:1fr}
+.prep .n3 b{font-size:clamp(34px,3.4vw,56px);line-height:1.05}
+.prep .sign{margin:clamp(30px,3vw,44px) 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(22px,1.9vw,28px);opacity:.85}
+.gift .tx{grid-column:8/13}
+.gift .tx h2{font-size:clamp(40px,3.5vw,60px)}
+.hero .side p{text-shadow:0 1px 18px rgba(20,16,12,.7)}
+.hero .side .acts{gap:12px}
+.btn.ghost-l{color:var(--butter);border-color:rgba(241,225,179,.7)}
+.btn.ghost-l::before{background:var(--butter)}
+.btn.ghost-l:hover{color:var(--roast)}
+.gift .acts{gap:12px}
+@media (max-width:960px){.cue{display:none}}
+
+
 @media (max-width:960px){
   .hero .in{grid-template-columns:1fr}
-  .hero .meta{flex-direction:column;gap:10px}
-  .chd > .l,.chd > .r{grid-column:1/-1}
-  .chd > .r{margin-top:34px}
   .cafe,.cafe.rev{grid-template-columns:1fr;min-height:0}
   .cafe .pk,.cafe.rev .pk{grid-column:1/-1;order:0;aspect-ratio:1/1}
   .cafe .tx,.cafe.rev .tx{grid-column:1/-1;order:1;padding:44px var(--gut) 70px}
-  .cafe .pk .pack img{width:38%}
-  .cafe .pk .ix{font-size:84px}
+  .cafe .pk .pack img{width:32%}
   .hist .in{grid-template-columns:1fr}
   .hist h2,.hist .r{grid-column:1/-1}
   .gift .ph,.gift .tx{grid-column:1/-1}
@@ -138,245 +147,110 @@
   .cafe .pk .pack img{width:36%}
   .cafe .pk .scr{top:clamp(20px,2.6vw,40px);bottom:auto}
 }
+@media (max-width:960px){.creds{grid-template-columns:1fr;row-gap:0}.creds div,.creds div:first-child,.creds div:nth-child(3){padding:20px 0;flex-direction:column;align-items:flex-start;gap:6px}.creds div + div{border-left:0;border-top:1px solid var(--line)}}
+.cafe .pk .pack{inset:-14% 0}
+.cafe .pk .pack.mocha ~ .ix{color:var(--roast);opacity:.7}
+.creds div{padding-inline:clamp(18px,2.4vw,40px)}
+.creds span{font-size:15px;opacity:.8;max-width:26em;text-wrap:balance}
+@media (max-width:960px){.creds div,.creds div:first-child,.creds div:nth-child(3){padding-inline:0}}
+.hero .in::before{content:"";position:absolute;right:-6%;bottom:-30%;width:58%;height:150%;background:radial-gradient(closest-side,rgba(20,16,12,.5),rgba(20,16,12,0));z-index:-1;pointer-events:none}
+.cafe .fmt dt{opacity:.72}
+.gift .from span{opacity:.75}
+.gift img[src*="p-kit-vertical"]{object-position:62% 50%}
 </style>
-<style>
-
-/* Editorial rebuild: photographic chapters, tighter catalog, varied section rhythm. */
-.ftr .giant{max-width:540px;margin:60px auto 42px;padding:0!important}
-.hero::after{background:linear-gradient(180deg,rgba(20,26,18,.28),rgba(20,26,18,.04) 35%,rgba(20,26,18,.68) 100%)}
-.hero video{filter:brightness(1.04) saturate(.92)}
-.hero .bg{inset:0}
-.chd{padding-block:76px 46px;align-items:end}
-.chd .r>p{margin:0;max-width:28em}
-.coffee-pair{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-bottom:90px;background:var(--butter)}
-.coffee-pair .cafe,.coffee-pair .cafe.rev{display:flex;flex-direction:column;min-height:0;background:none}
-.coffee-pair .cafe .pk,.coffee-pair .cafe.rev .pk{width:100%;aspect-ratio:1.18;order:0;flex:none}
-.coffee-pair .cafe .pk .pack img{width:35%;max-height:80%;object-fit:contain}
-.coffee-pair .cafe .pk .ix{font-size:72px;opacity:.23}
-.coffee-pair .cafe .tx,.coffee-pair .cafe.rev .tx{order:1;padding:28px 0 0;display:block}
-.coffee-pair .cafe .tx h2{font-size:clamp(40px,4.2vw,72px);margin:12px 0}
-.coffee-pair .cafe .tx h2 .ln{display:inline}
-.coffee-pair .cafe .tx h2 .ln>span{display:inline}
-.coffee-pair .cafe .tx .lede{font-size:23px;margin:20px 0;max-width:25em;min-height:2.75em}
-.coffee-pair .cafe .sub{font-size:18px}
-.coffee-pair .cafe dl{display:none}
-.coffee-pair .cafe .buy{margin-top:25px;gap:18px}
-.coffee-pair .cafe .buy .num{font-size:29px;margin-right:auto}
-.coffee-pair .cafe .eyebrow{font-size:10px}
-.hist.story-banner{height:70svh;min-height:540px}
-.founder-section{display:grid;grid-template-columns:43% 57%;align-items:stretch}
-.founder-photo{margin:0;position:relative;min-height:760px}
-.founder-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.founder-photo figcaption{position:absolute;bottom:28px;left:32px;color:var(--cream);font-family:var(--serif);font-style:italic;font-size:24px;text-shadow:0 2px 15px #211d1a}
-.founder.founder-letter{max-width:none;padding:80px clamp(34px,5vw,82px);margin:0}
-.founder-letter h2{font-size:clamp(48px,5vw,80px);margin:14px 0 36px}
-.founder-letter .ftxt .lede{font-size:31px;line-height:1.25;max-width:15em}
-.founder-letter .ftxt p{font-size:16px;line-height:1.65}
-.founder-letter .ftxt p:last-child{font-size:26px;margin-top:30px;padding-top:25px;border-top:1px solid var(--line)}
-.origin-section{position:relative;display:grid;grid-template-columns:54% 46%;overflow:hidden}
-.origin-visual{min-height:760px;grid-column:1;grid-row:1}
-.origin-visual video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.farm.origin-copy{display:block;padding:85px clamp(32px,4vw,64px);grid-column:2;grid-row:1;align-self:center}
-.origin-copy .l,.origin-copy .r{display:block;grid-column:auto}
-.origin-copy .r .lede{font-size:32px;margin:32px 0 22px}
-.origin-copy .r .body{font-size:16px;line-height:1.7}
-.origin-copy .facts{grid-template-columns:1fr 1fr;gap:24px;margin-top:36px}
-.origin-copy .facts b{font-size:30px}
-.origin-copy .facts div{padding-top:0}
-.origin-copy .facts div:last-child{grid-column:1/-1}
-.origin-copy .facts{padding-top:24px}
-.steps{display:block}
-.steps>.l{position:static;display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:0 50px;margin-bottom:56px}
-.steps>.l>.chap{grid-column:1/-1}
-.steps>.l>p{margin:0;max-width:30em}
-.steps ol{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:44px 28px;margin:0}
-.steps li{display:grid;grid-template-columns:34px 1fr;grid-column:span 2;gap:22px 10px;padding:0;border:0!important;align-content:start}
-.steps li:nth-child(4),.steps li:nth-child(5){grid-column:span 3}
-.steps .step-photo{grid-column:1/-1;aspect-ratio:1.3}
-.steps .step-photo img{width:100%;height:100%;object-fit:cover}
-.steps li:nth-child(4) .step-photo,.steps li:nth-child(5) .step-photo{aspect-ratio:1.8}
-.steps li h3{font-size:32px;line-height:1.08}
-.steps li p{font-size:15px;line-height:1.65}
-.steps li i{font-size:24px;padding-top:4px}
-.lhead.shop-hero{position:relative;min-height:620px;padding-top:240px;padding-bottom:64px;color:var(--cream);overflow:hidden;isolation:isolate;grid-template-columns:1fr 1fr;align-items:end;margin-bottom:65px;background:var(--espresso)}
-.shop-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 46%;z-index:-2}
-.shop-hero::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(33,29,26,.65),rgba(33,29,26,.1) 55%,rgba(33,29,26,.62))}
-.lhead.shop-hero h1{grid-column:1;font-size:clamp(90px,12vw,185px)}
-.lhead.shop-hero .r{grid-column:2;max-width:26em;justify-self:end;margin:0}
-.lhead.shop-hero .r p{opacity:1}
-body[data-page=loja] .ct .pk{aspect-ratio:1.15}
-body[data-page=loja] .ct .pk .pack img{width:34%}
-.cmp td{padding-block:23px;font-size:22px}
-.kgrid{width:100%;min-width:0;grid-template-columns:repeat(3,minmax(0,1fr))!important}
-.kgrid>*{min-width:0}
-.kc-b{display:block}
-.kc-b .num{display:block;margin-top:15px;font-size:26px}
-.kc-img{aspect-ratio:1.05}
-.box4{grid-template-columns:1fr 1fr;gap:38px}
-.box4 .media{aspect-ratio:1.35}
-.box4 figcaption{display:flex;justify-content:space-between;gap:20px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:18px}
-.box4 b{font-size:28px}
-@media(max-width:960px){
-.founder-section,.origin-section{grid-template-columns:1fr 1fr}
-.founder.founder-letter{padding:55px 30px}
-.founder-photo{min-height:650px}
-.origin-visual{min-height:650px}
-.farm.origin-copy{padding:55px 30px}
-.origin-copy .r .lede{font-size:27px}
-.coffee-pair .cafe .buy .num{width:100%;margin:0}
-.coffee-pair .cafe .tx h2{font-size:43px}
-.steps li{grid-column:span 3}
-.steps li:nth-child(4){grid-column:span 3}
-.steps li:nth-child(5){grid-column:span 6}
-.steps li:nth-child(5) .step-photo{aspect-ratio:2.2}
-}
-@media(max-width:700px){
-.ftr .giant{max-width:260px;margin-block:46px 32px}
-.chd{padding-block:54px 30px}
-.chd>.r{margin-top:20px}
-.coffee-pair{grid-template-columns:1fr;gap:50px;padding-bottom:60px}
-.coffee-pair .cafe .pk,.coffee-pair .cafe.rev .pk{aspect-ratio:1.1}
-.coffee-pair .cafe .tx h2{font-size:46px}
-.coffee-pair .cafe .tx .lede{min-height:0;font-size:23px}
-.coffee-pair .cafe .buy .num{width:auto;margin-right:auto}
-.coffee-pair .cafe .buy{gap:13px}
-.coffee-pair .cafe .buy .btn{padding-inline:19px}
-.coffee-pair .cafe .buy .link{font-size:12px}
-.hist.story-banner{height:78svh;min-height:570px}
-.founder-section,.origin-section{display:flex;flex-direction:column}
-.founder-photo{min-height:0;height:420px}
-.founder-photo img{object-position:50% 45%}
-.founder.founder-letter{padding:48px var(--gut) 58px}
-.founder-letter .ftxt .lede{font-size:29px}
-.origin-visual{min-height:0;height:360px}
-.farm.origin-copy{padding:48px var(--gut) 58px}
-.origin-copy .r{margin:0}
-.origin-copy .r .lede{font-size:29px}
-.steps>.l{display:block;margin-bottom:35px}
-.steps>.l>p{margin-top:24px}
-.steps ol{display:block}
-.steps li{margin-top:35px}
-.steps li .step-photo,.steps li:nth-child(4) .step-photo,.steps li:nth-child(5) .step-photo{aspect-ratio:1.5}
-.lhead.shop-hero{min-height:590px;display:flex;flex-direction:column;justify-content:end;align-items:start;padding-top:200px;padding-bottom:44px;margin-bottom:40px;gap:28px}
-.lhead.shop-hero h1{font-size:100px}
-.lhead.shop-hero .r{max-width:26em}
-.shop-hero::after{background:linear-gradient(180deg,rgba(33,29,26,.25),rgba(33,29,26,.76))}
-body[data-page=loja] .ct .pk{aspect-ratio:1.1}
-.cmp table{table-layout:fixed}
-.cmp td{font-size:17px;padding-block:18px;overflow-wrap:anywhere}
-.cmp td:first-child{width:26%;font-size:9px;letter-spacing:.1em}
-.cmp th{font-size:9px;letter-spacing:.08em}
-.kgrid{grid-template-columns:1fr!important;gap:44px}
-.kc-img{aspect-ratio:1.12}
-.kc-b{display:flex;gap:15px}
-.kc-b .num{font-size:23px;margin:0;flex-shrink:0}
-.box4{grid-template-columns:1fr;gap:30px}
-.box4 .media{aspect-ratio:1.22}
-.box4 figcaption{display:block}
-.box4 b{font-size:26px}
-}
-
-</style>
-<style>body[data-page="home"] .hdr:not(.is-solid){background:linear-gradient(180deg,rgba(20,26,18,.66),rgba(20,26,18,.12))}.hero .eyebrow{text-shadow:0 1px 7px #182017,0 1px 2px #182017}</style>
 </head>
 <body data-page="home">
-<section class="hero">
-<div class="bg" data-par=".6"><video autoplay="" loop="" muted="" playsinline="" poster="assets/video/2-hero-fazenda-poster.jpg" src="assets/video/1-hero-fazenda.mp4"></video></div>
-<div class="in">
-<div>
-<p class="eyebrow ln-l" data-fade="">Café especial · Sul de Minas</p>
-<h1 class="display xxl" data-lines=""><span class="ln"><span>Todo momento</span></span><span class="ln"><span>tem sua <em class="it">ORA.</em></span></span></h1>
-</div>
-<div class="side" data-delay="2" data-fade="">
-<p>Dois cafés de uma mesma fazenda na região do Sul de Minas, a no mínimo 1.500 m de altitude, colhidos maduros e torrados em pequenos lotes.</p>
-<a class="btn light" href="#cafes">Conhecer os cafés <svg class="arr" viewbox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"></path></svg></a>
-</div>
-<div class="meta" data-delay="3" data-fade="">
-<span><i></i>Fazenda Santa Cruz · Sul de Minas</span>
-<span><i></i>Altitude mínima de 1.500 m</span>
-<span><i></i>Torra em pequenos lotes</span>
-</div>
-</div>
-</section>
-<section aria-label="Sobre os cafés" class="creds t-roast">
-<div data-fade=""><b class="num">01</b><span>Origem única<br/>Fazenda Santa Cruz</span></div>
-<div data-delay="1" data-fade=""><b class="num">1.500 m</b><span>Altitude mínima<br/>Região Sul de Minas</span></div>
-<div data-delay="2" data-fade=""><b class="num">02</b><span>Processos<br/>Natural e Cereja Descascado</span></div>
-<div data-delay="3" data-fade=""><b class="num">500 g</b><span>Moído para coado<br/>Também em 250 g</span></div>
-</section>
-<div class="chd wrap t-butter" id="cafes">
-<div class="l"><p class="eyebrow ln-l" data-fade="">Safra 2026/27</p><h2 class="display xl" data-lines="" style="margin-top:22px"><span class="ln"><span>Os cafés</span></span></h2></div>
-<div class="r">
-<p data-fade="">Mesma fazenda, mesma colheita. O processo depois do pé é o que separa um do outro.</p>
 
-</div>
-</div>
-<div class="coffee-pair wrap">
-<article class="cafe t-butter" id="cafe-natural">
-<div class="pk" data-open=""><div class="pack"><img alt="Pacote do Café Natural, 500 g" src="assets/img/pacote-natural.webp"/></div><span class="ix">01</span></div>
-<div class="tx">
-<p class="eyebrow ln-l" data-fade="">Processo natural</p>
-<h2 class="display xl" data-lines=""><span class="ln"><span>Natural</span></span></h2>
-<span class="sub" data-fade="">Variedade Bourbon</span>
-<p class="lede" data-fade="">Chocolate e caramelo em primeiro plano, corpo aveludado e doçura de fruta madura.</p>
-<div class="chips" data-fade=""><span>chocolate</span><span>caramelo</span><span>doce</span></div>
-<dl data-fade=""><dt>Corpo</dt><dd>Aveludado</dd><dt>Acidez</dt><dd>Equilibrada</dd><dt>Formato</dt><dd>Moído · 500 g</dd></dl>
-<div class="buy" data-fade=""><span class="num">R$ 89</span><button class="btn solid" data-quick="cafe-natural">Adicionar</button><a class="link" href="produto.html?p=cafe-natural">Detalhes</a></div>
-</div>
-</article>
-<article class="cafe rev t-butter" id="cafe-cereja">
-<div class="pk" data-open=""><div class="pack mocha"><img alt="Pacote do Café Cereja Descascado, 500 g" src="assets/img/pacote-cereja.webp"/></div><span class="ix">02</span></div>
-<div class="tx">
-<p class="eyebrow ln-l" data-fade="">Cereja descascado</p>
-<h2 class="display xl" data-lines=""><span class="ln"><span>Cereja </span></span><span class="ln"><span class="it">Descascado</span></span></h2>
-<span class="sub" data-fade="">Catucaí, Mundo Novo e Catuaí</span>
-<p class="lede" data-fade="">Doce e caramelizado, com notas de avelã e acidez cítrica.</p>
-<div class="chips" data-fade=""><span>avelã</span><span>caramelo</span><span>cítrico</span></div>
-<dl data-fade=""><dt>Corpo</dt><dd>Aveludado</dd><dt>Acidez</dt><dd>Cítrica delicada</dd><dt>Formato</dt><dd>Moído · 250 g ou 500 g</dd></dl>
-<div class="buy" data-fade=""><span class="num">R$ 89</span><button class="btn solid" data-quick="cafe-cereja">Adicionar</button><a class="link" href="produto.html?p=cafe-cereja">Detalhes</a></div>
-<p data-fade="" style="margin:16px 0 0;font-size:13px;opacity:.6">Também em 250 g, por R$ 59 · o dobro de café por mais R$ 30.</p>
-</div>
-</article>
-</div>
-<section class="hist story-banner">
-<div class="media"><video autoplay="" data-par=".5" loop="" muted="" playsinline="" poster="assets/video/graos.jpg" src="assets/video/graos.mp4"></video></div>
-<div class="in">
-<h2 class="display xl" data-lines=""><span class="ln"><span>Do pé de café</span></span><span class="ln"><span>à sua <em class="it">pausa.</em></span></span></h2>
-<div class="r" data-fade="">
-<p>A história da Fazenda Santa Cruz e de como cada lote da ORA é colhido, separado, secado e torrado.</p>
-<a class="btn light" href="historia.html">Nossa história <svg class="arr" viewbox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"></path></svg></a>
-</div>
-</div>
+<section class="hero">
+  <div class="bg" data-par=".6"><video src="assets/video/hero-cafezal.mp4" poster="assets/video/hero-cafezal.jpg" autoplay muted loop playsinline></video></div>
+  <div class="in">
+    <div>
+      <p class="eyebrow ln-l" data-fade>Café especial · Minas Gerais</p>
+      <h1 class="display xxl" data-lines><span class="ln"><span>Todo momento</span></span><span class="ln"><span>tem sua <em class="it">ORA.</em></span></span></h1>
+    </div>
+    <div class="side" data-fade data-delay="2">
+      <p>Cafés especiais de fazendas de Minas Gerais, colhidos maduros e torrados em pequenos lotes. Uma nova maneira de apreciar os seus momentos.</p>
+      <div class="acts"><a class="btn light" href="#cafes">Conheça nossos cafés <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a><a class="btn ghost-l" href="historia.html">Nossa história</a></div>
+    </div>
+  </div>
+  
 </section>
-<section class="sec wrap t-espresso prep" id="preparo">
-<div class="pv media" data-open=""><video autoplay="" loop="" muted="" playsinline="" poster="assets/video/coado.jpg" src="assets/video/coado.mp4"></video></div>
-<div class="pt">
-<div class="top">
-<h2 class="display lg" data-lines=""><span class="ln"><span>Como preparar</span></span></h2>
-<p data-fade="">No coador de papel ou de pano.<br/>Três números bastam.</p>
-</div>
-<div class="n3">
-<div data-fade=""><b class="num">10 g</b><span>de café, cerca de duas colheres de sopa rasas.</span></div>
-<div data-delay="1" data-fade=""><b class="num">150 ml</b><span>de água para cada xícara.</span></div>
-<div data-delay="2" data-fade=""><b class="num">92 °C</b><span>Desligue o fogo nas primeiras bolhas, espere meio minuto e despeje devagar.</span></div>
-</div>
-</div>
+
+<section class="creds t-roast" aria-label="Diferenciais">
+  <div data-fade><b>Cafés especiais</b><span>Natural e Cereja Descascado.</span></div>
+  <div data-fade data-delay="1"><b>Origem</b><span>Das fazendas de Minas Gerais para a sua ORA.</span></div>
+  <div data-fade data-delay="2"><b>Presentes</b><span>Experiências especiais para compartilhar.</span></div>
 </section>
-<section class="sec wrap t-butter">
-<div class="gift">
-<div class="ph media" data-open=""><img alt="Kit ORA aberto, com café, caneca e sacola" src="assets/img/p-kit-vertical.jpg"/></div>
-<div class="tx">
-<p class="eyebrow ln-l" data-fade="">Para presentear</p>
-<h2 class="display lg" data-lines=""><span class="ln"><span>O café, na</span></span><span class="ln"><span><em class="it">caixa ORA.</em></span></span></h2>
-<p class="body" data-fade="">Kits com café, caneca e jarra térmicas, na caixa com sacola kraft e um cartão com a sua mensagem.</p>
-<div class="from" data-fade=""><span>A partir de</span><b class="num">R$ 129,00</b></div>
-<a class="btn" data-fade="" href="presentes.html">Ver os presentes <svg class="arr" viewbox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"></path></svg></a>
+
+<div class="chd wrap t-butter" id="cafes">
+  <div><p class="eyebrow ln-l" data-fade>Nossos cafés</p><h2 class="display xl" data-lines style="margin-top:22px"><span class="ln"><span>Cafés que tornam</span></span><span class="ln"><span>cada <em class="it">momento especial.</em></span></span></h2></div>
+  <p data-fade>Cada café tem a sua personalidade de aroma, corpo e sabor. Os grãos vêm de fazendas de Minas Gerais; o que muda entre eles é o processo depois da colheita.</p>
 </div>
+<div>
+  <article class="cafe t-butter">
+    <div class="pk"><div class="pack" data-par=".35"><img src="assets/img/pacote-natural.webp" alt="Pacote do Café Natural, 500 g"></div><span class="ix">01</span></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Processo natural</p>
+      <h2 class="display xl" data-lines><span class="ln"><span>Café</span></span><span class="ln"><span class="it">Natural</span></span></h2>
+            <p class="lede" data-fade>Um café de personalidade marcante, que valoriza a intensidade, o corpo e a expressão natural dos grãos.</p>
+      <dl class="fmt" data-fade><dt>Peso</dt><dd>500 g</dd><dt>Preço</dt><dd class="num">R$ 89,00</dd></dl>
+      <div class="buy" data-fade><a class="btn solid" href="produto.html?p=cafe-natural">Conheça este café <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
+    </div>
+  </article>
+  <article class="cafe rev t-butter">
+    <div class="pk"><div class="pack mocha" data-par=".35"><img src="assets/img/pacote-cereja.webp" alt="Pacote do Café Cereja Descascado, 500 g"></div><span class="ix">02</span></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Processo cereja descascado</p>
+      <h2 class="display xl" data-lines><span class="ln"><span>Cereja</span></span><span class="ln"><span class="it">Descascado</span></span></h2>
+            <p class="lede" data-fade>Um café que valoriza a delicadeza e a complexidade dos grãos, com equilíbrio e características próprias.</p>
+      <dl class="fmt" data-fade><dt>Peso</dt><dd>250 g ou 500 g</dd><dt>Preço</dt><dd class="num">a partir de R$ 59,00</dd></dl>
+      <div class="buy" data-fade><a class="btn solid" href="produto.html?p=cafe-cereja">Conheça este café <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div>
+    </div>
+  </article>
 </div>
+
+<section class="hist">
+  <div class="media"><video src="assets/video/4-fazenda.mp4" poster="assets/video/fazenda.jpg" autoplay muted loop playsinline data-par=".5"></video></div>
+  <div class="in">
+    <h2 class="display xl" data-lines><span class="ln"><span>Toda boa história</span></span><span class="ln"><span>tem uma <em class="it">origem.</em></span></span></h2>
+    <div class="r" data-fade>
+      <p>A ORA nasce em Minas Gerais. Os grãos são selecionados em fazendas do estado, colhidos maduros e torrados em pequenos lotes, para chegar à sua xícara com a qualidade da origem.</p>
+      <a class="btn light" href="historia.html">Conheça nossa história <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
+    </div>
+  </div>
 </section>
+
+<section class="sec wrap t-butter" id="presentes">
+  <div class="gift">
+    <div class="ph media" data-open><img src="assets/img/p-kit-vertical.jpg" alt="Kit ORA aberto, com café, caneca e sacola"></div>
+    <div class="tx">
+      <p class="eyebrow ln-l" data-fade>Presentes</p>
+      <h2 class="display lg" data-lines><span class="ln"><span>Presentear também é</span></span><span class="ln"><span><em class="it">uma forma de dizer.</em></span></span></h2>
+      <p class="body" data-fade>Café com caneca ou jarra térmica, na caixa ORA, com sacola kraft e um cartão com a sua mensagem. Para alguém especial, para uma data importante ou para a sua empresa.</p>
+      <div class="from" data-fade><span>A partir de</span><b class="num">R$ 129,00</b></div>
+      <div class="acts" data-fade><a class="btn solid" href="presentes.html">Conheça nossos presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a><a class="btn" href="presentes.html#corporativo">Presentes corporativos</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap t-roast prep" id="conceito">
+  <div class="pv media" data-open><video src="assets/video/xicara.mp4" poster="assets/video/xicara.jpg" autoplay muted loop playsinline></video></div>
+  <div class="pt">
+  <div class="top">
+    <h2 class="display lg" data-lines><span class="ln"><span>A vida acontece</span></span><span class="ln"><span><em class="it">nos detalhes.</em></span></span></h2>
+  </div>
+  <div class="n3">
+    <div data-fade><b>Na pausa entre compromissos.</b></div>
+    <div data-fade data-delay="1"><b>No café compartilhado.</b></div>
+    <div data-fade data-delay="2"><b>No início de um novo dia.</b></div>
+  </div>
+  <p class="sign" data-fade>Todo momento tem sua ORA.</p>
+  </div>
+</section>
+
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=8"></script>
-<script src="js/catalogo.js?v=9"></script>
-<script src="js/site.js?v=8"></script>
+<script src="js/logo.js?v=15"></script>
+<script src="js/catalogo.js?v=15"></script>
+<script src="js/site.js?v=15"></script>
 </body>
 </html>

@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Café · ORA</title>
+<meta name="description" content="Cafés especiais e kits para presentear da ORA: processo, notas, preparo e preço.">
 <meta name="theme-color" content="#F1E1B3">
 <link rel="icon" href="assets/brand/monograma.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ora.css?v=8">
+<link rel="stylesheet" href="css/ora.css?v=15">
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
 .gw{grid-column:1/8;min-width:0}
@@ -150,11 +151,18 @@
   .spec dl div{grid-template-columns:8.5em 1fr}
   .sbar .n span,.sbar .num{display:none}
 }
+.gal .media.kraft{background:radial-gradient(120% 90% at 50% 30%,#cbb9a3 0%,var(--mocha) 55%,#a69079 100%);display:grid;place-items:center}
+.gal .media.kraft img{width:auto;height:84%;object-fit:contain;filter:drop-shadow(0 30px 30px rgba(40,25,15,.3))}
+.gal .media.kraft .cap,.gal .media.w.wide .cap{color:var(--roast);opacity:.75}
+.sw .fix{border:0;box-shadow:none;padding:4px 0}
+.cup .row b:last-child{opacity:1}
+@media (max-width:700px){.cup .row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:left}.cup .row b{font-size:19px}}
+.kgrid.k2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 </style>
 <style>
 
 /* Editorial rebuild: photographic chapters, tighter catalog, varied section rhythm. */
-.ftr .giant{max-width:540px;margin:60px auto 42px;padding:0!important}
+
 .hero::after{background:linear-gradient(180deg,rgba(20,26,18,.28),rgba(20,26,18,.04) 35%,rgba(20,26,18,.68) 100%)}
 .hero video{filter:brightness(1.04) saturate(.92)}
 .hero .bg{inset:0}
@@ -243,7 +251,7 @@ body[data-page=loja] .ct .pk .pack img{width:34%}
 .steps li:nth-child(5) .step-photo{aspect-ratio:2.2}
 }
 @media(max-width:700px){
-.ftr .giant{max-width:260px;margin-block:46px 32px}
+
 .chd{padding-block:54px 30px}
 .chd>.r{margin-top:20px}
 .coffee-pair{grid-template-columns:1fr;gap:50px;padding-bottom:60px}
@@ -278,7 +286,7 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 .cmp td{font-size:17px;padding-block:18px;overflow-wrap:anywhere}
 .cmp td:first-child{width:26%;font-size:9px;letter-spacing:.1em}
 .cmp th{font-size:9px;letter-spacing:.08em}
-.kgrid{grid-template-columns:1fr!important;gap:44px}
+.kgrid,.kgrid.k2{grid-template-columns:1fr!important;gap:44px}
 .kc-img{aspect-ratio:1.12}
 .kc-b{display:flex;gap:15px}
 .kc-b .num{font-size:23px;margin:0;flex-shrink:0}
@@ -288,6 +296,14 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 .box4 b{font-size:26px}
 }
 
+
+.info,.pdp > *{min-width:0}
+@media (max-width:420px){[data-buyrow]{flex-wrap:wrap}[data-buyrow] .btn{flex:1 1 auto;min-width:0;padding-inline:18px;gap:10px}}
+.crumbs a,.crumbs span{opacity:.75}
+.opt .lb span,.meta .lot,.pr span,.gal-n,.spec dt,.sw small,.plans small,.ship,.cup .row small{opacity:.78!important}
+.sbar .n b{white-space:normal;font-size:17px;line-height:1.15}
+.opt .lb span:only-child{opacity:1!important;letter-spacing:.22em;text-transform:uppercase;font-weight:700;font-size:11px}
+@media (max-width:420px){.trust{grid-template-columns:1fr;gap:14px}.trust li{display:flex;gap:12px;align-items:baseline}.trust b{font-size:17px;min-width:6.5em;margin:0}}
 </style>
 </head>
 <body data-page="produto" data-hdr="light">
@@ -305,8 +321,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true"></div>
 
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=8"></script>
-<script src="js/catalogo.js?v=9"></script>
+<script src="js/logo.js?v=15"></script>
+<script src="js/catalogo.js?v=15"></script>
 <script>
 window.ORA_PAGE = () => {
   const $ = s => document.querySelector(s);
@@ -314,11 +330,12 @@ window.ORA_PAGE = () => {
   const ARR = ORA_ARR;
   const TRUCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>';
   let p = oraProd(q.get('p')) || oraProd('cafe-natural');
+  if (p.tipoLoja === 'drip') { location.replace('loja.html#drip'); return; }
   let st = { qty: 1, sub: false, t: '500', v: oraCafe(q.get('c')) ? q.get('c') : 'natural' };
 
   const media = (src, cls = '', cap = '') => {
     const isV = src.endsWith('.mp4');
-    const el = isV ? `<video src="${src}" poster="${src.replace('.mp4', '.jpg')}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${p.nome}">`;
+    const el = isV ? `<video src="${src}" poster="${src.replace('.mp4', '.jpg')}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${cap || p.nome}">`;
     return `<div class="media ${cls}">${el}${cap ? `<span class="cap">${cap}</span>` : ''}</div>`;
   };
   const sw = (c, on) => `<button type="button" data-sw="${c.id}" aria-pressed="${on}"><i class="${c.cor === 'mocha' ? 'mocha' : ''}"><img src="${c.img}" alt=""></i><span><b>${c.nome}</b><small>${c.id === 'natural' ? 'Mais doce' : 'Mais cítrico'}</small></span></button>`;
@@ -330,10 +347,10 @@ window.ORA_PAGE = () => {
 
     /* galeria */
     const g = isCafe
-      ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : '')), media('assets/video/po.mp4', '', 'Moído para coado'), media(c.rotulo, 'lblc', 'O rótulo'), ...(c.img250 ? [media(c.img250, '', 'Nova embalagem · 250 g')] : []), media('assets/img/cartao-origem.jpg', 'w wide', 'Fazenda Santa Cruz · Sul de Minas')]
+      ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : '')), media('assets/video/po.mp4', '', 'Moído para coado'), media(c.rotulo, 'lblc', 'O rótulo'), ...(c.img250 ? [media(c.img250, 'w kraft', 'Embalagem kraft · 250 g')] : []), media('assets/img/cartao-frente.jpg', 'w wide', 'Cartão ORA')]
       : [media(p.img, 'w'), media(p.img2), media('assets/img/sacola.jpg'), media('assets/img/caixa-slogan.jpg', 'w wide', 'Caixa ORA')];
     $('[data-gal]').innerHTML = g.join('');
-    if (isCafe) $('[data-gal] .pack').innerHTML = `<img src="${c.img}" alt="Pacote do ${c.nomeCompleto}, 500 g">`;
+    if (isCafe) $('[data-gal] .pack').innerHTML = `<img src="${st.t === '250' && c.img250 ? c.img250 : c.img}" alt="Pacote do ${c.nomeCompleto}, ${st.t} g">`;
     $('[data-galn]').textContent = `${g.length} imagens · deslize`;
 
     /* informações e compra */
@@ -341,23 +358,24 @@ window.ORA_PAGE = () => {
     const precoCompra = () => st.sub ? Math.round(precoBase() * .85) : precoBase();
     const total = () => brl(precoCompra() * st.qty);
     $('[data-info]').innerHTML = `
-      <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
+      <div class="crumbs"><a href="${isCafe ? 'loja.html' : 'presentes.html'}">${isCafe ? 'Nossos cafés' : 'Presentes'}</a><span>/</span><span>${p.nome}</span></div>
       <h1 class="display lg">${isCafe ? p.nome.replace(' Descascado', ' <em class="it">Descascado</em>') : p.nome}</h1>
       <span class="sub">${isCafe ? c.sub : p.tipo}</span>
-      ${isCafe ? `<div class="meta"><span class="lot">Lote ${c.lote} · Safra 2026/27</span></div>` : ''}
-      <div class="pr"><b class="num">${brl(precoBase())}</b><span>${isCafe ? st.t + ' g' : 'kit completo, na caixa'}</span></div>
+      <div class="pr"><b class="num">${brl(precoBase())}</b><span>${isCafe ? st.t + ' g' + (st.sub ? ' · assinatura, ' + brl(Math.round(precoBase() * .85)) + ' por mês' : '') : 'na caixa ORA'}</span></div>
       <p class="lede">${isCafe ? c.frase : p.resumo}</p>
       ${isCafe ? `<div class="chips">${c.notas.map(n => `<span>${n.toLowerCase()}</span>`).join('')}</div>` : ''}
-      <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Dois cafés, mesma fazenda' : c.notas.join(', ').toLowerCase()}</span></div>
+      <div class="opt"><div class="lb"><span>${isCafe ? 'Café' : 'Café do kit'}</span><span>${isCafe ? 'Dois cafés, dois processos' : (c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase())}</span></div>
         <div class="sw">${C.cafes.map(x => sw(x, x.id === c.id)).join('')}</div></div>
       ${isCafe && p.p250 ? `
-      <div class="opt"><div class="lb"><span>Tamanho</span><span>Café em dobro por 25% a menos</span></div>
+      <div class="opt"><div class="lb"><span>Tamanho</span><span>Moído para coado</span></div>
         <div class="sw">
-          <button type="button" data-tam="250" aria-pressed="${st.t === '250'}"><span><b>250 g · ${brl(p.p250)}</b><small>Na embalagem nova, para conhecer</small></span></button>
-          <button type="button" data-tam="500" aria-pressed="${st.t === '500'}"><span><b>500 g · ${brl(p.preco)}</b><small>O dobro de café por mais R$ 30</small></span></button>
+          <button type="button" data-tam="250" aria-pressed="${st.t === '250'}"><span><b>250 g · ${brl(p.p250)}</b><small>Embalagem kraft, para conhecer</small></span></button>
+          <button type="button" data-tam="500" aria-pressed="${st.t === '500'}"><span><b>500 g · ${brl(p.preco)}</b><small>O dobro do café por -25% no preço</small></span></button>
         </div></div>` : ''}
+      ${isCafe && !p.p250 ? `
+      <div class="opt"><div class="lb"><span>Formato</span></div><div class="sw"><span class="fix"><span><b>Moído para coado · ${st.t} g</b><small>Para coador de papel ou de pano</small></span></span></div></div>
+      ` : ''}
       ${isCafe ? `
-      <div class="opt"><div class="lb"><span>Formato</span></div><div class="sw"><span class="fix"><span><b>Moído para coado · ${st.t} g</b><small>Moagem média, para coador de papel ou de pano</small></span></span></div></div>
       <div class="opt"><div class="lb"><span>Forma de compra</span></div>
         <div class="plans">
           <label><input type="radio" name="plan" value="0" ${st.sub ? '' : 'checked'}><span><b>Compra única</b><small>Um pacote, entregue uma vez.</small></span><span class="p num">${brl(precoBase())}</span></label>
@@ -367,21 +385,20 @@ window.ORA_PAGE = () => {
         <div class="qty"><button aria-label="Diminuir" data-qd="-1">−</button><span data-qty>${st.qty}</span><button aria-label="Aumentar" data-qd="1">+</button></div>
         <button class="btn solid" data-buy><span>Adicionar</span><span class="num" data-total style="font-size:17px;letter-spacing:0">${total()}</span></button>
       </div>
-      <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP no fechamento.</p>
-      ${isCafe ? `<ul class="trust"><li><b>Origem única</b>Fazenda Santa Cruz, Sul de Minas · acima de 1.500 m</li><li><b>Pequenos lotes</b>Torra acompanhada</li><li><b>Moagem média</b>Para coador de papel ou de pano</li></ul>` : ''}
-      ${isCafe ? '' : `<details class="gmsg"><summary>Incluir cartão com mensagem</summary><textarea rows="3" maxlength="180" placeholder="Escreva sua mensagem" data-msg></textarea></details>`}
+      <p class="ship">${TRUCK}Enviamos para todo o Brasil. Frete pelo CEP na finalização da compra.</p>
+      ${isCafe ? `<ul class="trust"><li><b>Minas Gerais</b>Grãos de fazendas selecionadas</li><li><b>Torra</b>Em pequenos lotes</li><li><b>Moído para coado</b>Para coador de papel ou de pano</li></ul>` : ''}
+      ${isCafe ? '' : `<details class="gmsg"${st.msg ? ' open' : ''}><summary>Incluir cartão com mensagem</summary><textarea rows="3" maxlength="140" placeholder="Escreva sua mensagem" data-msg>${(st.msg || '').replace(/</g, '&lt;')}</textarea></details>`}
       <div class="acc">
-        ${isCafe ? '' : `<details open><summary>O que vem</summary><div class="a"><ul>${p.contem.map(x => `<li>${x}</li>`).join('')}</ul></div></details>`}
         <details><summary>Como preparar</summary><div class="a">10 g de café para cada 150 ml de água a 92 °C, em coador de papel ou de pano. Molhe o pó, espere 30 segundos e complete devagar.</div></details>
         <details><summary>Conservação</summary><div class="a">Depois de aberto, feche bem o pacote e guarde longe da luz e do calor. O sabor fica melhor nas primeiras semanas.</div></details>
-        <details><summary>Entrega e trocas</summary><div class="a">Enviamos para todo o Brasil. Prazo e valor aparecem pelo seu CEP no fechamento do pedido.</div></details>
+        <details><summary>Entrega e trocas</summary><div class="a">Enviamos para todo o Brasil. Prazo e valor aparecem pelo seu CEP na finalização da compra. Trocas e devoluções seguem o Código de Defesa do Consumidor; veja as condições em <a href="politicas.html#trocas" style="text-decoration:underline">Políticas</a>.</div></details>
       </div>`;
 
     /* abaixo da dobra */
     const other = C.cafes.find(x => x.id !== c.id), op = C.produtos.find(x => x.cafe === other.id);
     const kits = C.produtos.filter(x => x.tipoLoja === 'kit' && x.handle !== p.handle);
-    const specRows = [['Fazenda', 'Santa Cruz'], ['Região', 'Sul de Minas, MG'], ['Processo', c.processo], ['Variedade', c.variedade], ['Safra', '2026/27'], ['Lote', c.lote],
-      ['Altitude', 'A partir de 1.500 m'], ['Notas', c.notas.join(', ')], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coado, papel ou pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
+    const specRows = [['Origem', 'Fazendas de Minas Gerais'], ['Processo', c.processo], ['Variedade', c.variedade],
+      ['Notas', c.notas.join(', ').charAt(0) + c.notas.join(', ').slice(1).toLowerCase()], ['Acidez', c.acidez], ['Corpo', c.corpo], ['Final', c.final], ['Formato', p.p250 ? 'Moído, 250 g ou 500 g' : 'Moído, 500 g'], ['Preparo', 'Coador de papel ou de pano'], ['Proporção', '1:15 · 10 g para 150 ml']];
     $('[data-below]').innerHTML = `
       ${isCafe ? `<section class="cup t-espresso"><p class="eyebrow" data-fade>Na xícara</p>
         <p class="w" data-lines>${c.notas.map(n => `<span class="ln"><span>${n}</span></span>`).join('')}</p>
@@ -399,7 +416,7 @@ window.ORA_PAGE = () => {
         <div class="proc">
           <div class="ph media" data-open><video src="assets/video/graos.mp4" poster="assets/video/graos.jpg" autoplay muted loop playsinline></video></div>
           <div class="tx">
-            <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : 'Cereja descascado'}</p>
+            <p class="eyebrow ln-l" data-fade>${c.processo === 'Natural' ? 'Processo natural' : 'Processo cereja descascado'}</p>
             <h2 class="display md" data-fade>${c.processo === 'Natural' ? 'Seca inteiro,<br><em class="it">com a fruta.</em>' : 'Sem a casca,<br><em class="it">mais limpo.</em>'}</h2>
             <p class="lede" data-fade>${c.sobre}</p>
             <a class="link" href="historia.html" data-fade>Nossa história ${ARR}</a>
@@ -409,12 +426,12 @@ window.ORA_PAGE = () => {
       <section class="sec wrap t-butter more" style="padding-top:0">
         ${isCafe ? `<div class="other">
           <a class="pk media pack ${other.cor === 'mocha' ? 'mocha' : ''}" href="produto.html?p=${op.handle}" data-open><img src="${other.img}" alt="Café ${other.nome}"></a>
-          <div class="tx"><p class="eyebrow ln-l" data-fade>O outro café da fazenda</p><h3 class="display md" data-fade>${other.nome}</h3><span class="sub" data-fade style="font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7">${other.sub}</span>
+          <div class="tx"><p class="eyebrow ln-l" data-fade>O outro café da ORA</p><h3 class="display md" data-fade>${other.nome}</h3><span class="sub" data-fade style="font-family:var(--serif);font-style:italic;font-size:20px;opacity:.7">${other.sub}</span>
             <p class="lede" data-fade>${other.frase}</p>
-            <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Detalhes</a></div></div>
+            <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
         </div>` : ''}
-        <div class="hd"><h2 class="display md" data-fade>${isCafe ? 'Para presentear' : 'Outros presentes'}</h2><a class="link" href="presentes.html" data-fade>Ver presentes ${ARR}</a></div>
-        <div class="kgrid">${kits.map(oraKitCard).join('')}</div>
+        <div class="hd"><h2 class="display md" data-fade>${isCafe ? 'Para presentear' : 'Outros presentes'}</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
+        <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
       </section>`;
 
     /* barra fixa */
@@ -425,11 +442,12 @@ window.ORA_PAGE = () => {
     document.querySelectorAll('[data-below] video,[data-gal] video').forEach(v => { v.muted = true; v.play().catch(() => {}); });
   }
 
-  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl((st.sub ? Math.round(precoBase() * .85) : precoBase()) * st.qty));
+  const base = () => (st.t === '250' && p.p250) ? p.p250 : p.preco;
+  const upd = () => document.querySelectorAll('[data-total]').forEach(e => e.textContent = brl((st.sub ? Math.round(base() * .85) : base()) * st.qty));
   document.addEventListener('click', e => {
     const s = e.target.closest('[data-sw]');
     if (s) {
-      if (p.tipoLoja === 'cafe') { p = C.produtos.find(x => x.cafe === s.dataset.sw); history.replaceState(null, '', '?p=' + p.handle); render(); }
+      if (p.tipoLoja === 'cafe') { p = C.produtos.find(x => x.cafe === s.dataset.sw); if (!p.p250) st.t = '500'; history.replaceState(null, '', '?p=' + p.handle); render(); }
       else { st.v = s.dataset.sw; history.replaceState(null, '', '?p=' + p.handle + '&c=' + st.v); render(); }
       return;
     }
@@ -439,7 +457,8 @@ window.ORA_PAGE = () => {
     if (d) { st.qty = Math.max(1, Math.min(20, st.qty + +d.dataset.qd)); document.querySelector('[data-qty]').textContent = st.qty; upd(); }
     if (e.target.closest('[data-buy]')) { const m = document.querySelector('[data-msg]'); ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, t: st.t, msg: m ? m.value.trim() : '' }); }
   });
-  document.addEventListener('change', e => { if (e.target.name === 'plan') st.sub = e.target.value === '1'; });
+  document.addEventListener('input', e => { if (e.target.matches('[data-msg]')) st.msg = e.target.value; });
+  document.addEventListener('change', e => { if (e.target.name === 'plan') { st.sub = e.target.value === '1'; render(); } });
 
   render();
   const bar = document.querySelector('[data-sbar]');
@@ -448,6 +467,6 @@ window.ORA_PAGE = () => {
   watch(); new MutationObserver(watch).observe(document.querySelector('[data-info]'), { childList: true });
 };
 </script>
-<script src="js/site.js?v=8"></script>
+<script src="js/site.js?v=15"></script>
 </body>
 </html>

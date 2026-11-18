@@ -10,8 +10,8 @@
 <meta content="#4A3025" name="theme-color"/>
 <link href="assets/brand/monograma.svg" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
-<link href="css/ora.css?v=8" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/ora.css?v=15" rel="stylesheet"/>
 <style>
 .ghero{position:relative;height:74svh;min-height:520px;overflow:hidden;background:var(--espresso);color:var(--butter)}
 .ghero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -51,7 +51,7 @@
 <style>
 
 /* Editorial rebuild: photographic chapters, tighter catalog, varied section rhythm. */
-.ftr .giant{max-width:540px;margin:60px auto 42px;padding:0!important}
+
 .hero::after{background:linear-gradient(180deg,rgba(20,26,18,.28),rgba(20,26,18,.04) 35%,rgba(20,26,18,.68) 100%)}
 .hero video{filter:brightness(1.04) saturate(.92)}
 .hero .bg{inset:0}
@@ -140,7 +140,7 @@ body[data-page=loja] .ct .pk .pack img{width:34%}
 .steps li:nth-child(5) .step-photo{aspect-ratio:2.2}
 }
 @media(max-width:700px){
-.ftr .giant{max-width:260px;margin-block:46px 32px}
+
 .chd{padding-block:54px 30px}
 .chd>.r{margin-top:20px}
 .coffee-pair{grid-template-columns:1fr;gap:50px;padding-bottom:60px}
@@ -186,6 +186,18 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 }
 
 </style>
+<style>
+.corp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);align-items:start;padding-block:clamp(80px,9vw,130px);scroll-margin-top:60px}
+.corp .cl{grid-column:1/6}.corp .cr{grid-column:7/13}
+.corp .body{margin:0 0 30px;font-size:19px;line-height:1.6;opacity:.88;max-width:26em}
+.corp ul{list-style:none;padding:0;margin:0 0 38px;border-top:1px solid var(--line)}
+.corp li{display:grid;grid-template-columns:9em 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.corp li b{font-family:var(--serif);font-weight:400;font-size:22px}
+.corp li span{font-size:16px;opacity:.92}
+@media (max-width:900px){.corp .cl,.corp .cr{grid-column:1/-1}.corp .cr{margin-top:30px}.corp li{grid-template-columns:1fr;gap:4px}}
+.card-pv .sig small{opacity:.75}
+@media (max-width:760px){.ghero::after{background:linear-gradient(180deg,rgba(33,29,26,.25),rgba(33,29,26,.15) 35%,rgba(33,29,26,.8))}.ghero img{object-position:30% 50%}}
+</style>
 </head>
 <body data-page="presentes">
 <section class="ghero">
@@ -206,7 +218,15 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <figure data-fade=""><div class="media"><img alt="Sacola kraft ORA" src="assets/img/sacola.jpg"/></div><figcaption><b>Sacola kraft</b><span>Para entregar em mãos.</span></figcaption></figure>
 <figure data-delay="1" data-fade=""><div class="media"><img alt="Caixa ORA" src="assets/img/p-caixa.jpg"/></div><figcaption><b>Caixa ORA</b><span>Com o slogan na tampa interna.</span></figcaption></figure>
 <figure data-delay="2" data-fade=""><div class="media"><img alt="Café e caneca dentro da caixa" src="assets/img/p-cafe-caneca.jpg"/></div><figcaption><b>Café e peças</b><span>Conforme o kit escolhido.</span></figcaption></figure>
-<figure data-delay="3" data-fade=""><div class="media"><img alt="Cartão Nossa origem" src="assets/img/cartao-origem.jpg" style="object-position:80% 50%"/></div><figcaption><b>Cartão</b><span>A origem do café e a sua mensagem.</span></figcaption></figure>
+<figure data-delay="3" data-fade=""><div class="media"><img alt="Cartão ORA" src="assets/img/cartao-frente.jpg"/></div><figcaption><b>Cartão</b><span>Para a sua mensagem.</span></figcaption></figure>
+</div>
+</section>
+<section class="sec wrap t-espresso corp" id="corporativo">
+<div class="cl"><p class="eyebrow ln-l" data-fade="">Para empresas</p><h2 class="display lg" data-lines="" style="margin-top:22px"><span class="ln"><span>Presentes</span></span><span class="ln"><span><em class="it">corporativos.</em></span></span></h2></div>
+<div class="cr">
+<p class="body" data-fade="">Kits ORA para clientes, equipes e datas da empresa. Cada caixa vai com um cartão com a mensagem da empresa.</p>
+<ul data-fade=""><li><b>Quantidade</b><span>Pedidos de vários kits de uma vez.</span></li><li><b>Mensagem</b><span>Um cartão por kit, com o texto da empresa.</span></li><li><b>Entrega</b><span>Em um endereço ou em vários.</span></li></ul>
+<a class="btn light" data-fade="" href="https://www.instagram.com/oracafeespecial" rel="noopener" target="_blank">Falar com a ORA <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
 </div>
 </section>
 <section class="sec wrap t-roast" id="cartao" style="padding-block:clamp(80px,9vw,130px)">
@@ -214,9 +234,9 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="l fld">
 <h2 class="display md" data-fade="">Cartão de mensagem</h2>
 <p class="body" data-fade="" style="opacity:.8;margin-top:14px">Escreva aqui e veja como fica. O texto vai junto com o kit.</p>
-<label for="mTo">Para</label><input id="mTo" maxlength="40" value="Helena"/>
-<label for="mTx">Mensagem</label><textarea id="mTx" maxlength="180" rows="3">Para as suas pausas de domingo. Com carinho.</textarea>
-<label for="mFr">De</label><input id="mFr" maxlength="40" value="Marina"/>
+<label for="mTo">Para</label><input id="mTo" maxlength="40" placeholder="Nome de quem recebe"/>
+<label for="mTx">Mensagem</label><textarea id="mTx" maxlength="140" rows="3" placeholder="Escreva a sua mensagem"></textarea>
+<label for="mFr">De</label><input id="mFr" maxlength="40" placeholder="Seu nome"/>
 <div class="two2"><div><label for="mKit">Kit</label><select id="mKit"></select></div><div><label for="mCf">Café</label><select id="mCf"><option value="natural">Natural</option><option value="cereja">Cereja Descascado</option></select></div></div>
 <div style="margin-top:30px"><button class="btn light" data-msg-add="">Adicionar com este cartão</button></div>
 </div>
@@ -230,8 +250,8 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 </div>
 </section>
 <script src="js/vendor/lenis.min.js"></script>
-<script src="js/logo.js?v=8"></script>
-<script src="js/catalogo.js?v=9"></script>
+<script src="js/logo.js?v=15"></script>
+<script src="js/catalogo.js?v=15"></script>
 <script>
 (() => {
   const $ = s => document.querySelector(s), K = ORA_CATALOGO.produtos.filter(p => p.tipoLoja === 'kit');
@@ -240,13 +260,15 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
   $('[data-pv-logo]').innerHTML = oraLogo();
   const upd = () => {
     const to = $('#mTo').value.trim(), tx = $('#mTx').value;
-    $('[data-pv-tx]').textContent = (to ? to + ',\n' : '') + (tx || 'Sua mensagem aparece aqui.');
-    $('[data-pv-fr]').textContent = $('#mFr').value.trim();
+    const vazio = !to && !tx.trim() && !$('#mFr').value.trim();
+    $('[data-pv-tx]').textContent = vazio ? 'Helena,\nPara as suas pausas de domingo. Com carinho.' : (to ? to + ',\n' : '') + (tx || 'Sua mensagem aparece aqui.');
+    $('[data-pv-fr]').textContent = vazio ? 'Marina' : $('#mFr').value.trim();
+    $('[data-pv]')?.classList.toggle('ex', vazio);
   };
   ['#mTo', '#mTx', '#mFr'].forEach(s => $(s).addEventListener('input', upd)); upd();
-  $('[data-msg-add]').addEventListener('click', () => ORA.add($('#mKit').value, { v: $('#mCf').value, msg: ($('#mTo').value.trim() ? $('#mTo').value.trim() + ', ' : '') + ($('#mTx').value.trim() || ' ') + ($('#mFr').value.trim() ? ' · ' + $('#mFr').value.trim() : '') }));
+  $('[data-msg-add]').addEventListener('click', () => ORA.add($('#mKit').value, { v: $('#mCf').value, msg: $('#mTx').value.trim() ? ($('#mTo').value.trim() ? $('#mTo').value.trim() + ', ' : '') + $('#mTx').value.trim() + ($('#mFr').value.trim() ? ' · ' + $('#mFr').value.trim() : '') : '' }));
 })();
 </script>
-<script src="js/site.js?v=8"></script>
+<script src="js/site.js?v=15"></script>
 </body>
 </html>

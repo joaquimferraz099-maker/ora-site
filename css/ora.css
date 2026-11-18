@@ -171,7 +171,7 @@ a:hover > .arr,button:hover > .arr{transform:translateX(5px)}
 .veil.on{opacity:1;transition-duration:.45s}
 
 /* entradas: linhas que sobem, blocos que aparecem, imagens que se abrem */
-.ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.ln{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em}
 .ln > span{display:block;transform:translateY(105%);transition:transform 1.25s var(--ease)}
 .is-in .ln > span,.ln.is-in > span{transform:none}
 .ln:nth-child(2) > span{transition-delay:.08s}
@@ -235,3 +235,19 @@ a:hover > .arr,button:hover > .arr{transform:translateX(5px)}
 .ann{position:relative;z-index:65;background:var(--espresso);color:var(--butter);text-align:center;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:9px var(--gut)}
 .ann b{color:var(--sand)}
 .hdr{top:34px}
+@media (max-width:600px){.ann{font-size:10px;letter-spacing:.12em;padding-inline:12px}}
+.ftr .ftag{margin:14px 0 0;max-width:24em;font-size:15px;line-height:1.6;opacity:.75}
+.kc .kc-l{display:inline-block;margin-top:14px}
+.hdr{top:var(--ann,34px)}
+.ann-m{display:none}
+@media (max-width:600px){.ann{font-size:11px;letter-spacing:.1em}.ann-x{display:none}.ann-m{display:inline}}
+.qty button{width:40px;height:40px}
+.bag .rm{padding:8px 0}
+@media (max-width:700px){body[data-page=produto] .toast{bottom:92px}}
+.ftr h4{opacity:.9}
+
+/* revisão 17/11 b */
+h1,h2,h3,.display{text-wrap:balance}
+p,li,figcaption span,.kc-b p{text-wrap:pretty}
+.kc-img img[src*="p-cafe-caneca"],.media img[src*="p-cafe-caneca"]{object-position:72% 50%}
+.kc-img img[src*="caixa-slogan"]{object-position:30% 50%}
