@@ -353,6 +353,8 @@ body{background:var(--roast)}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 :is(section,header):has(> .seam-b,> .seam-t){position:relative}
 .seam-t{position:absolute;left:0;right:0;top:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
+video.v-off{opacity:0}
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}
 </style>
 <style>
 .hhero{position:relative;height:calc(100svh - 36px);min-height:584px;color:var(--butter);overflow:hidden;background:var(--roast)}
@@ -484,7 +486,6 @@ body{background:var(--roast)}
   <div class="t">
     <span class="chap" data-fade>ii.</span>
     <h2 class="display lg" data-lines><span class="ln"><span>Café de</span></span><span class="ln"><span><em class="it">altitude.</em></span></span></h2>
-    <p class="alt" data-fade><b>1.500</b><span>metros acima do nível do mar.</span></p>
     <p data-fade>Nas montanhas de Minas Gerais, a altitude e as condições climáticas contribuem para um desenvolvimento mais lento dos frutos, influenciando as características sensoriais do café.</p>
     <p data-fade>É nesse ambiente que buscamos grãos especiais, com identidade própria e características que se revelam em cada xícara.</p>
   </div>
@@ -516,11 +517,11 @@ body{background:var(--roast)}
 </section>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=54"></script>
-<script defer src="js/catalogo.js?v=54"></script>
+<script defer src="js/logo.js?v=55"></script>
+<script defer src="js/catalogo.js?v=55"></script>
 
-<script defer src="js/loja.js?v=54"></script>
-<script defer src="js/site.js?v=54"></script>
+<script defer src="js/loja.js?v=55"></script>
+<script defer src="js/site.js?v=55"></script>
 
 
 </body>

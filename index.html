@@ -353,6 +353,8 @@ body{background:var(--roast)}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 :is(section,header):has(> .seam-b,> .seam-t){position:relative}
 .seam-t{position:absolute;left:0;right:0;top:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
+video.v-off{opacity:0}
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}
 </style>
 <style>
 /* abertura */
@@ -541,7 +543,7 @@ body{background:var(--roast)}
   <div class="band">
     <picture><source media="(max-width: 760px)" srcset="assets/video/2-hero-fazenda-poster-cel.webp" width="506" height="900"><img decoding="async" loading="lazy" width="1600" height="900" src="assets/video/2-hero-fazenda-poster.webp" srcset="assets/video/2-hero-fazenda-poster-800.webp 800w, assets/video/2-hero-fazenda-poster-1200.webp 1200w, assets/video/2-hero-fazenda-poster.webp 1600w" sizes="(max-width: 760px) 100vw, 120vw" alt="Cafezal nas montanhas de Minas Gerais" data-par=".4"></picture><video muted loop playsinline preload="none" aria-hidden="true" data-par=".4"><source src="assets/video/1-hero-fazenda-cel.mp4" type="video/mp4" media="(max-width: 760px)"><source src="assets/video/1-hero-fazenda.mp4" type="video/mp4"></video>
     <div class="in">
-      <h2 class="display xl" data-lines><span class="ln"><span>Minas Gerais,</span></span><span class="ln"><span><em class="it">a 1.500 metros.</em></span></span></h2>
+      <h2 class="display xl" data-lines><span class="ln"><span>Sul de</span></span><span class="ln"><span><em class="it">Minas.</em></span></span></h2>
       <div class="r" data-fade>
         <p>Os cafés da ORA vêm de fazendas nas montanhas de Minas Gerais. Na altitude, o fruto amadurece devagar e o café ganha doçura.</p>
         <a class="btn light" href="historia.html">Conheça nossa história <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a>
@@ -592,9 +594,9 @@ body{background:var(--roast)}
 </section>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=54"></script>
-<script defer src="js/catalogo.js?v=54"></script>
-<script defer src="js/loja.js?v=54"></script>
-<script defer src="js/site.js?v=54"></script>
+<script defer src="js/logo.js?v=55"></script>
+<script defer src="js/catalogo.js?v=55"></script>
+<script defer src="js/loja.js?v=55"></script>
+<script defer src="js/site.js?v=55"></script>
 </body>
 </html>

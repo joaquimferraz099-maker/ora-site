@@ -403,3 +403,6 @@ body{background:var(--roast)}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 :is(section,header):has(> .seam-b,> .seam-t){position:relative}
 .seam-t{position:absolute;left:0;right:0;top:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
+
+video.v-off{opacity:0}
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}

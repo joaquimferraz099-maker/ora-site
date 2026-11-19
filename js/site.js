@@ -207,8 +207,13 @@
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   /* vídeos tocam só quando visíveis */
-  const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }), { rootMargin: '100px' });
-  $$('video:not([data-hover])').forEach(v => { v.muted = true; v.playsInline = true; v.loop = true; vio.observe(v); });
+  /* celular com economia de bateria/dados recusa o autoplay: mostra a foto, sem botão de play, e toca no primeiro toque ou rolagem */
+  const vis = new Set(), pend = new Set();
+  const toca = v => { const r = v.play(); if (!r) return; r.then(() => { v.classList.remove('v-off'); pend.delete(v); }).catch(() => { if (v.previousElementSibling && v.previousElementSibling.matches('picture, img')) v.classList.add('v-off'); pend.add(v); }); };
+  const gesto = () => pend.forEach(v => vis.has(v) && toca(v));
+  ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach(t => addEventListener(t, gesto, { passive: true }));
+  const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { vis.add(v); toca(v); } else { vis.delete(v); v.pause(); } }), { rootMargin: '100px' });
+  $$('video:not([data-hover])').forEach(v => { v.muted = v.defaultMuted = true; v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('webkit-playsinline', ''); v.playsInline = true; v.loop = true; v.disablePictureInPicture = true; vio.observe(v); });
 
   /* entradas */
   const runReveals = () => {

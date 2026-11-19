@@ -354,6 +354,8 @@ body{background:var(--roast)}
 @media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
 :is(section,header):has(> .seam-b,> .seam-t){position:relative}
 .seam-t{position:absolute;left:0;right:0;top:-1px;height:clamp(90px,14vw,200px);z-index:1;pointer-events:none}
+video.v-off{opacity:0}
+video::-webkit-media-controls,video::-webkit-media-controls-start-playback-button,video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}
 </style>
 <style>
 .pdp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(14px,1.8vw,30px);padding:calc(var(--hdr) + 18px) var(--gut) clamp(90px,10vw,150px);align-items:start}
@@ -670,10 +672,10 @@ body[data-page=loja] .ct .pk{aspect-ratio:1.1}
 <div class="sbar" data-sbar aria-hidden="true" inert></div>
 
 <script defer src="js/vendor/lenis.min.js"></script>
-<script defer src="js/logo.js?v=54"></script>
-<script defer src="js/catalogo.js?v=54"></script>
-<script defer src="js/pg-produto.js?v=54"></script>
-<script defer src="js/loja.js?v=54"></script>
-<script defer src="js/site.js?v=54"></script>
+<script defer src="js/logo.js?v=55"></script>
+<script defer src="js/catalogo.js?v=55"></script>
+<script defer src="js/pg-produto.js?v=55"></script>
+<script defer src="js/loja.js?v=55"></script>
+<script defer src="js/site.js?v=55"></script>
 </body>
 </html>
