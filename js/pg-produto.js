@@ -23,7 +23,7 @@ window.ORA_PAGE = () => {
     /* galeria */
     const g = isCafe
       ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : ''), '', '(max-width: 760px) 45vw, 27vw'), media('assets/video/po.mp4', '', 'Moagem para coado'), ...(c.img250 && st.t !== '250' ? [media(c.img250, 'kraft', 'Kraft · 250 g')] : [media('assets/img/px-coado.webp', '', 'Pronto em minutos')]), media('assets/img/px-colheita-cesto.webp', 'w wide', 'A colheita')]
-      : [media(p.img, 'w wide'), `<div class="media" style="background:${c.id === 'cereja' ? 'radial-gradient(120% 90% at 50% 30%,#d6c5ae 0%,#bfa98f 55%,#a48e75 100%)' : 'radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)'}"><img ${oraImg(c.img, '(max-width: 760px) 80vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, 500 g" style="object-fit:contain;padding:10% 0 8%"><span class="cap" style="color:var(--butter)">Café ORA 500 g</span></div>`, media(p.img2, '', '')];
+      : [media(p.img, 'w wide'), `<div class="media" style="background:${c.id === 'cereja' ? 'radial-gradient(120% 90% at 50% 30%,#d6c5ae 0%,#bfa98f 55%,#a48e75 100%)' : 'radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)'}"><img ${oraImg(c.img, '(max-width: 760px) 80vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, 500 g" style="object-fit:contain;padding:10% 0 8%"><span class="cap" style="color:var(--butter)">Café ORA 500 g</span></div>`, media('assets/img/sacola.webp', '', 'Sacola kraft')];
     $('[data-gal]').innerHTML = g.join('');
     if (isCafe) $('[data-gal] .pack').innerHTML = `<img ${oraImg(st.t === '250' && c.img250 ? c.img250 : c.img, '(max-width: 760px) 45vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, ${st.t} g">`;
     $('[data-galn]').textContent = `${g.length} imagens · deslize`;
