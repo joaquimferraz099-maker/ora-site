@@ -209,7 +209,16 @@
   /* vídeos tocam só quando visíveis */
   /* celular com economia de bateria/dados recusa o autoplay: mostra a foto, sem botão de play, e toca no primeiro toque ou rolagem */
   const vis = new Set(), pend = new Set();
-  const toca = v => { const r = v.play(); if (!r) return; r.then(() => { v.classList.remove('v-off'); pend.delete(v); }).catch(() => { if (v.previousElementSibling && v.previousElementSibling.matches('picture, img')) v.classList.add('v-off'); pend.add(v); }); };
+  const toca = v => { const r = v.play(); if (!r) return; r.then(() => { v.classList.remove('v-off'); pend.delete(v); }).catch(() => {
+    if (v.previousElementSibling && v.previousElementSibling.matches('picture, img')) v.classList.add('v-off');
+    /* imagem animada não é bloqueada pela economia de bateria: troca o vídeo por ela, só no celular */
+    if (v.dataset.anim && !v.dataset.animOn && matchMedia('(max-width: 760px)').matches) {
+      v.dataset.animOn = '1'; const im = new Image(); im.alt = ''; im.decoding = 'async'; im.setAttribute('aria-hidden', 'true');
+      im.onload = () => { v.after(im); v.classList.add('v-off'); v.pause(); pend.delete(v); vio.unobserve(v); };
+      im.src = v.dataset.anim; return;
+    }
+    if (!v.dataset.animOn) pend.add(v);
+  }); };
   const gesto = () => pend.forEach(v => vis.has(v) && toca(v));
   ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach(t => addEventListener(t, gesto, { passive: true }));
   const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { vis.add(v); toca(v); } else { vis.delete(v); v.pause(); } }), { rootMargin: '100px' });
