@@ -23,7 +23,7 @@ window.ORA_PAGE = () => {
     /* galeria */
     const g = isCafe
       ? [media(c.img, 'w pack' + (c.cor === 'mocha' ? ' mocha' : ''), '', '(max-width: 760px) 45vw, 27vw'), media('assets/video/po.mp4', '', 'Moagem para coado'), ...(c.img250 && st.t !== '250' ? [media(c.img250, 'kraft', 'Kraft · 250 g')] : [media('assets/img/px-coado.webp', '', 'Pronto em minutos')]), media('assets/img/px-colheita-cesto.webp', 'w wide', 'A colheita')]
-      : [media(p.img, 'w wide'), `<div class="media" style="background:${c.id === 'cereja' ? 'radial-gradient(120% 90% at 50% 30%,#d6c5ae 0%,#bfa98f 55%,#a48e75 100%)' : 'radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)'}"><img ${oraImg(c.img, '(max-width: 760px) 80vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, 500 g" style="object-fit:contain;padding:10% 0 8%"><span class="cap" style="color:var(--butter)">Café ORA 500 g</span></div>`, media('assets/img/cartao-frente.webp', '', 'Cartão ORA')];
+      : [media(p.img, 'w wide'), `<div class="media" style="background:${c.id === 'cereja' ? 'radial-gradient(120% 90% at 50% 30%,#d6c5ae 0%,#bfa98f 55%,#a48e75 100%)' : 'radial-gradient(120% 90% at 50% 30%,#8a6150 0%,#6a4636 55%,#4e3227 100%)'}"><img ${oraImg(c.img, '(max-width: 760px) 80vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, 500 g" style="object-fit:contain;padding:10% 0 8%"><span class="cap" style="color:var(--butter)">Café ORA 500 g</span></div>`, media(p.img2, '', '')];
     $('[data-gal]').innerHTML = g.join('');
     if (isCafe) $('[data-gal] .pack').innerHTML = `<img ${oraImg(st.t === '250' && c.img250 ? c.img250 : c.img, '(max-width: 760px) 45vw, 27vw')} alt="Pacote do ${c.nomeCompleto}, ${st.t} g">`;
     $('[data-galn]').textContent = `${g.length} imagens · deslize`;
@@ -62,7 +62,7 @@ window.ORA_PAGE = () => {
       <p class="ship pay-l">${window.ORA_LOJA ? ORA_LOJA.pagamentoTexto(precoCompra()) : 'Pix ou cartão de crédito'}. Enviamos para todo o Brasil.</p>
       <form class="cepf" data-cepf novalidate><label for="pdCep">${TRUCK}Calcular entrega</label><input id="pdCep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="Seu CEP" value="${(() => { try { return JSON.parse(localStorage.getItem('ora-cep')) || ''; } catch (e) { return ''; } })()}"><button type="submit" class="link">Calcular</button></form>
       <p class="cep-r" data-cepr aria-live="polite"></p>
-      ${isCafe ? '' : `<details class="gmsg" open><summary>Mensagem do cartão (incluso)</summary><textarea rows="3" maxlength="140" placeholder="Escreva sua mensagem" data-msg>${(st.msg || '').replace(/</g, '&lt;')}</textarea><small data-kcnt style="display:block;text-align:right;font-size:12px;opacity:.8;margin-top:6px">${(st.msg || '').length}/140</small></details>`}
+      
       <div class="acc">
         <details><summary>Como preparar</summary><div class="a">A receita da ORA para o coado, passo a passo, está na página dos cafés. <a href="loja.html#preparo" style="text-decoration:underline">Ver como preparar</a>.</div></details>
         <details><summary>Conservação</summary><div class="a">Depois de aberto, feche bem o pacote e guarde longe da luz e do calor. O sabor fica melhor nas primeiras semanas.</div></details>
@@ -120,7 +120,7 @@ window.ORA_PAGE = () => {
             <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
         </div>
       </section>` : ''}
-      ${isCafe ? `<section class="sec wrap t-espresso more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com um cartão escrito por você. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-espresso more">
+      ${isCafe ? `<section class="sec wrap t-espresso more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com sacola kraft. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-espresso more">
         <div class="hd"><h2 class="display md" data-fade>Outros presentes</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
         <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
       </section>`}`;
@@ -146,9 +146,8 @@ window.ORA_PAGE = () => {
     if (tm) { st.t = tm.dataset.tam; render(); return; }
     const d = e.target.closest('[data-qd]');
     if (d) { st.qty = Math.max(1, Math.min(20, st.qty + +d.dataset.qd)); document.querySelector('[data-qty]').textContent = st.qty; upd(); }
-    if (e.target.closest('[data-buy]')) { const m = document.querySelector('[data-msg]'); ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, t: st.t, msg: m ? m.value.trim() : '' }); }
+    if (e.target.closest('[data-buy]')) { ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, t: st.t }); }
   });
-  document.addEventListener('input', e => { if (e.target.matches('[data-msg]')) { st.msg = e.target.value; const k = document.querySelector('[data-kcnt]'); if (k) k.textContent = st.msg.length + '/140'; } });
   document.addEventListener('change', e => { if (e.target.name === 'plan') { st.sub = e.target.value === '1'; render(); } });
 
   render();

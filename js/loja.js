@@ -78,7 +78,6 @@ window.ORA_LOJA = {
     const lines = bag.map(i => {
       const l = { merchandiseId: L.variantes[chave(i)], quantity: i.qty, attributes: [] };
       if (i.sub && L.planoAssinatura) l.sellingPlanId = L.planoAssinatura;
-      if (i.msg && i.msg.trim()) l.attributes.push({ key: 'Mensagem do cartão', value: i.msg.trim().slice(0, 140) });
       return l;
     });
     const query = `mutation($input: CartInput!) { cartCreate(input: $input) { cart { checkoutUrl } userErrors { message } } }`;

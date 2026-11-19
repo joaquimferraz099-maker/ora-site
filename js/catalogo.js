@@ -41,15 +41,15 @@ window.ORA_CATALOGO = {
     { handle: 'cafe-caneca', tipoLoja: 'kit', nome: 'Café e caneca', tipo: 'Kit presente', preco: 12900,
       img: 'assets/img/p-kit-vertical.webp', img2: 'assets/img/p-cafe-caneca.webp', thumb: 'assets/img/p-kit-vertical.webp',
       resumo: 'Para quem toma o café a caminho do dia: um pacote ORA e a caneca térmica que acompanha.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
+      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Caixa ORA e sacola kraft'] },
     { handle: 'cafe-jarra', tipoLoja: 'kit', nome: 'Café e jarra', tipo: 'Kit presente', preco: 16900,
       img: 'assets/img/caixa-slogan.webp', img2: 'assets/img/p-caixa.webp', thumb: 'assets/img/caixa-slogan.webp',
       resumo: 'Para a mesa do café da manhã: um pacote ORA e a jarra térmica que mantém o coado quente.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] },
+      contem: ['Café ORA 500 g, à sua escolha', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft'] },
     { handle: 'kit-completo', tipoLoja: 'kit', nome: 'Kit completo', tipo: 'Kit presente', preco: 24900, destaque: 'Mais completo',
       img: 'assets/img/p-kit-completo.webp', img2: 'assets/img/kit-aberto.webp', thumb: 'assets/img/p-kit-completo.webp',
       resumo: 'Para quem recebe em casa: café, caneca e jarra, tudo o que o ritual pede.',
-      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft', 'Cartão ORA com a sua mensagem'] }
+      contem: ['Café ORA 500 g, à sua escolha', 'Caneca térmica ORA', 'Jarra térmica ORA', 'Caixa ORA e sacola kraft'] }
   ]
 };
 

@@ -117,7 +117,7 @@
         <div><h5>${p.tipoLoja === 'cafe' ? 'Café ' + p.nome : p.nome}</h5><p>${linha(i)}</p>
           <div class="qty"><button aria-label="Diminuir" data-q="${k}" data-d="-1">−</button><span>${i.qty}</span><button aria-label="Aumentar" data-q="${k}" data-d="1">+</button></div>
           <button class="rm" data-rm="${k}">Remover</button></div>
-        <div class="pr num">${brl(precoItem(i) * i.qty)}${i.sub ? '<small style="font-size:.6em;opacity:.7">/mês</small>' : ''}</div>${i.msg && i.msg.trim() ? `<p class="cmsg"><b>Cartão:</b> “${i.msg.trim().replace(/</g, '&lt;')}”</p>` : ''}</div>`;
+        <div class="pr num">${brl(precoItem(i) * i.qty)}${i.sub ? '<small style="font-size:.6em;opacity:.7">/mês</small>' : ''}</div></div>`;
     }).join('');
     const tot = bag.reduce((a, i) => a + precoItem(i) * i.qty, 0);
     const L = window.ORA_LOJA, fg = L ? L.freteGratisTexto(tot) : '', cep = store.get('ora-cep', '');
