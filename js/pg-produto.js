@@ -120,7 +120,7 @@ window.ORA_PAGE = () => {
             <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap" data-fade><button class="btn solid" data-quick="${op.handle}">Adicionar · ${brl(op.preco)}</button><a class="link" href="produto.html?p=${op.handle}">Conheça este café</a></div></div>
         </div>
       </section>` : ''}
-      ${isCafe ? `<section class="sec wrap t-espresso more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com sacola kraft. A partir de R$ 129,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-espresso more">
+      ${isCafe ? `<section class="sec wrap t-espresso more"><div class="gband"><div><h2 class="display md" data-fade>Para <em class="it">presentear</em></h2><p data-fade>Café com caneca ou jarra térmica, na caixa ORA, com sacola kraft. A partir de R$ 139,00.</p></div><a class="btn light" href="presentes.html" data-fade>Conheça os presentes <svg class="arr" viewBox="0 0 22 9"><path d="M0 4.5h20M16.5.8l3.8 3.7-3.8 3.7" fill="none" stroke="currentColor"/></svg></a></div></section>` : `<section class="sec wrap t-espresso more">
         <div class="hd"><h2 class="display md" data-fade>Outros presentes</h2><a class="link" href="presentes.html" data-fade>Conheça nossos presentes ${ARR}</a></div>
         <div class="kgrid${kits.length === 2 ? ' k2' : ''}">${kits.map(oraKitCard).join('')}</div>
       </section>`}`;
