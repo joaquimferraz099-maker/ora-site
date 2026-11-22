@@ -105,6 +105,7 @@
   const precoItem = i => { const p = oraProd(i.h); let v = (i.t === '250' && p.p250) ? p.p250 : p.preco; if (i.sub) v = Math.round(v * .85); return v; };
   function renderBag() {
     bag = bag.filter(i => oraProd(i.h));
+    if (!(!window.oraAssina || oraAssina())) bag.forEach(i => { i.sub = false; });
     $$('.bag-count').forEach(e => e.textContent = bag.reduce((a, i) => a + i.qty, 0));
     const items = $('.items', bagEl), pf = $('.pf', bagEl);
     if (!bag.length) {
@@ -168,7 +169,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeBag(); B.classList.remove('menu-open'); document.documentElement.style.overflow = ''; } });
   window.ORA = {
     add(h, o = {}) {
-      const p = oraProd(h), v = p.cafe || o.v || 'natural', qty = o.qty || 1, msg = o.msg || '', sub = !!o.sub, t = p.p250 ? (o.t || '500') : undefined;
+      const p = oraProd(h), v = p.cafe || o.v || 'natural', qty = o.qty || 1, msg = o.msg || '', sub = !!o.sub && (!window.oraAssina || oraAssina()), t = p.p250 ? (o.t || '500') : undefined;
       const ex = bag.find(i => i.h === h && i.v === v && i.msg === msg && !!i.sub === sub && (i.t || '500') === (t || '500'));
       ex ? ex.qty = Math.min(p.max || 20, ex.qty + qty) : bag.push({ h, v, qty, msg, sub, t });
       save();

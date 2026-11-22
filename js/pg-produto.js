@@ -49,7 +49,7 @@ window.ORA_PAGE = () => {
       ${isCafe && !p.p250 ? `
       <div class="opt"><div class="lb"><span>Formato</span></div><div class="sw"><span class="fix"><span><b>Moído para coado · ${st.t} g</b><small>Para coador de papel ou de pano</small></span></span></div></div>
       ` : ''}
-      ${isCafe ? `
+      ${isCafe && (!window.oraAssina || oraAssina()) ? `
       <div class="opt"><div class="lb"><span>Forma de compra</span></div>
         <div class="plans">
           <label><input type="radio" name="plan" value="0" ${st.sub ? '' : 'checked'}><span><b>Compra única</b><small>Um pacote, entregue uma vez.</small></span><span class="p num">${brl(precoBase())}</span></label>
@@ -148,7 +148,7 @@ window.ORA_PAGE = () => {
     if (d) { st.qty = Math.max(1, Math.min(20, st.qty + +d.dataset.qd)); document.querySelector('[data-qty]').textContent = st.qty; upd(); }
     if (e.target.closest('[data-buy]')) { ORA.add(p.handle, { v: st.v, qty: st.qty, sub: st.sub, t: st.t }); }
   });
-  document.addEventListener('change', e => { if (e.target.name === 'plan') { st.sub = e.target.value === '1'; render(); } });
+  document.addEventListener('change', e => { if (e.target.name === 'plan') { st.sub = e.target.value === '1' && (!window.oraAssina || oraAssina()); render(); } });
 
   render();
   const bar = document.querySelector('[data-sbar]');

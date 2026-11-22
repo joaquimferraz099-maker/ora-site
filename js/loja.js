@@ -33,6 +33,36 @@ window.ORA_LOJA = {
 (() => {
   const L = window.ORA_LOJA, brl = c => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   L.ativa = () => !!(L.shopify.dominio && L.shopify.token);
+  /* assinatura só aparece se a loja tiver plano de assinatura configurado (na prévia, aparece) */
+  L.assinatura = () => !L.ativa() || !!L.planoAssinatura;
+  window.oraAssina = L.assinatura;
+
+  const api = async (query, variables) => {
+    const r = await fetch(`https://${L.shopify.dominio}/api/${L.shopify.versao}/graphql.json`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Storefront-Access-Token': L.shopify.token },
+      body: JSON.stringify({ query, variables })
+    });
+    return r.json();
+  };
+
+  /* acha sozinho o ID de cada variante na Shopify, pelo handle do produto e pelo nome da opção
+     (Tamanho "250 g"/"500 g" nos cafés; Café "Natural"/"Cereja Descascado" nos kits).
+     O que estiver preenchido à mão em L.variantes tem prioridade. */
+  let mapa = null;
+  L.mapaVariantes = () => mapa || (mapa = api(`{ products(first: 50) { nodes { handle variants(first: 20) { nodes { id availableForSale selectedOptions { name value } } } } } }`)
+    .then(j => {
+      const m = {};
+      ((j.data && j.data.products.nodes) || []).forEach(pr => pr.variants.nodes.forEach(v => {
+        const val = v.selectedOptions.map(o => o.value).join(' ').toLowerCase();
+        const k = /250/.test(val) ? `${pr.handle}|250` : /500/.test(val) ? `${pr.handle}|500`
+          : /cereja/.test(val) ? `${pr.handle}|cereja` : /natural/.test(val) ? `${pr.handle}|natural` : pr.handle;
+        m[k] = v.id;
+        if (pr.variants.nodes.length === 1) m[pr.handle + '|500'] = m[pr.handle + '|500'] || v.id;
+      }));
+      Object.keys(L.variantes).forEach(k => { if (L.variantes[k]) m[k] = L.variantes[k]; });
+      return m;
+    }).catch(() => { mapa = null; return Object.assign({}, L.variantes); }));
 
   /* "Pix ou cartão de crédito", mais parcelas e desconto quando configurados */
   L.pagamentoTexto = valor => {
@@ -73,21 +103,17 @@ window.ORA_LOJA = {
   /* cria o carrinho na Shopify e devolve o endereço do checkout */
   L.checkout = async bag => {
     if (!L.ativa()) return { previa: true };
-    const faltam = bag.filter(i => !L.variantes[chave(i)]);
+    const V = await L.mapaVariantes();
+    const faltam = bag.filter(i => !V[chave(i)]);
     if (faltam.length) { console.warn('ORA: variantes sem ID na Shopify:', faltam.map(chave)); return { erro: 'Um dos produtos da sacola ainda não está disponível na loja.' }; }
     const lines = bag.map(i => {
-      const l = { merchandiseId: L.variantes[chave(i)], quantity: i.qty, attributes: [] };
+      const l = { merchandiseId: V[chave(i)], quantity: i.qty, attributes: [] };
       if (i.sub && L.planoAssinatura) l.sellingPlanId = L.planoAssinatura;
       return l;
     });
     const query = `mutation($input: CartInput!) { cartCreate(input: $input) { cart { checkoutUrl } userErrors { message } } }`;
     try {
-      const r = await fetch(`https://${L.shopify.dominio}/api/${L.shopify.versao}/graphql.json`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-Shopify-Storefront-Access-Token': L.shopify.token },
-        body: JSON.stringify({ query, variables: { input: { lines, buyerIdentity: { countryCode: 'BR' } } } })
-      });
-      const j = await r.json(), c = j.data && j.data.cartCreate;
+      const j = await api(query, { input: { lines, buyerIdentity: { countryCode: 'BR' } } }), c = j.data && j.data.cartCreate;
       if (!c || (c.userErrors && c.userErrors.length) || !c.cart) return { erro: (c && c.userErrors[0] && c.userErrors[0].message) || 'A loja não respondeu.' };
       return { url: c.cart.checkoutUrl };
     } catch (e) { return { erro: 'Não foi possível falar com a loja agora.' }; }
