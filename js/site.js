@@ -256,6 +256,11 @@
   }
 
   window.ORA_PAGE && window.ORA_PAGE();
+  /* contador de visitas: só carrega quando houver token em ORA_LOJA.contadorVisitas */
+  if (window.ORA_LOJA && ORA_LOJA.contadorVisitas) {
+    const cf = document.createElement('script'); cf.defer = true; cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cf.setAttribute('data-cf-beacon', JSON.stringify({ token: ORA_LOJA.contadorVisitas })); document.head.appendChild(cf);
+  }
   /* emendas: a cor de uma seção se dissolve na seguinte, em vez de um corte seco */
   const seams = () => {
     const blocos = $$('body > header:not(.hdr), body > section, body > main > section, body > main > header, body > main > div > section, .ftr').filter(el => el.offsetHeight > 0);

@@ -27,7 +27,10 @@ window.ORA_LOJA = {
     descontoPix: 0        // em %, ex.: 5
   },
   freteGratisAcima: 0,    // em centavos, ex.: 25000
-  empresa: { razaoSocial: '', cnpj: '', endereco: '' }
+  empresa: { razaoSocial: '', cnpj: '', endereco: '' },
+  /* Contador de visitas (Cloudflare Web Analytics, grátis e sem cookies): colar aqui o token do site.
+     Vazio = desligado. */
+  contadorVisitas: ''
 };
 
 (() => {
