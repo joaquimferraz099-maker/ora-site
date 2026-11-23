@@ -22,9 +22,9 @@ window.ORA_LOJA = {
   planoAssinatura: '',  // ID do plano de venda do app de assinatura (gid://shopify/SellingPlan/...)
   /* Condições comerciais. Zero quer dizer "não mostrar". */
   pagamento: {
-    parcelasSemJuros: 0,  // ex.: 3
+    parcelasSemJuros: 3,  // ex.: 3
     parcelaMinima: 0,     // em centavos, ex.: 3000
-    descontoPix: 0        // em %, ex.: 5
+    descontoPix: 5        // em %, ex.: 5
   },
   freteGratisAcima: 0,    // em centavos, ex.: 25000
   empresa: { razaoSocial: '', cnpj: '', endereco: '' },
